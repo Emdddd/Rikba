@@ -44,16 +44,18 @@ export function HowItWorks() {
     <section id="how-it-works" className="py-20 md:py-32 border-t border-border">
       <div className="mx-auto max-w-6xl px-5">
         <AnimateOnScroll animation="fade-up">
-          <h2 className="text-center text-3xl md:text-5xl font-bold text-foreground text-balance leading-tight">
-            Three taps.{" "}
-            <span className="text-primary inline-flex items-center gap-1.5">
+          <div className="text-center">
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground text-balance leading-tight mb-2">
+              Three taps
+            </h2>
+            <span className="text-primary inline-flex items-center gap-1.5 text-xl md:text-2xl font-bold">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 md:w-6 md:h-6 opacity-60">
                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                 <polyline points="22 4 12 14.01 9 11.01" />
               </svg>
-              That{"'"}s it.
+              That's it.
             </span>
-          </h2>
+          </div>
         </AnimateOnScroll>
 
         <div className="mt-14 grid gap-8 md:grid-cols-3 max-w-4xl mx-auto relative">
