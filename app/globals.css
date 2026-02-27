@@ -1,37 +1,75 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "tw-animate-css";
 
-/* ========================= */
-/* Theme Variables */
-/* ========================= */
+@custom-variant dark (&:is(.dark *));
+
+/* ================================================= */
+/* THEME VARIABLES */
+/* ================================================= */
 
 :root {
+
   --background: oklch(0.13 0.01 260);
   --foreground: oklch(0.97 0 0);
+
   --card: oklch(0.17 0.01 260);
   --card-foreground: oklch(0.97 0 0);
+
   --primary: oklch(0.62 0.22 260);
   --primary-foreground: oklch(0.99 0 0);
+
   --secondary: oklch(0.22 0.015 260);
   --secondary-foreground: oklch(0.92 0 0);
+
   --muted: oklch(0.22 0.01 260);
   --muted-foreground: oklch(0.65 0.02 260);
+
   --border: oklch(0.28 0.02 260);
+
   --radius: 0.75rem;
 }
 
-/* ========================= */
-/* Base */
-/* ========================= */
+/* ================================================= */
+/* TAILWIND THEME LINK */
+/* ================================================= */
+
+@theme inline {
+
+  --font-sans: var(--font-inter), Inter, system-ui, sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-border: var(--border);
+}
+
+/* ================================================= */
+/* BASE (TAILWIND V4 SAFE) */
+/* ================================================= */
 
 @layer base {
+
   * {
-    @apply border-border;
+    border-color: var(--border);
+    outline-color: color-mix(in oklab, var(--primary) 50%, transparent);
   }
 
   body {
-    @apply bg-background text-foreground;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
   }
 }
 
@@ -39,9 +77,9 @@ html {
   scroll-behavior: smooth;
 }
 
-/* ========================= */
-/* Floating Animations */
-/* ========================= */
+/* ================================================= */
+/* FLOATING ANIMATIONS */
+/* ================================================= */
 
 @keyframes float-y {
   0%,100% { transform: translateY(0); }
@@ -53,43 +91,64 @@ html {
   50% { transform: rotate(2deg) translateY(-6px); }
 }
 
-/* ========================= */
-/* Car Animation */
-/* ========================= */
+/* ================================================= */
+/* CAR DRIVE ANIMATION */
+/* ================================================= */
 
 @keyframes car-drive {
-  0% { transform: translateX(-30px); opacity:0;}
-  10% { opacity:1;}
-  90% { opacity:1;}
-  100% { transform:translateX(calc(100vw + 30px)); opacity:0;}
+
+  0% {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+
+  10% { opacity:1; }
+
+  90% { opacity:1; }
+
+  100% {
+    transform: translateX(calc(100vw + 30px));
+    opacity:0;
+  }
 }
 
 .animate-car-drive {
   animation: car-drive 8s linear infinite;
 }
 
-/* ========================= */
-/* Glow Pulse */
-/* ========================= */
+/* ================================================= */
+/* GLOW PULSE */
+/* ================================================= */
 
 @keyframes glow-pulse {
-  0%,100% { box-shadow:0 0 20px 0 oklch(0.62 0.22 260 / .1);}
-  50% { box-shadow:0 0 30px 4px oklch(0.62 0.22 260 / .2);}
+
+  0%,100% {
+    box-shadow: 0 0 20px 0 oklch(0.62 0.22 260 / .1);
+  }
+
+  50% {
+    box-shadow: 0 0 30px 4px oklch(0.62 0.22 260 / .2);
+  }
 }
 
 .animate-glow-pulse {
   animation: glow-pulse 3s ease-in-out infinite;
 }
 
-/* ========================= */
-/* Travel Dot */
-/* ========================= */
+/* ================================================= */
+/* TRAVEL DOT */
+/* ================================================= */
 
 @keyframes travel-dot {
-  0% { left:0%; opacity:0;}
-  10% { opacity:1;}
-  90% { opacity:1;}
-  100% { left:100%; opacity:0;}
+
+  0% { left:0%; opacity:0; }
+  10% { opacity:1; }
+  90% { opacity:1; }
+
+  100% {
+    left:100%;
+    opacity:0;
+  }
 }
 
 .animate-travel-dot {
@@ -101,6 +160,7 @@ html {
 /* ================================================= */
 
 .map-reveal-mask {
+
   position: relative;
   display:flex;
   align-items:center;
@@ -113,6 +173,7 @@ html {
 }
 
 @keyframes malta-center-reveal {
+
   0% {
     clip-path: inset(0 50% 0 50%);
     opacity:0;
