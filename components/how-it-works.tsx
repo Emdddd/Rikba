@@ -45,11 +45,11 @@ export function HowItWorks() {
       <div className="mx-auto max-w-6xl px-5">
         <AnimateOnScroll animation="fade-up">
           <div className="text-center">
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground text-balance leading-tight mb-2">
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-2">
               Three taps
             </h2>
             <span className="text-primary inline-flex items-center gap-1.5 text-xl md:text-2xl font-bold">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 md:w-6 md:h-6 opacity-60">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                 <polyline points="22 4 12 14.01 9 11.01" />
               </svg>
@@ -59,7 +59,7 @@ export function HowItWorks() {
         </AnimateOnScroll>
 
         <div className="mt-14 grid gap-8 md:grid-cols-3 max-w-4xl mx-auto relative">
-          {/* Connecting line behind steps (desktop only) */}
+
           <div className="hidden md:block absolute top-[40px] left-[calc(16.67%+40px)] right-[calc(16.67%+40px)] h-px bg-border z-0">
             <div className="absolute top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-primary animate-travel-dot" />
           </div>
@@ -67,19 +67,26 @@ export function HowItWorks() {
           {steps.map((step, index) => (
             <AnimateOnScroll key={step.step} animation="fade-up" delay={index * 150}>
               <div className="relative z-10 text-center">
-                {/* Icon with step number */}
+
                 <div className="relative mx-auto mb-5 w-20 h-20 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
                   {step.icon}
+
                   <span className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-primary text-primary-foreground text-xs font-bold flex items-center justify-center shadow-lg shadow-primary/30">
                     {step.step}
                   </span>
 
-                  {/* Small contextual animated chip next to icon */}
+                  {/* ===== UPDATED LOGO CHIP ===== */}
                   {index === 0 && (
                     <FloatingBadge delay={0} duration={4} direction="y" className="absolute -right-16 top-1/2 -translate-y-1/2 hidden md:flex">
                       <div className="flex items-center gap-1 rounded-lg bg-card border border-border shadow-md px-2 py-1">
-                       <img src="https://i.imgur.com/26ZC9ge_d.webp?maxwidth=760&fidelity=grand" alt="Rikba" className="w-4 h-4 rounded object-contain" />
-                        <span className="text-[8px] font-semibold text-foreground whitespace-nowrap">rikba</span>
+                        <img
+                          src="/5BDA6FFD-95DA-4CC6-9EAD-71BA2A8B75E0.png"
+                          alt="Rikba"
+                          className="w-4 h-4 rounded object-contain"
+                        />
+                        <span className="text-[8px] font-semibold text-foreground whitespace-nowrap">
+                          rikba
+                        </span>
                       </div>
                     </FloatingBadge>
                   )}
@@ -97,14 +104,18 @@ export function HowItWorks() {
                     <FloatingBadge delay={0.2} duration={4} direction="y" className="absolute -right-24 top-1/2 -translate-y-1/2 hidden md:flex">
                       <div className="flex items-center gap-1.5 rounded-lg bg-card border border-border shadow-md px-2 py-1">
                         <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                        <span className="text-[8px] font-semibold text-foreground whitespace-nowrap">1 min away</span>
+                        <span className="text-[8px] font-semibold text-foreground whitespace-nowrap">
+                          1 min away
+                        </span>
                       </div>
                     </FloatingBadge>
                   )}
+
                 </div>
 
                 <h3 className="text-xl font-bold text-foreground mb-2">{step.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{step.description}</p>
+
               </div>
             </AnimateOnScroll>
           ))}
