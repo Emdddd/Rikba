@@ -49,27 +49,27 @@ export function Hero() {
       </div>
 
       <div className="relative mx-auto max-w-6xl px-5 z-10">
-        {/* Badge with Image Above */}
+        {/* Badge with Large Image Above */}
         <AnimateOnScroll animation="scale-in">
-          <div className="flex flex-col items-center justify-center mb-8 gap-4 md:gap-6">
-            {/* Launch Image */}
-            <div className="relative w-24 h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-2xl shadow-2xl border-4 border-primary/30 overflow-hidden group hover:shadow-primary/50 transition-all duration-300 hover:-translate-y-1">
+          <div className="flex flex-col items-center justify-center mb-8 gap-6 md:gap-8">
+            {/* Large Launch Image */}
+            <div className="relative w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 xl:w-56 xl:h-56 rounded-3xl shadow-2xl border-4 border-primary/20 overflow-hidden group hover:shadow-primary/40 transition-all duration-400 hover:-translate-y-2">
               <Image
                 src="https://i.imgur.com/uFWj0RH_d.webp?maxwidth=760&fidelity=grand"
                 alt="Rikba launch preview"
-                width={128}
-                height={128}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                width={224}
+                height={224}
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-3xl backdrop-blur-sm" />
             </div>
             
-            {/* Launch Badge */}
-            <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-6 py-2.5 text-sm font-semibold text-primary shadow-lg backdrop-blur-sm">
-              <span className="relative flex w-2.5 h-2.5 shrink-0">
-                <span className="animate-ping absolute inset-0 rounded-full bg-primary opacity-75" />
-                <span className="relative rounded-full w-2.5 h-2.5 bg-primary shadow-sm" />
+            {/* Larger Launch Badge */}
+            <span className="inline-flex items-center gap-3 rounded-2xl border-2 border-primary/40 bg-primary/15 px-8 py-4 text-base md:text-lg font-bold text-primary shadow-xl backdrop-blur-md hover:shadow-primary/30 hover:bg-primary/20 transition-all duration-300">
+              <span className="relative flex w-3 h-3 shrink-0">
+                <span className="animate-ping absolute inset-0 rounded-full bg-primary opacity-80" />
+                <span className="relative rounded-full w-3 h-3 bg-primary shadow-md ring-2 ring-primary/30" />
               </span>
               Launching Summer 2026
             </span>
@@ -135,7 +135,7 @@ export function Hero() {
             ].map((badge) => (
               <div
                 key={badge.text}
-                className="flex items-center gap-2 text-sm text-muted-foreground group hover:text-primary transition-colors"
+                className="flex items-center gap-2 text-sm text-muted-foreground group hover:text-primary transition-colors hover:scale-105"
               >
                 <span className="text-primary shrink-0 group-hover:scale-110 transition-transform">{badge.icon}</span>
                 {badge.text}
