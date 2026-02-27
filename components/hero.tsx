@@ -6,23 +6,58 @@ import { FloatingBadge, PriceBadge } from "./floating-badge"
 export function Hero() {
   return (
     <section className="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
-      {/* Malta Map Background - SVG */}
+      
+      {/* Malta Map Background - Accurate SVG */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-primary/5 to-black/30" />
+        
         <div className="absolute inset-0 w-full h-full opacity-25 animate-map-float">
-          <svg viewBox="0 0 400 300" className="w-full h-full text-primary/60">
-            <path 
-              d="M150 100 Q170 80 200 90 T250 110 Q270 130 260 160 T240 200 Q220 230 180 220 T140 190 Q120 170 130 140 T150 100 Z M180 120 Q200 110 220 130 T210 170 Q190 190 170 170 T180 120 Z" 
-              stroke="currentColor" 
-              strokeWidth="2.5" 
-              fill="none" 
+          <svg
+            viewBox="0 0 800 1000"
+            className="w-full h-full text-primary/50"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            {/* GOZO (Top) */}
+            <path
+              d="M320 140 
+                 C380 110 470 110 530 140 
+                 C590 170 610 220 580 260 
+                 C540 310 450 320 380 290 
+                 C320 260 300 200 320 140 Z"
+              stroke="currentColor"
+              strokeWidth="3"
               className="animate-malta-glow"
             />
-            <path 
-              d="M300 150 Q320 140 340 150 T360 170 Q350 190 330 180 T300 150 Z" 
-              stroke="currentColor" 
-              strokeWidth="2" 
-              fill="none" 
+
+            {/* COMINO (Middle small island) */}
+            <ellipse
+              cx="450"
+              cy="340"
+              rx="35"
+              ry="20"
+              stroke="currentColor"
+              strokeWidth="3"
+              className="animate-malta-glow delay-500"
+            />
+
+            {/* MALTA (Main Island - Bottom) */}
+            <path
+              d="M180 480
+                 C160 420 200 360 280 330
+                 C380 290 550 310 650 380
+                 C720 430 760 500 740 560
+                 C710 640 590 690 460 700
+                 C330 710 240 680 200 620
+                 C170 580 170 520 180 480 Z
+
+                 M380 500
+                 C420 470 490 470 530 510
+                 C560 540 540 590 500 600
+                 C450 610 400 580 380 540
+                 C370 520 370 510 380 500 Z"
+              stroke="currentColor"
+              strokeWidth="3"
               className="animate-malta-glow delay-1000"
             />
           </svg>
@@ -31,68 +66,27 @@ export function Hero() {
 
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[128px] pointer-events-none" />
 
-      <div className="hidden lg:block absolute inset-0 pointer-events-none">
-        <div className="relative mx-auto max-w-6xl h-full">
-          <FloatingBadge delay={0} duration={6} direction="y" className="absolute top-1/2 -translate-y-1/2 left-0">
-            <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary/50">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
-            </div>
-          </FloatingBadge>
-
-          <FloatingBadge delay={1} duration={5} direction="rotate" className="absolute top-[38%] right-0">
-            <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary/50">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-              </svg>
-            </div>
-          </FloatingBadge>
-
-          <FloatingBadge delay={2} duration={7} direction="y" className="absolute bottom-[12%] left-[6%]">
-            <PriceBadge price="7.80" />
-          </FloatingBadge>
-
-          <FloatingBadge delay={0.5} duration={4.5} direction="rotate" className="absolute bottom-[16%] right-[4%]">
-            <div className="flex items-center gap-1.5 rounded-xl bg-primary/15 border border-primary/25 px-3 py-2 shadow-lg">
-              <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-              <span className="text-xs font-semibold text-primary">Driver nearby</span>
-            </div>
-          </FloatingBadge>
-        </div>
-      </div>
-
       <div className="relative mx-auto max-w-6xl px-5 z-10">
         <AnimateOnScroll animation="scale-in">
           <div className="flex justify-center mb-8">
             <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
-              <span className="relative flex w-2 h-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
-                <span className="relative inline-flex rounded-full w-2 h-2 bg-primary" />
-              </span>
               Built for Malta
             </span>
           </div>
         </AnimateOnScroll>
 
         <AnimateOnScroll animation="fade-up" delay={100}>
-          <h1 className="text-center text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground text-balance leading-tight">
+          <h1 className="text-center text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground leading-tight">
             Malta deserves
             <br />
-            <span className="text-primary inline-flex items-center gap-2 md:gap-3">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 md:w-8 md:h-8 shrink-0 opacity-60">
-                <path d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.7-3.6a1 1 0 0 0-.8-.4H5.24a2 2 0 0 0-1.8 1.1l-.8 1.63A6 6 0 0 0 2 12.42V16h2" />
-                <circle cx="6.5" cy="16.5" r="2.5" />
-                <circle cx="16.5" cy="16.5" r="2.5" />
-              </svg>
+            <span className="text-primary">
               a better ride.
             </span>
           </h1>
         </AnimateOnScroll>
 
         <AnimateOnScroll animation="fade-up" delay={200}>
-          <p className="mx-auto mt-6 max-w-xl text-center text-lg md:text-xl text-muted-foreground leading-relaxed text-pretty">
+          <p className="mx-auto mt-6 max-w-xl text-center text-lg md:text-xl text-muted-foreground leading-relaxed">
             Lower prices. Happier drivers. An app that's 100% Maltese and keeps your money on the island.
           </p>
         </AnimateOnScroll>
@@ -101,70 +95,20 @@ export function Hero() {
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="#waitlist"
-              className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-8 py-4 text-base font-semibold text-primary-foreground hover:bg-primary/90 transition-all shadow-lg shadow-primary/25 min-h-[48px] animate-glow-pulse"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-8 py-4 text-base font-semibold text-primary-foreground hover:bg-primary/90 transition-all shadow-lg shadow-primary/25 min-h-[48px]"
             >
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" className="shrink-0 transition-transform group-hover:scale-110 group-hover:rotate-12">
-                <path d="M8 0L9.79 6.21L16 8L9.79 9.79L8 16L6.21 9.79L0 8L6.21 6.21L8 0Z" />
-              </svg>
               Join the Waitlist
             </a>
+
             <a
               href="#drivers"
-              className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-secondary px-8 py-4 text-base font-semibold text-secondary-foreground hover:bg-secondary/80 hover:border-primary/40 transition-all min-h-[48px]"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-secondary px-8 py-4 text-base font-semibold text-secondary-foreground hover:bg-secondary/80 hover:border-primary/40 transition-all min-h-[48px]"
             >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 transition-transform group-hover:translate-x-0.5">
-                <circle cx="12" cy="12" r="10" />
-                <path d="M12 8v8" />
-                <path d="M8 12h8" />
-              </svg>
               I want to drive
             </a>
           </div>
         </AnimateOnScroll>
-
-        <AnimateOnScroll animation="fade-up" delay={400}>
-          <div className="mt-14 flex flex-wrap items-center justify-center gap-6 md:gap-10">
-            {[
-              { icon: <CoinIcon />, text: "Drivers keep more" },
-              { icon: <TagIcon />, text: "Transparent pricing" },
-              { icon: <PinIcon />, text: "Made in Malta" },
-            ].map((badge) => (
-              <div key={badge.text} className="flex items-center gap-2 text-sm text-muted-foreground">
-                <span className="text-primary shrink-0">{badge.icon}</span>
-                {badge.text}
-              </div>
-            ))}
-          </div>
-        </AnimateOnScroll>
       </div>
     </section>
-  )
-}
-
-function CoinIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="12" cy="12" r="8" />
-      <line x1="12" y1="8" x2="12" y2="16" />
-      <path d="M9.5 10c0-.83.67-1.5 1.5-1.5h1c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-1c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5h1c.83 0 1.5-.67 1.5-1.5" />
-    </svg>
-  )
-}
-
-function TagIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" />
-      <line x1="7" y1="7" x2="7.01" y2="7" />
-    </svg>
-  )
-}
-
-function PinIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-      <circle cx="12" cy="10" r="3" />
-    </svg>
   )
 }
