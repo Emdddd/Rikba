@@ -9,9 +9,7 @@ export function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border">
       <div className="mx-auto max-w-6xl px-5 flex items-center justify-between h-16">
         <a href="#" className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center shadow-md shadow-primary/30">
-            <span className="text-primary-foreground font-bold text-sm">R</span>
-          </div>
+          <img src="https://i.imgur.com/26ZC9ge_d.webp?maxwidth=760&fidelity=grand" alt="Rikba" className="w-8 h-8 rounded-lg object-contain" />
           <span className="text-foreground font-bold text-xl tracking-tight">Rikba</span>
         </a>
 
