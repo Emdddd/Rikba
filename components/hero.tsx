@@ -34,7 +34,7 @@ export function Hero() {
 
           {/* Price badge - bottom left */}
           <FloatingBadge delay={2} duration={7} direction="y" className="absolute bottom-[12%] left-[6%]">
-            <PriceBadge price="8.50" />
+            <PriceBadge price="7.80" />
           </FloatingBadge>
 
           {/* Driver nearby - bottom right */}
