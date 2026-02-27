@@ -10,11 +10,10 @@ export function Footer() {
         <AnimateOnScroll animation="fade-up">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
 
-            {/* ===== BRAND SECTION ===== */}
-            <div className="flex flex-col items-center md:items-start">
+            {/* BRAND */}
+            <div className="flex flex-col items-center text-center">
 
-              {/* Logo + Brand Name */}
-              <div className="flex items-center gap-1">
+              <div className="flex items-center gap-1 justify-center">
                 <img
                   src="/5BDA6FFD-95DA-4CC6-9EAD-71BA2A8B75E0.png"
                   alt="Rikba"
@@ -26,7 +25,6 @@ export function Footer() {
                 </span>
               </div>
 
-              {/* Contact Us */}
               <a
                 href="mailto:info@rikba.eu"
                 className="mt-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
@@ -36,8 +34,7 @@ export function Footer() {
 
             </div>
 
-            {/* Copyright */}
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground text-center">
               &copy; 2026 Rikba. Made in Malta.
             </p>
 
