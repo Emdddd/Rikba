@@ -28,10 +28,10 @@ export function ComparisonSection() {
             </span>
           </FloatingBadge>
 
-          {/* Floating -20% badge */}
+          {/* Floating -8% badge */}
           <FloatingBadge delay={1} duration={4} direction="rotate" className="absolute -bottom-5 right-4 md:-bottom-7 md:right-8 z-20 pointer-events-none">
             <span className="flex items-center justify-center px-3 py-2 md:px-4 md:py-2.5 rounded-xl bg-primary shadow-2xl shadow-primary/30 text-sm md:text-base font-bold text-primary-foreground">
-              -20%
+              -8%
             </span>
           </FloatingBadge>
 
@@ -52,7 +52,7 @@ export function ComparisonSection() {
               {/* Items */}
               <div className="space-y-5">
                 <ComparisonRow icon={<CrossIcon />} label="Pricing" value="High fares with surge pricing" negative />
-                <ComparisonRow icon={<CrossIcon />} label="Driver commission" value="Drivers keep only ~75%" negative />
+                <ComparisonRow icon={<CrossIcon />} label="Driver commission" value="Drivers keep only ~80%" negative />
                 <ComparisonRow icon={<CrossIcon />} label="Built for" value="Global template, not Malta" negative />
                 <ComparisonRow icon={<CrossIcon />} label="Money stays" value="Profits go overseas" negative />
                 <ComparisonRow icon={<CrossIcon />} label="Transparency" value="Hidden fees after the ride" negative />
@@ -63,7 +63,7 @@ export function ComparisonSection() {
               <div className="mt-8 pt-6 border-t border-border">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-sm text-muted-foreground">Driver keeps</span>
-                  <span className="text-sm font-bold text-muted-foreground">75%</span>
+                  <span className="text-sm font-bold text-muted-foreground">80%</span>
                 </div>
                 <div className="h-3 rounded-full bg-muted overflow-hidden">
                   <div className="h-full rounded-full bg-muted-foreground/25 animate-bar-fill-75" />
@@ -93,8 +93,8 @@ export function ComparisonSection() {
 
               {/* Items */}
               <div className="relative space-y-5">
-                <ComparisonRow icon={<CheckIcon />} label="Pricing" value="Lower fares, no surge pricing" positive />
-                <ComparisonRow icon={<CheckIcon />} label="Driver commission" value="Drivers keep 90%" positive />
+                <ComparisonRow icon={<CheckIcon />} label="Pricing" value="Fair fares, no surge pricing" positive />
+                <ComparisonRow icon={<CheckIcon />} label="Driver commission" value="Drivers keep 92%" positive />
                 <ComparisonRow icon={<CheckIcon />} label="Built for" value="100% designed for Malta" positive />
                 <ComparisonRow icon={<CheckIcon />} label="Money stays" value="Your money stays on the island" positive />
                 <ComparisonRow icon={<CheckIcon />} label="Transparency" value="Book a price, pay that price" positive />
@@ -105,7 +105,7 @@ export function ComparisonSection() {
               <div className="relative mt-8 pt-6 border-t border-primary/20">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-sm text-muted-foreground">Driver keeps</span>
-                  <span className="text-sm font-bold text-primary">90%</span>
+                  <span className="text-sm font-bold text-primary">92%</span>
                 </div>
                 <div className="h-3 rounded-full bg-muted overflow-hidden">
                   <div className="h-full rounded-full bg-primary animate-bar-fill-90" />
