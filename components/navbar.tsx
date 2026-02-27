@@ -8,14 +8,16 @@ export function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border">
       <div className="mx-auto max-w-6xl px-5 flex items-center justify-between h-16">
-        
-        {/* ===== LOGO (UPDATED ONLY) ===== */}
-        <a href="#" className="flex items-center gap-2">
+
+        {/* ===== LOGO ===== */}
+        <a href="#" className="flex items-center gap-1">
+          {/* قللنا المسافة هنا من gap-2 → gap-1 */}
           <img
-            src="https://i.ibb.co/NdVWc51v/5-BDA6-FFD-95-DA-4-CC6-9-EAD-71-BA2-A8-B75-E0.png"
+            src="/5BDA6FFD-95DA-4CC6-9EAD-71BA2A8B75E0.png"
             alt="Rikba"
             className="w-8 h-8 rounded-lg object-contain"
           />
+
           <span className="text-foreground font-bold text-xl tracking-tight">
             Rikba
           </span>
@@ -87,22 +89,22 @@ export function Navbar() {
         <div className="md:hidden bg-background border-b border-border">
           <div className="px-5 py-4 flex flex-col gap-4">
 
-            <a href="#problem" onClick={() => setMobileMenuOpen(false)} className="text-muted-foreground hover:text-foreground transition-colors py-2 text-base">
+            <a href="#problem" onClick={() => setMobileMenuOpen(false)} className="py-2 text-base">
               Why Rikba
             </a>
 
-            <a href="#how-it-works" onClick={() => setMobileMenuOpen(false)} className="text-muted-foreground hover:text-foreground transition-colors py-2 text-base">
+            <a href="#how-it-works" onClick={() => setMobileMenuOpen(false)} className="py-2 text-base">
               How it works
             </a>
 
-            <a href="#faq" onClick={() => setMobileMenuOpen(false)} className="text-muted-foreground hover:text-foreground transition-colors py-2 text-base">
+            <a href="#faq" onClick={() => setMobileMenuOpen(false)} className="py-2 text-base">
               FAQ
             </a>
 
             <a
               href="#waitlist"
               onClick={() => setMobileMenuOpen(false)}
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-colors min-h-[44px]"
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground"
             >
               Join the Waitlist
             </a>
