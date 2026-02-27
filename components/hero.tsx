@@ -2,6 +2,7 @@
 
 import { AnimateOnScroll } from "./animate-on-scroll"
 import { FloatingBadge, PriceBadge } from "./floating-badge"
+import Image from 'next/image'
 
 export function Hero() {
   return (
@@ -48,13 +49,27 @@ export function Hero() {
       </div>
 
       <div className="relative mx-auto max-w-6xl px-5 z-10">
-        {/* Badge */}
+        {/* Badge with Image Above */}
         <AnimateOnScroll animation="scale-in">
-          <div className="flex justify-center mb-8">
-            <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
-              <span className="relative flex w-2 h-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
-                <span className="relative inline-flex rounded-full w-2 h-2 bg-primary" />
+          <div className="flex flex-col items-center justify-center mb-8 gap-4 md:gap-6">
+            {/* Launch Image */}
+            <div className="relative w-24 h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-2xl shadow-2xl border-4 border-primary/30 overflow-hidden group hover:shadow-primary/50 transition-all duration-300 hover:-translate-y-1">
+              <Image
+                src="https://i.imgur.com/uFWj0RH_d.webp?maxwidth=760&fidelity=grand"
+                alt="Rikba launch preview"
+                width={128}
+                height={128}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
+            </div>
+            
+            {/* Launch Badge */}
+            <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-6 py-2.5 text-sm font-semibold text-primary shadow-lg backdrop-blur-sm">
+              <span className="relative flex w-2.5 h-2.5 shrink-0">
+                <span className="animate-ping absolute inset-0 rounded-full bg-primary opacity-75" />
+                <span className="relative rounded-full w-2.5 h-2.5 bg-primary shadow-sm" />
               </span>
               Launching Summer 2026
             </span>
@@ -80,7 +95,7 @@ export function Hero() {
         {/* Subtitle */}
         <AnimateOnScroll animation="fade-up" delay={200}>
           <p className="mx-auto mt-6 max-w-xl text-center text-lg md:text-xl text-muted-foreground leading-relaxed text-pretty">
-            Lower prices. Happier drivers. An app that{"'"}s 100% Maltese and keeps your money on the island.
+            Lower prices. Happier drivers. An app that's 100% Maltese and keeps your money on the island.
           </p>
         </AnimateOnScroll>
 
@@ -120,9 +135,9 @@ export function Hero() {
             ].map((badge) => (
               <div
                 key={badge.text}
-                className="flex items-center gap-2 text-sm text-muted-foreground"
+                className="flex items-center gap-2 text-sm text-muted-foreground group hover:text-primary transition-colors"
               >
-                <span className="text-primary shrink-0">{badge.icon}</span>
+                <span className="text-primary shrink-0 group-hover:scale-110 transition-transform">{badge.icon}</span>
                 {badge.text}
               </div>
             ))}
