@@ -97,7 +97,7 @@ export function HowItWorks() {
                     <FloatingBadge delay={0.2} duration={4} direction="y" className="absolute -right-24 top-1/2 -translate-y-1/2 hidden md:flex">
                       <div className="flex items-center gap-1.5 rounded-lg bg-card border border-border shadow-md px-2 py-1">
                         <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                        <span className="text-[8px] font-semibold text-foreground whitespace-nowrap">2 min away</span>
+                        <span className="text-[8px] font-semibold text-foreground whitespace-nowrap">1 min away</span>
                       </div>
                     </FloatingBadge>
                   )}
