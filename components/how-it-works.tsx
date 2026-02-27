@@ -43,11 +43,13 @@ export function HowItWorks() {
   return (
     <section id="how-it-works" className="py-20 md:py-32 border-t border-border">
       <div className="mx-auto max-w-6xl px-5">
+
         <AnimateOnScroll animation="fade-up">
           <div className="text-center">
             <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-2">
               Three taps
             </h2>
+
             <span className="text-primary inline-flex items-center gap-1.5 text-xl md:text-2xl font-bold">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
@@ -60,6 +62,7 @@ export function HowItWorks() {
 
         <div className="mt-14 grid gap-8 md:grid-cols-3 max-w-4xl mx-auto relative">
 
+          {/* Connecting line */}
           <div className="hidden md:block absolute top-[40px] left-[calc(16.67%+40px)] right-[calc(16.67%+40px)] h-px bg-border z-0">
             <div className="absolute top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-primary animate-travel-dot" />
           </div>
@@ -75,24 +78,34 @@ export function HowItWorks() {
                     {step.step}
                   </span>
 
-                  {/* ===== UPDATED LOGO CHIP ===== */}
+                  {/* ===== UPDATED RIKBA CHIP ===== */}
                   {index === 0 && (
-                    <FloatingBadge delay={0} duration={4} direction="y" className="absolute -right-16 top-1/2 -translate-y-1/2 hidden md:flex">
-                      <div className="flex items-center gap-1 rounded-lg bg-card border border-border shadow-md px-2 py-1">
+                    <FloatingBadge
+                      delay={0}
+                      duration={4}
+                      direction="y"
+                      className="absolute -right-16 top-1/2 -translate-y-1/2 hidden md:flex"
+                    >
+                      <div className="flex items-center gap-0.5 rounded-lg bg-card border border-border shadow-md px-2 py-1">
                         <img
                           src="/5BDA6FFD-95DA-4CC6-9EAD-71BA2A8B75E0.png"
                           alt="Rikba"
-                          className="w-4 h-4 rounded object-contain"
+                          className="w-5 h-5 rounded object-contain"
                         />
                         <span className="text-[8px] font-semibold text-foreground whitespace-nowrap">
-                          rikba
+                          Rikba
                         </span>
                       </div>
                     </FloatingBadge>
                   )}
 
                   {index === 1 && (
-                    <FloatingBadge delay={0.3} duration={3.5} direction="y" className="absolute -right-20 top-1/2 -translate-y-1/2 hidden md:flex">
+                    <FloatingBadge
+                      delay={0.3}
+                      duration={3.5}
+                      direction="y"
+                      className="absolute -right-20 top-1/2 -translate-y-1/2 hidden md:flex"
+                    >
                       <span className="flex items-center gap-1 rounded-lg bg-card border border-border shadow-md px-2 py-1">
                         <span className="text-[8px] text-muted-foreground font-medium">EUR</span>
                         <span className="text-sm font-bold text-primary">7.80</span>
@@ -101,7 +114,12 @@ export function HowItWorks() {
                   )}
 
                   {index === 2 && (
-                    <FloatingBadge delay={0.2} duration={4} direction="y" className="absolute -right-24 top-1/2 -translate-y-1/2 hidden md:flex">
+                    <FloatingBadge
+                      delay={0.2}
+                      duration={4}
+                      direction="y"
+                      className="absolute -right-24 top-1/2 -translate-y-1/2 hidden md:flex"
+                    >
                       <div className="flex items-center gap-1.5 rounded-lg bg-card border border-border shadow-md px-2 py-1">
                         <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
                         <span className="text-[8px] font-semibold text-foreground whitespace-nowrap">
@@ -113,8 +131,13 @@ export function HowItWorks() {
 
                 </div>
 
-                <h3 className="text-xl font-bold text-foreground mb-2">{step.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{step.description}</p>
+                <h3 className="text-xl font-bold text-foreground mb-2">
+                  {step.title}
+                </h3>
+
+                <p className="text-muted-foreground leading-relaxed">
+                  {step.description}
+                </p>
 
               </div>
             </AnimateOnScroll>
