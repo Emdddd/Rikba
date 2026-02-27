@@ -6,14 +6,33 @@ import { FloatingBadge, PriceBadge } from "./floating-badge"
 export function Hero() {
   return (
     <section className="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
-      {/* Background glow */}
+      {/* Malta Map Background - SVG */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-primary/5 to-black/30" />
+        <div className="absolute inset-0 w-full h-full opacity-25 animate-map-float">
+          <svg viewBox="0 0 400 300" className="w-full h-full text-primary/60">
+            <path 
+              d="M150 100 Q170 80 200 90 T250 110 Q270 130 260 160 T240 200 Q220 230 180 220 T140 190 Q120 170 130 140 T150 100 Z M180 120 Q200 110 220 130 T210 170 Q190 190 170 170 T180 120 Z" 
+              stroke="currentColor" 
+              strokeWidth="2.5" 
+              fill="none" 
+              className="animate-malta-glow"
+            />
+            <path 
+              d="M300 150 Q320 140 340 150 T360 170 Q350 190 330 180 T300 150 Z" 
+              stroke="currentColor" 
+              strokeWidth="2" 
+              fill="none" 
+              className="animate-malta-glow delay-1000"
+            />
+          </svg>
+        </div>
+      </div>
+
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[128px] pointer-events-none" />
 
-      {/* === Floating elements anchored to center area only on lg === */}
       <div className="hidden lg:block absolute inset-0 pointer-events-none">
-        {/* container to constrain floaters */}
         <div className="relative mx-auto max-w-6xl h-full">
-          {/* Location pin - left side, vertically centered */}
           <FloatingBadge delay={0} duration={6} direction="y" className="absolute top-1/2 -translate-y-1/2 left-0">
             <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary/50">
@@ -23,7 +42,6 @@ export function Hero() {
             </div>
           </FloatingBadge>
 
-          {/* Shield - right side, vertically centered up slightly */}
           <FloatingBadge delay={1} duration={5} direction="rotate" className="absolute top-[38%] right-0">
             <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary/50">
@@ -32,12 +50,10 @@ export function Hero() {
             </div>
           </FloatingBadge>
 
-          {/* Price badge - bottom left */}
           <FloatingBadge delay={2} duration={7} direction="y" className="absolute bottom-[12%] left-[6%]">
             <PriceBadge price="7.80" />
           </FloatingBadge>
 
-          {/* Driver nearby - bottom right */}
           <FloatingBadge delay={0.5} duration={4.5} direction="rotate" className="absolute bottom-[16%] right-[4%]">
             <div className="flex items-center gap-1.5 rounded-xl bg-primary/15 border border-primary/25 px-3 py-2 shadow-lg">
               <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
@@ -48,7 +64,6 @@ export function Hero() {
       </div>
 
       <div className="relative mx-auto max-w-6xl px-5 z-10">
-        {/* Badge */}
         <AnimateOnScroll animation="scale-in">
           <div className="flex justify-center mb-8">
             <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
@@ -56,12 +71,11 @@ export function Hero() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
                 <span className="relative inline-flex rounded-full w-2 h-2 bg-primary" />
               </span>
-              Launching Summer 2026
+              Built for Malta
             </span>
           </div>
         </AnimateOnScroll>
 
-        {/* Heading */}
         <AnimateOnScroll animation="fade-up" delay={100}>
           <h1 className="text-center text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground text-balance leading-tight">
             Malta deserves
@@ -77,14 +91,12 @@ export function Hero() {
           </h1>
         </AnimateOnScroll>
 
-        {/* Subtitle */}
         <AnimateOnScroll animation="fade-up" delay={200}>
           <p className="mx-auto mt-6 max-w-xl text-center text-lg md:text-xl text-muted-foreground leading-relaxed text-pretty">
-            Lower prices. Happier drivers. An app that{"'"}s 100% Maltese and keeps your money on the island.
+            Lower prices. Happier drivers. An app that's 100% Maltese and keeps your money on the island.
           </p>
         </AnimateOnScroll>
 
-        {/* CTAs */}
         <AnimateOnScroll animation="fade-up" delay={300}>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
@@ -110,7 +122,6 @@ export function Hero() {
           </div>
         </AnimateOnScroll>
 
-        {/* Trust badges */}
         <AnimateOnScroll animation="fade-up" delay={400}>
           <div className="mt-14 flex flex-wrap items-center justify-center gap-6 md:gap-10">
             {[
@@ -118,10 +129,7 @@ export function Hero() {
               { icon: <TagIcon />, text: "Transparent pricing" },
               { icon: <PinIcon />, text: "Made in Malta" },
             ].map((badge) => (
-              <div
-                key={badge.text}
-                className="flex items-center gap-2 text-sm text-muted-foreground"
-              >
+              <div key={badge.text} className="flex items-center gap-2 text-sm text-muted-foreground">
                 <span className="text-primary shrink-0">{badge.icon}</span>
                 {badge.text}
               </div>
