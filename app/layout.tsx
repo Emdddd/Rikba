@@ -6,27 +6,42 @@ import './globals.css'
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: 'Rikba | Malta\'s Ride-Hailing App | Coming Summer 2026',
-  description: 'Lower prices. Happier drivers. An app that\'s 100% Maltese and keeps your money on the island.',
-  generator: 'v0.app',
+  title: "Rikba | Malta's Ride-Hailing App | Coming Summer 2026",
+  description:
+    "Lower prices. Happier drivers. An app that's 100% Maltese and keeps your money on the island.",
+
+  metadataBase: new URL("https://rikba.eu"),
+
   icons: {
-    icon: [
+    icon: "/5BDA6FFD-95DA-4CC6-9EAD-71BA2A8B75E0.png",
+    shortcut: "/5BDA6FFD-95DA-4CC6-9EAD-71BA2A8B75E0.png",
+    apple: "/5BDA6FFD-95DA-4CC6-9EAD-71BA2A8B75E0.png",
+  },
+
+  openGraph: {
+    title: "Rikba",
+    description: "Malta deserves a better ride.",
+    url: "https://rikba.eu",
+    siteName: "Rikba",
+    images: [
       {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
+        url: "/5BDA6FFD-95DA-4CC6-9EAD-71BA2A8B75E0.png",
+        width: 512,
+        height: 512,
+        alt: "Rikba",
       },
     ],
-    apple: '/apple-icon.png',
+    locale: "en_US",
+    type: "website",
   },
-}
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Rikba",
+    description: "Malta deserves a better ride.",
+    images: ["/5BDA6FFD-95DA-4CC6-9EAD-71BA2A8B75E0.png"],
+  },
+};
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -36,9 +51,9 @@ export const viewport: Viewport = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
   return (
     <html lang="en" className="bg-background">
       <body className={`${inter.variable} font-sans antialiased`}>
