@@ -13,27 +13,27 @@ export function BuiltForMalta() {
         <AnimateOnScroll animation="fade-up">
           <div className="relative overflow-hidden rounded-3xl border border-border bg-card p-8 md:p-14 text-center min-h-[400px] md:min-h-[480px] flex flex-col items-center justify-center">
 
-            {/* ===== Malta Map Center Reveal ===== */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
-              <div className="map-reveal-mask text-primary/40">
-                <MaltaMap />
-              </div>
-            </div>
+            {/* ✅ Malta Map Background */}
+            <MaltaMap />
 
-            {/* Gradient readability */}
+            {/* ✅ Gradient readability */}
             <div className="absolute inset-0 bg-gradient-to-b from-card/70 via-card/50 to-card/80 pointer-events-none" />
 
             {/* ===== CONTENT ===== */}
             <div className="relative z-10">
 
               <div className="mb-6 mx-auto w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center">
-                <svg width="32" height="32" viewBox="0 0 24 24"
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="text-primary">
+                  className="text-primary"
+                >
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                   <circle cx="12" cy="10" r="3" />
                 </svg>
@@ -66,7 +66,7 @@ export function BuiltForMalta() {
 
             </div>
 
-            {/* ===== CAR ===== */}
+            {/* ✅ Animated Car */}
             <div className="absolute bottom-6 left-0 right-0 z-10">
               <CarAnimation />
             </div>
