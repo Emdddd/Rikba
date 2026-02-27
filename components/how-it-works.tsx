@@ -88,7 +88,7 @@ export function HowItWorks() {
                     <FloatingBadge delay={0.3} duration={3.5} direction="y" className="absolute -right-20 top-1/2 -translate-y-1/2 hidden md:flex">
                       <span className="flex items-center gap-1 rounded-lg bg-card border border-border shadow-md px-2 py-1">
                         <span className="text-[8px] text-muted-foreground font-medium">EUR</span>
-                        <span className="text-sm font-bold text-primary">8.50</span>
+                        <span className="text-sm font-bold text-primary">7.80</span>
                       </span>
                     </FloatingBadge>
                   )}
