@@ -14,7 +14,7 @@ export function WaitlistSection() {
     const formData = new FormData(form)
     formData.append("role", role)
 
-    const response = await fetch("https://formspree.io/f/xwvnyjbr", {
+    const response = await fetch("https://formspree.io/f/mgolqzww", {
       method: "POST",
       body: formData,
       headers: {
@@ -121,7 +121,7 @@ export function WaitlistSection() {
       {showToast && (
         <div className="fixed inset-0 flex items-center justify-center pointer-events-none z-50">
           <div className="bg-primary text-primary-foreground px-8 py-4 rounded-2xl shadow-2xl text-lg font-semibold animate-fade-in">
-            Received.💙
+            Received 💙
           </div>
         </div>
       )}
