@@ -9,11 +9,11 @@ export function Footer() {
 
         <AnimateOnScroll animation="fade-up">
 
-          {/* CENTER EVERYTHING */}
+          {/* Centered Footer */}
           <div className="flex flex-col items-center text-center">
 
-            {/* Logo + Name */}
-            <div className="flex items-center gap-1 justify-center">
+            {/* Logo + Brand */}
+            <div className="flex items-center justify-center gap-1">
               <img
                 src="/5BDA6FFD-95DA-4CC6-9EAD-71BA2A8B75E0.png"
                 alt="Rikba"
@@ -25,10 +25,10 @@ export function Footer() {
               </span>
             </div>
 
-            {/* Contact */}
+            {/* Contact Us (Optical Center Fix) */}
             <a
               href="mailto:info@rikba.eu"
-              className="mt-3 text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className="mt-3 text-sm text-muted-foreground hover:text-foreground transition-colors translate-x-[4px]"
             >
               Contact us
             </a>
