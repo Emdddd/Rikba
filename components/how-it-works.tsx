@@ -4,12 +4,13 @@ import { AnimateOnScroll } from "./animate-on-scroll"
 import { FloatingBadge } from "./floating-badge"
 
 export function HowItWorks() {
+
   const steps = [
     {
       step: "01",
       icon: (
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <rect x="5" y="2" width="14" height="20" rx="2" />
           <line x1="12" y1="18" x2="12.01" y2="18" />
         </svg>
       ),
@@ -19,7 +20,7 @@ export function HowItWorks() {
     {
       step: "02",
       icon: (
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
           <circle cx="12" cy="10" r="3" />
         </svg>
@@ -30,7 +31,7 @@ export function HowItWorks() {
     {
       step: "03",
       icon: (
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
           <polyline points="22 4 12 14.01 9 11.01" />
         </svg>
@@ -44,6 +45,7 @@ export function HowItWorks() {
     <section id="how-it-works" className="py-20 md:py-32 border-t border-border">
       <div className="mx-auto max-w-6xl px-5">
 
+        {/* Header */}
         <AnimateOnScroll animation="fade-up">
           <div className="text-center">
             <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-2">
@@ -72,13 +74,14 @@ export function HowItWorks() {
               <div className="relative z-10 text-center">
 
                 <div className="relative mx-auto mb-5 w-20 h-20 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
+
                   {step.icon}
 
                   <span className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-primary text-primary-foreground text-xs font-bold flex items-center justify-center shadow-lg shadow-primary/30">
                     {step.step}
                   </span>
 
-                  {/* ===== UPDATED RIKBA CHIP ===== */}
+                  {/* ===== RIKBA BADGE (FIXED LOGO) ===== */}
                   {index === 0 && (
                     <FloatingBadge
                       delay={0}
@@ -86,11 +89,11 @@ export function HowItWorks() {
                       direction="y"
                       className="absolute -right-16 top-1/2 -translate-y-1/2 hidden md:flex"
                     >
-                      <div className="flex items-center gap-0.5 rounded-lg bg-card border border-border shadow-md px-2 py-1">
+                      <div className="flex items-center gap-1 rounded-lg bg-card border border-border shadow-md px-2 py-1">
                         <img
-                          src="/5BDA6FFD-95DA-4CC6-9EAD-71BA2A8B75E0.png"
+                          src="/Logoicon.PNG"
                           alt="Rikba"
-                          className="w-5 h-5 rounded object-contain"
+                          className="w-5 h-5 object-contain"
                         />
                         <span className="text-[8px] font-semibold text-foreground whitespace-nowrap">
                           Rikba
@@ -142,6 +145,7 @@ export function HowItWorks() {
               </div>
             </AnimateOnScroll>
           ))}
+
         </div>
       </div>
     </section>
