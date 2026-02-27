@@ -5,108 +5,109 @@ import { AnimateOnScroll } from "./animate-on-scroll"
 
 export function WaitlistSection() {
   const [role, setRole] = useState<"rider" | "driver">("rider")
+  const [showToast, setShowToast] = useState(false)
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
+    const form = e.currentTarget
+    const formData = new FormData(form)
+    formData.append("role", role)
+
+    const response = await fetch("https://formspree.io/f/xwvnyjbr", {
+      method: "POST",
+      body: formData,
+      headers: {
+        Accept: "application/json",
+      },
+    })
+
+    if (response.ok) {
+      form.reset()
+      setShowToast(true)
+
+      setTimeout(() => {
+        setShowToast(false)
+      }, 5000)
+    }
+  }
 
   return (
-    <section id="waitlist" className="py-20 md:py-32 border-t border-border">
+    <section id="waitlist" className="py-20 md:py-32 border-t border-border relative">
       <div className="mx-auto max-w-6xl px-5">
         <div className="mx-auto max-w-xl">
           <AnimateOnScroll animation="fade-up">
-            <h2 className="text-center text-3xl md:text-5xl font-bold text-foreground text-balance leading-tight">
+            <h2 className="text-center text-3xl md:text-5xl font-bold text-foreground leading-tight">
               Be first <span className="text-primary">in line.</span>
             </h2>
-            <p className="mt-4 text-center text-muted-foreground text-lg leading-relaxed">
+            <p className="mt-4 text-center text-muted-foreground text-lg">
               Rikba launches Summer 2026. Get in before everyone else.
             </p>
           </AnimateOnScroll>
 
-          {/* Counter */}
-          <AnimateOnScroll animation="scale-in" delay={100}>
-            <div className="mt-8 flex justify-center">
-              <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
-                Join 100+ riders and drivers already on the waitlist
-              </span>
-            </div>
-          </AnimateOnScroll>
-
           {/* Role toggle */}
-          <AnimateOnScroll animation="fade-up" delay={200}>
-            <div className="mt-8 flex items-center justify-center">
-              <div className="inline-flex rounded-xl bg-secondary p-1 border border-border">
-                <button
-                  type="button"
-                  onClick={() => setRole("rider")}
-                  className={`rounded-lg px-6 py-3 text-sm font-semibold transition-all min-h-[44px] ${
-                    role === "rider"
-                      ? "bg-primary text-primary-foreground shadow-sm shadow-primary/30"
-                      : "text-muted-foreground hover:text-foreground"
-                  }`}
-                >
-                  I want to ride
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setRole("driver")}
-                  className={`rounded-lg px-6 py-3 text-sm font-semibold transition-all min-h-[44px] ${
-                    role === "driver"
-                      ? "bg-primary text-primary-foreground shadow-sm shadow-primary/30"
-                      : "text-muted-foreground hover:text-foreground"
-                  }`}
-                >
-                  I want to drive
-                </button>
-              </div>
+          <div className="mt-8 flex items-center justify-center">
+            <div className="inline-flex rounded-xl bg-secondary p-1 border border-border">
+              <button
+                type="button"
+                onClick={() => setRole("rider")}
+                className={`rounded-lg px-6 py-3 text-sm font-semibold transition-all ${
+                  role === "rider"
+                    ? "bg-primary text-primary-foreground"
+                    : "text-muted-foreground"
+                }`}
+              >
+                I want to ride
+              </button>
+              <button
+                type="button"
+                onClick={() => setRole("driver")}
+                className={`rounded-lg px-6 py-3 text-sm font-semibold transition-all ${
+                  role === "driver"
+                    ? "bg-primary text-primary-foreground"
+                    : "text-muted-foreground"
+                }`}
+              >
+                I want to drive
+              </button>
             </div>
-          </AnimateOnScroll>
+          </div>
 
           {/* Form */}
-          <AnimateOnScroll animation="fade-up" delay={300}>
-            <form
-              action="https://formspree.io/f/xwvnyjbr"
-              method="POST"
-              className="mt-8 rounded-2xl border border-border bg-card p-6 md:p-8"
+          <form
+            onSubmit={handleSubmit}
+            className="mt-8 rounded-2xl border border-border bg-card p-6 md:p-8"
+          >
+            <label className="block text-sm font-medium mb-2">
+              Your email or phone (or both)
+            </label>
+
+            <input
+              name="contact"
+              type="text"
+              required
+              placeholder={role === "rider" ? "rider@email.com" : "driver@email.com"}
+              className="w-full rounded-xl border border-border bg-input px-4 py-3 text-foreground focus:ring-2 focus:ring-primary/50"
+            />
+
+            <button
+              type="submit"
+              className="mt-6 w-full rounded-xl bg-primary px-6 py-4 font-semibold text-primary-foreground hover:bg-primary/90 transition-all"
             >
-              {/* Hidden role field */}
-              <input type="hidden" name="role" value={role} />
-
-              <label htmlFor="contact" className="block text-sm font-medium text-card-foreground mb-2">
-                Your email or phone (or both)
-              </label>
-
-              <input
-                id="contact"
-                name="contact"
-                type="text"
-                required
-                placeholder={role === "rider" ? "rider@email.com" : "driver@email.com"}
-                className="w-full rounded-xl border border-border bg-input px-4 py-3.5 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all text-base min-h-[48px]"
-              />
-
-              <label className="mt-4 flex items-start gap-3 cursor-pointer">
-                <input
-                  type="checkbox"
-                  name="updates"
-                  value="yes"
-                  className="mt-1 w-5 h-5 rounded border-border bg-input text-primary focus:ring-primary/50 accent-primary shrink-0"
-                />
-                <span className="text-sm text-muted-foreground leading-relaxed">
-                  Send me updates, promotions, and offers from Rikba
-                </span>
-              </label>
-
-              <button
-                type="submit"
-                className="group mt-6 w-full rounded-xl bg-primary px-6 py-4 text-base font-semibold text-primary-foreground hover:bg-primary/90 transition-all shadow-lg shadow-primary/25 min-h-[48px] inline-flex items-center justify-center gap-2"
-              >
-                Join the Waitlist
-              </button>
-
-              <p className="mt-4 text-center text-xs text-muted-foreground">
-                We{"'"}ll only contact you about Rikba. No spam, ever.
-              </p>
-            </form>
-          </AnimateOnScroll>
+              Join the Waitlist
+            </button>
+          </form>
         </div>
       </div>
+
+      {/* Toast */}
+      {showToast && (
+        <div className="fixed inset-0 flex items-center justify-center pointer-events-none z-50">
+          <div className="bg-primary text-primary-foreground px-8 py-4 rounded-2xl shadow-2xl text-lg font-semibold animate-fade-in">
+            Submitted.. 💙
+          </div>
+        </div>
+      )}
     </section>
   )
 }
