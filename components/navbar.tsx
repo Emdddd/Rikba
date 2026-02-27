@@ -10,12 +10,12 @@ export function Navbar() {
       <div className="mx-auto max-w-6xl px-5 flex items-center justify-between h-16">
 
         {/* ===== LOGO ===== */}
-        <a href="#" className="flex items-center gap-1">
-          {/* قللنا المسافة هنا من gap-2 → gap-1 */}
+        <a href="#" className="flex items-center gap-2">
+
           <img
-            src="/5BDA6FFD-95DA-4CC6-9EAD-71BA2A8B75E0.png"
-            alt="Rikba"
-            className="w-8 h-8 rounded-lg object-contain"
+            src="/Logoicon.PNG"
+            alt="Rikba Logo"
+            className="w-9 h-9 object-contain"
           />
 
           <span className="text-foreground font-bold text-xl tracking-tight">
@@ -25,14 +25,21 @@ export function Navbar() {
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
-          <a href="#problem" className="text-muted-foreground hover:text-foreground transition-colors text-sm inline-flex items-center gap-1.5">
+
+          <a
+            href="#problem"
+            className="text-muted-foreground hover:text-foreground transition-colors text-sm inline-flex items-center gap-1.5"
+          >
             <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor" className="text-primary opacity-60">
               <path d="M8 0L9.79 6.21L16 8L9.79 9.79L8 16L6.21 9.79L0 8L6.21 6.21L8 0Z" />
             </svg>
             Why Rikba
           </a>
 
-          <a href="#how-it-works" className="text-muted-foreground hover:text-foreground transition-colors text-sm inline-flex items-center gap-1.5">
+          <a
+            href="#how-it-works"
+            className="text-muted-foreground hover:text-foreground transition-colors text-sm inline-flex items-center gap-1.5"
+          >
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-primary opacity-60">
               <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
               <polyline points="22 4 12 14.01 9 11.01" />
@@ -40,7 +47,10 @@ export function Navbar() {
             How it works
           </a>
 
-          <a href="#faq" className="text-muted-foreground hover:text-foreground transition-colors text-sm inline-flex items-center gap-1.5">
+          <a
+            href="#faq"
+            className="text-muted-foreground hover:text-foreground transition-colors text-sm inline-flex items-center gap-1.5"
+          >
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-primary opacity-60">
               <circle cx="12" cy="12" r="10" />
               <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
@@ -48,6 +58,7 @@ export function Navbar() {
             </svg>
             FAQ
           </a>
+
         </div>
 
         {/* CTA */}
@@ -82,6 +93,7 @@ export function Navbar() {
             </svg>
           )}
         </button>
+
       </div>
 
       {/* Mobile Menu */}
@@ -115,4 +127,3 @@ export function Navbar() {
     </nav>
   )
 }
-
