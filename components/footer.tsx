@@ -15,18 +15,6 @@ export function Footer() {
               <span className="text-foreground font-bold text-lg tracking-tight">Rikba</span>
             </div>
 
-            <div className="flex items-center gap-6">
-              <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors min-h-[44px] flex items-center">
-                Privacy
-              </a>
-              <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors min-h-[44px] flex items-center">
-                Terms
-              </a>
-              <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors min-h-[44px] flex items-center">
-                Contact
-              </a>
-            </div>
-
             <p className="text-sm text-muted-foreground">
               &copy; 2026 Rikba. Made in Malta.
             </p>
