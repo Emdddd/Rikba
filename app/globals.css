@@ -156,35 +156,44 @@ html {
 }
 
 /* ================================================= */
-/* ⭐ MALTA MAP CENTER REVEAL ⭐ */
+/* ⭐ MALTA MAP FLOAT */
 /* ================================================= */
 
-.map-reveal-mask {
-
-  position: relative;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  opacity:0;
-  filter: blur(0.4px);
-
-  animation: malta-center-reveal 1.4s cubic-bezier(.22,1,.36,1) forwards;
+@keyframes malta-float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
 }
 
-@keyframes malta-center-reveal {
+.animate-malta-float {
+  animation: malta-float 12s ease-in-out infinite;
+}
 
-  0% {
-    clip-path: inset(0 50% 0 50%);
-    opacity:0;
+/* ================================================= */
+/* ⭐ MALTA MAP PULSE */
+/* ================================================= */
+
+@keyframes malta-pulse {
+
+  0%,100% {
+    opacity: .4;
+    transform: scale(1);
   }
 
-  40% {
-    opacity:0.12;
+  50% {
+    opacity: .7;
+    transform: scale(1.05);
   }
+}
 
-  100% {
-    clip-path: inset(0 0% 0 0%);
-    opacity:0.18;
-  }
+.animate-malta-pulse {
+  animation: malta-pulse 6s ease-in-out infinite;
+}
+
+/* ================================================= */
+/* SVG QUALITY IMPROVEMENT */
+/* ================================================= */
+
+svg {
+  shape-rendering: geometricPrecision;
+  text-rendering: optimizeLegibility;
 }
