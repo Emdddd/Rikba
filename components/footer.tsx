@@ -15,9 +15,9 @@ export function Footer() {
             {/* Logo + Brand */}
             <div className="flex items-center justify-center gap-1">
               <img
-                src="/5BDA6FFD-95DA-4CC6-9EAD-71BA2A8B75E0.png"
+                src="/Logoicon.PNG"
                 alt="Rikba"
-                className="w-7 h-7 rounded-lg object-contain"
+                className="w-7 h-7 object-contain"
               />
 
               <span className="text-foreground font-bold text-lg tracking-tight">
@@ -25,7 +25,7 @@ export function Footer() {
               </span>
             </div>
 
-            {/* Contact Us (Optical Center Fix) */}
+            {/* Contact */}
             <a
               href="mailto:info@rikba.eu"
               className="mt-3 text-sm text-muted-foreground hover:text-foreground transition-colors translate-x-[4px]"
