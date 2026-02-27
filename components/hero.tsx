@@ -7,6 +7,7 @@ import Image from "next/image"
 export function Hero() {
   return (
     <section className="relative pt-16 pb-20 md:pt-24 md:pb-28 overflow-hidden">
+
       {/* Background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[128px] pointer-events-none" />
 
@@ -49,8 +50,8 @@ export function Hero() {
           <div className="flex flex-col items-center justify-center mb-3 -mt-4">
             <div className="relative w-[260px] md:w-[360px] lg:w-[420px] xl:w-[480px] h-auto">
               <Image
-                src="https://i.imgur.com/uFWj0RH_d.webp?maxwidth=760&fidelity=grand"
-                alt="Rikba launch preview"
+                src="https://i.imgur.com/Nzf22Bx_d.webp?maxwidth=760&fidelity=grand"
+                alt="Rikba logo"
                 width={480}
                 height={200}
                 priority
@@ -71,7 +72,7 @@ export function Hero() {
             </span>
           </h1>
 
-          {/* Launch badge (same old style, smaller) */}
+          {/* Launch Badge */}
           <div className="flex justify-center mt-4">
             <span className="inline-flex items-center gap-2 rounded-xl border border-primary/40 bg-primary/15 px-5 py-2 text-sm font-semibold text-primary shadow-lg backdrop-blur-md">
               <span className="relative flex w-2.5 h-2.5 shrink-0">
