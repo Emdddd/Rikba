@@ -1,38 +1,79 @@
 "use client"
 
-export function UniverseBackground({ className = "" }: { className?: string }) {
+export function MaltaMap({ className = "" }: { className?: string }) {
   return (
     <div className={`absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden ${className}`}>
-      <svg viewBox="0 0 1000 600" className="w-full h-full">
-        {/* Stars background */}
-        {Array.from({ length: 120 }).map((_, i) => {
-          const cx = Math.random() * 1000
-          const cy = Math.random() * 600
-          const r = Math.random() * 2 + 0.5
-          const dur = Math.random() * 3 + 2
-          const delay = Math.random() * 3
-          return (
-            <circle
-              key={i}
-              cx={cx}
-              cy={cy}
-              r={r}
-              className="text-primary fill-current"
-              style={{
-                animation: `pulse ${dur}s ease-in-out ${delay}s infinite alternate`,
-              }}
-            />
-          )
-        })}
+      <div className="animate-malta-float relative w-[320px] h-[384px] md:w-[500px] md:h-[600px]">
 
-        <style jsx>{`
-          @keyframes pulse {
-            0% { opacity: 0.3; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.5); }
-            100% { opacity: 0.3; transform: scale(1); }
-          }
-        `}</style>
-      </svg>
+        {/* Outer glow */}
+        <div className="absolute inset-[-60px] bg-primary/5 rounded-full blur-[80px] animate-malta-pulse" />
+
+        <svg
+          viewBox="0 0 500 600"
+          className="w-full h-full opacity-20 md:opacity-25"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          {/* Malta main island outline */}
+          <path
+            d="M260 80 C280 75, 310 78, 340 90 C370 102, 395 120, 410 145 C425 170, 435 195, 440 225 C445 255, 438 280, 425 305 C412 330, 395 350, 375 368 C355 386, 332 398, 310 408 C288 418, 262 422, 240 420 C218 418, 195 410, 178 395 C161 380, 148 360, 140 338 C132 316, 128 292, 130 268 C132 244, 140 220, 152 198 C164 176, 180 158, 198 142 C216 126, 238 115, 255 100 C262 94, 258 84, 260 80Z"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            className="text-primary animate-malta-draw"
+            fill="currentColor"
+            fillOpacity="0.05"
+          />
+
+          {/* Small inner contour paths (hills) */}
+          <path
+            d="M220 200 C230 195, 250 200, 260 210 C270 220, 275 235, 260 240"
+            stroke="currentColor"
+            strokeWidth="0.8"
+            className="text-primary"
+            fill="none"
+            opacity="0.15"
+          />
+          <path
+            d="M300 300 C310 290, 330 295, 340 310"
+            stroke="currentColor"
+            strokeWidth="0.8"
+            className="text-primary"
+            fill="none"
+            opacity="0.15"
+          />
+
+          {/* Gozo island */}
+          <path
+            d="M180 30 C200 25, 225 28, 245 38 C265 48, 278 62, 282 80 C286 98, 280 115, 268 128 C256 141, 238 148, 220 150 C202 152, 182 148, 168 138 C154 128, 144 112, 140 95 C136 78, 138 60, 148 46 C158 32, 170 28, 180 30Z"
+            stroke="currentColor"
+            strokeWidth="1.2"
+            className="text-primary animate-malta-draw-delayed"
+            fill="currentColor"
+            fillOpacity="0.04"
+          />
+
+          {/* Comino island */}
+          <path
+            d="M230 155 C240 150, 252 152, 260 160 C268 168, 270 180, 265 190 C260 200, 248 205, 238 202 C228 199, 220 190, 222 178 C224 166, 228 158, 230 155Z"
+            stroke="currentColor"
+            strokeWidth="1.2"
+            className="text-primary animate-malta-draw-delayed"
+            fill="currentColor"
+            fillOpacity="0.05"
+          />
+
+          {/* Optional location pulse dots */}
+          <circle cx="310" cy="250" r="3" className="text-primary fill-current animate-ping" style={{ animationDuration: "3s" }} />
+          <circle cx="310" cy="250" r="1.5" className="text-primary fill-current" />
+
+          <circle cx="210" cy="80" r="2.5" className="text-primary fill-current animate-ping" style={{ animationDuration: "4s", animationDelay: "1s" }} />
+          <circle cx="210" cy="80" r="1" className="text-primary fill-current" />
+
+          <circle cx="350" cy="320" r="2.5" className="text-primary fill-current animate-ping" style={{ animationDuration: "3.5s", animationDelay: "2s" }} />
+          <circle cx="350" cy="320" r="1" className="text-primary fill-current" />
+
+        </svg>
+      </div>
     </div>
   )
 }
