@@ -76,9 +76,7 @@ export function HowItWorks() {
                   {index === 0 && (
                     <FloatingBadge delay={0} duration={4} direction="y" className="absolute -right-16 top-1/2 -translate-y-1/2 hidden md:flex">
                       <div className="flex items-center gap-1 rounded-lg bg-card border border-border shadow-md px-2 py-1">
-                        <div className="w-4 h-4 rounded bg-primary flex items-center justify-center">
-                          <span className="text-primary-foreground font-bold text-[7px]">R</span>
-                        </div>
+                       <img src="https://i.imgur.com/26ZC9ge_d.webp?maxwidth=760&fidelity=grand" alt="Rikba" className="w-4 h-4 rounded object-contain" />
                         <span className="text-[8px] font-semibold text-foreground whitespace-nowrap">rikba</span>
                       </div>
                     </FloatingBadge>
