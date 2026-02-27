@@ -12,9 +12,7 @@ export function Hero() {
 
       {/* === Floating elements anchored to center area only on lg === */}
       <div className="hidden lg:block absolute inset-0 pointer-events-none">
-        {/* container to constrain floaters */}
         <div className="relative mx-auto max-w-6xl h-full">
-          {/* Location pin - left side, vertically centered */}
           <FloatingBadge delay={0} duration={6} direction="y" className="absolute top-1/2 -translate-y-1/2 left-0">
             <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary/50">
@@ -24,7 +22,6 @@ export function Hero() {
             </div>
           </FloatingBadge>
 
-          {/* Shield - right side, vertically centered up slightly */}
           <FloatingBadge delay={1} duration={5} direction="rotate" className="absolute top-[38%] right-0">
             <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary/50">
@@ -33,12 +30,10 @@ export function Hero() {
             </div>
           </FloatingBadge>
 
-          {/* Price badge - bottom left */}
           <FloatingBadge delay={2} duration={7} direction="y" className="absolute bottom-[12%] left-[6%]">
             <PriceBadge price="7.80" />
           </FloatingBadge>
 
-          {/* Driver nearby - bottom right */}
           <FloatingBadge delay={0.5} duration={4.5} direction="rotate" className="absolute bottom-[16%] right-[4%]">
             <div className="flex items-center gap-1.5 rounded-xl bg-primary/15 border border-primary/25 px-3 py-2 shadow-lg">
               <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
@@ -49,40 +44,13 @@ export function Hero() {
       </div>
 
       <div className="relative mx-auto max-w-6xl px-5 z-10">
-        {/* Badge with Large Image Above */}
-        <AnimateOnScroll animation="scale-in">
-          <div className="flex flex-col items-center justify-center mb-8 gap-6 md:gap-8">
-            {/* Large Launch Image */}
-            <div className="relative w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 xl:w-56 xl:h-56 rounded-3xl shadow-2xl border-4 border-primary/20 overflow-hidden group hover:shadow-primary/40 transition-all duration-400 hover:-translate-y-2">
-              <Image
-                src="https://i.imgur.com/uFWj0RH_d.webp?maxwidth=760&fidelity=grand"
-                alt="Rikba launch preview"
-                width={224}
-                height={224}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-3xl backdrop-blur-sm" />
-            </div>
-            
-            {/* Larger Launch Badge */}
-            <span className="inline-flex items-center gap-3 rounded-2xl border-2 border-primary/40 bg-primary/15 px-8 py-4 text-base md:text-lg font-bold text-primary shadow-xl backdrop-blur-md hover:shadow-primary/30 hover:bg-primary/20 transition-all duration-300">
-              <span className="relative flex w-3 h-3 shrink-0">
-                <span className="animate-ping absolute inset-0 rounded-full bg-primary opacity-80" />
-                <span className="relative rounded-full w-3 h-3 bg-primary shadow-md ring-2 ring-primary/30" />
-              </span>
-              Launching Summer 2026
-            </span>
-          </div>
-        </AnimateOnScroll>
-
-        {/* Heading */}
-        <AnimateOnScroll animation="fade-up" delay={100}>
-          <h1 className="text-center text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground text-balance leading-tight">
+        {/* Main Heading */}
+        <AnimateOnScroll animation="fade-up" delay={0}>
+          <h1 className="text-center text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground text-balance leading-tight mb-8 md:mb-12">
             Malta deserves
             <br />
-            <span className="text-primary inline-flex items-center gap-2 md:gap-3">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 md:w-8 md:h-8 shrink-0 opacity-60">
+            <span className="text-primary inline-flex items-center justify-center gap-2 md:gap-3">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 shrink-0 opacity-70 drop-shadow-lg">
                 <path d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.7-3.6a1 1 0 0 0-.8-.4H5.24a2 2 0 0 0-1.8 1.1l-.8 1.63A6 6 0 0 0 2 12.42V16h2" />
                 <circle cx="6.5" cy="16.5" r="2.5" />
                 <circle cx="16.5" cy="16.5" r="2.5" />
@@ -92,15 +60,28 @@ export function Hero() {
           </h1>
         </AnimateOnScroll>
 
-        {/* Subtitle */}
+        {/* Smaller Launch Badge Below Heading */}
         <AnimateOnScroll animation="fade-up" delay={200}>
+          <div className="flex flex-col items-center justify-center mb-12 md:mb-16 gap-4">
+            <span className="inline-flex items-center gap-2 rounded-xl border border-primary/30 bg-primary/10 px-6 py-3 text-sm md:text-base font-semibold text-primary shadow-lg backdrop-blur-sm hover:shadow-primary/20 transition-all">
+              <span className="relative flex w-2.5 h-2.5 shrink-0">
+                <span className="animate-ping absolute inset-0 rounded-full bg-primary opacity-75" />
+                <span className="relative rounded-full w-2.5 h-2.5 bg-primary shadow-sm" />
+              </span>
+              Launching Summer 2026
+            </span>
+          </div>
+        </AnimateOnScroll>
+
+        {/* Subtitle */}
+        <AnimateOnScroll animation="fade-up" delay={300}>
           <p className="mx-auto mt-6 max-w-xl text-center text-lg md:text-xl text-muted-foreground leading-relaxed text-pretty">
             Lower prices. Happier drivers. An app that's 100% Maltese and keeps your money on the island.
           </p>
         </AnimateOnScroll>
 
         {/* CTAs */}
-        <AnimateOnScroll animation="fade-up" delay={300}>
+        <AnimateOnScroll animation="fade-up" delay={400}>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="#waitlist"
@@ -126,7 +107,7 @@ export function Hero() {
         </AnimateOnScroll>
 
         {/* Trust badges */}
-        <AnimateOnScroll animation="fade-up" delay={400}>
+        <AnimateOnScroll animation="fade-up" delay={500}>
           <div className="mt-14 flex flex-wrap items-center justify-center gap-6 md:gap-10">
             {[
               { icon: <CoinIcon />, text: "Drivers keep more" },
