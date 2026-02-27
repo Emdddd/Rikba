@@ -93,7 +93,7 @@ export function ComparisonSection() {
 
               {/* Items */}
               <div className="relative space-y-5">
-                <ComparisonRow icon={<CheckIcon />} label="Pricing" value="Fair fares, no surge pricing" positive />
+                <ComparisonRow icon={<CheckIcon />} label="Pricing" value="Fair fares, Clear prices" positive />
                 <ComparisonRow icon={<CheckIcon />} label="Driver commission" value="Drivers keep 92%" positive />
                 <ComparisonRow icon={<CheckIcon />} label="Built for" value="100% designed for Malta" positive />
                 <ComparisonRow icon={<CheckIcon />} label="Money stays" value="Your money stays on the island" positive />
