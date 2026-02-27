@@ -6,7 +6,7 @@ import Image from "next/image"
 
 export function Hero() {
   return (
-    <section className="relative pt-24 pb-20 md:pt-32 md:pb-28 overflow-hidden">
+    <section className="relative pt-16 pb-20 md:pt-24 md:pb-28 overflow-hidden">
       {/* Background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[128px] pointer-events-none" />
 
@@ -44,18 +44,17 @@ export function Hero() {
 
       <div className="relative mx-auto max-w-6xl px-5 z-10">
 
-        {/* ===== LOGO ===== */}
+        {/* ===== WIDE LOGO ===== */}
         <AnimateOnScroll animation="scale-in">
-          <div className="flex flex-col items-center justify-center mb-6">
-            {/* المسافة أقل */}
-            <div className="relative w-44 h-44 md:w-56 md:h-56 lg:w-64 lg:h-64">
+          <div className="flex flex-col items-center justify-center mb-3 -mt-4">
+            <div className="relative w-[260px] md:w-[360px] lg:w-[420px] xl:w-[480px] h-auto">
               <Image
                 src="https://i.imgur.com/uFWj0RH_d.webp?maxwidth=760&fidelity=grand"
                 alt="Rikba launch preview"
-                width={320}
-                height={320}
+                width={480}
+                height={200}
                 priority
-                className="w-full h-full object-contain"
+                className="w-full h-auto object-contain"
               />
             </div>
           </div>
@@ -72,7 +71,7 @@ export function Hero() {
             </span>
           </h1>
 
-          {/* ===== OLD LAUNCH BADGE (SMALLER) ===== */}
+          {/* Launch badge (same old style, smaller) */}
           <div className="flex justify-center mt-4">
             <span className="inline-flex items-center gap-2 rounded-xl border border-primary/40 bg-primary/15 px-5 py-2 text-sm font-semibold text-primary shadow-lg backdrop-blur-md">
               <span className="relative flex w-2.5 h-2.5 shrink-0">
@@ -92,7 +91,7 @@ export function Hero() {
           </p>
         </AnimateOnScroll>
 
-        {/* CTA */}
+        {/* CTA Buttons */}
         <AnimateOnScroll animation="fade-up" delay={300}>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
