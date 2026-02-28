@@ -155,7 +155,7 @@ html {
 }
 
 /* ================================================= */
-/* ⭐ MALTA MAP FLOAT */
+/* MALTA MAP FLOAT */
 /* ================================================= */
 
 @keyframes malta-float {
@@ -168,7 +168,7 @@ html {
 }
 
 /* ================================================= */
-/* ⭐ MALTA MAP PULSE */
+/* MALTA MAP PULSE */
 /* ================================================= */
 
 @keyframes malta-pulse {
@@ -189,26 +189,59 @@ html {
 }
 
 /* ================================================= */
-/* ⭐ HORIZONTAL TICKER (FIXED) */
+/* ⭐ FADE MARQUEE (FINAL FIX) */
 /* ================================================= */
 
-@keyframes ticker-scroll {
-
-  0% {
-    transform: translateX(100%);
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
   }
-
-  100% {
-    transform: translateX(-100%);
+  to {
+    transform: translateX(-50%);
   }
 }
 
 @layer utilities {
 
-  .animate-ticker {
-    animation: ticker-scroll 25s linear infinite;
+  .marquee-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .marquee-track {
+    display: flex;
+    gap: 3rem;
+    width: max-content;
     white-space: nowrap;
+    animation: marquee-scroll 20s linear infinite;
     will-change: transform;
+  }
+
+  /* Fade Left */
+  .marquee-container::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 120px;
+    height: 100%;
+    background: linear-gradient(to right, var(--background), transparent);
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  /* Fade Right */
+  .marquee-container::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 120px;
+    height: 100%;
+    background: linear-gradient(to left, var(--background), transparent);
+    z-index: 10;
+    pointer-events: none;
   }
 
 }
