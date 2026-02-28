@@ -23,10 +23,9 @@ export function MaltaMap({ className = "" }: { className?: string }) {
           "
         />
 
-        {/* ⭐ CENTER PULSE DOT */}
-        <div className="absolute top-[55%] left-[62%] -translate-x-1/2 -translate-y-1/2">
+        {/* ⭐ Pulse Dot (Moved Right) */}
+        <div className="absolute top-[55%] left-[72%] -translate-x-1/2 -translate-y-1/2">
 
-          {/* dot */}
           <span className="relative flex h-3 w-3">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
             <span className="relative inline-flex rounded-full h-3 w-3 bg-primary shadow-[0_0_12px_rgba(59,130,246,0.9)]" />
