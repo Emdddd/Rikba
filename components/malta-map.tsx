@@ -23,44 +23,40 @@ export function MaltaMap({ className = "" }: { className?: string }) {
         />
 
         {/* ===================== */}
-        {/* 9 DISTRIBUTED DOTS */}
+        {/* PERFECT DISTRIBUTION */}
         {/* ===================== */}
 
-        {/* Gozo */}
-        <div className="map-dot" style={{ top:"14%", left:"42%" }} />
-        <div className="map-pulse" style={{ top:"14%", left:"42%" }} />
+        {/* 🟢 GOZO - TOP LEFT */}
+        <div className="map-dot" style={{ top:"10%", left:"36%" }} />
+        <div className="map-pulse" style={{ top:"10%", left:"36%" }} />
 
-        {/* North Malta */}
-        <div className="map-dot" style={{ top:"30%", left:"56%" }} />
-        <div className="map-pulse" style={{ top:"30%", left:"56%", animationDelay:"0.4s" }} />
+        {/* 🔵 NORTH MALTA */}
+        <div className="map-dot" style={{ top:"28%", left:"55%" }} />
+        <div className="map-pulse" style={{ top:"28%", left:"55%", animationDelay:"0.4s" }} />
 
-        {/* West */}
-        <div className="map-dot" style={{ top:"44%", left:"46%" }} />
-        <div className="map-pulse" style={{ top:"44%", left:"46%", animationDelay:"0.8s" }} />
+        <div className="map-dot" style={{ top:"30%", left:"68%" }} />
+        <div className="map-pulse" style={{ top:"30%", left:"68%", animationDelay:"0.8s" }} />
 
-        {/* Center */}
-        <div className="map-dot" style={{ top:"50%", left:"58%" }} />
-        <div className="map-pulse" style={{ top:"50%", left:"58%", animationDelay:"1.2s" }} />
+        {/* 🟣 CENTER (SPACED) */}
+        <div className="map-dot" style={{ top:"48%", left:"58%" }} />
+        <div className="map-pulse" style={{ top:"48%", left:"58%", animationDelay:"1.2s" }} />
 
-        {/* Valletta Area */}
-        <div className="map-dot" style={{ top:"56%", left:"66%" }} />
-        <div className="map-pulse" style={{ top:"56%", left:"66%", animationDelay:"1.6s" }} />
+        <div className="map-dot" style={{ top:"52%", left:"72%" }} />
+        <div className="map-pulse" style={{ top:"52%", left:"72%", animationDelay:"1.6s" }} />
 
-        {/* South East */}
-        <div className="map-dot" style={{ top:"66%", left:"63%" }} />
-        <div className="map-pulse" style={{ top:"66%", left:"63%", animationDelay:"2s" }} />
+        {/* 🟡 WEST SIDE (3 SPREAD DOTS) */}
+        <div className="map-dot" style={{ top:"46%", left:"42%" }} />
+        <div className="map-pulse" style={{ top:"46%", left:"42%", animationDelay:"2s" }} />
 
-        {/* Airport / Central South */}
-        <div className="map-dot" style={{ top:"66%", left:"53%" }} />
-        <div className="map-pulse" style={{ top:"66%", left:"53%", animationDelay:"2.4s" }} />
+        <div className="map-dot" style={{ top:"60%", left:"40%" }} />
+        <div className="map-pulse" style={{ top:"60%", left:"40%", animationDelay:"2.4s" }} />
 
-        {/* South West */}
-        <div className="map-dot" style={{ top:"74%", left:"48%" }} />
-        <div className="map-pulse" style={{ top:"74%", left:"48%", animationDelay:"2.8s" }} />
+        <div className="map-dot" style={{ top:"72%", left:"45%" }} />
+        <div className="map-pulse" style={{ top:"72%", left:"45%", animationDelay:"2.8s" }} />
 
-        {/* Far South */}
-        <div className="map-dot" style={{ top:"82%", left:"55%" }} />
-        <div className="map-pulse" style={{ top:"82%", left:"55%", animationDelay:"3.2s" }} />
+        {/* 🔴 SOUTH */}
+        <div className="map-dot" style={{ top:"82%", left:"60%" }} />
+        <div className="map-pulse" style={{ top:"82%", left:"60%", animationDelay:"3.2s" }} />
 
       </div>
     </div>
