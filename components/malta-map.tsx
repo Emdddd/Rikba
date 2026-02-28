@@ -10,9 +10,9 @@ export function MaltaMap({ className = "" }: { className?: string }) {
         {/* Glow خلف الخريطة */}
         <div className="absolute inset-[-120px] bg-primary/10 blur-[120px] rounded-full animate-malta-pulse" />
 
-        {/* Malta SVG من public */}
+        {/* Malta SVG */}
         <img
-          src="/maltaHigh.svg"
+          src="/Mapmalta.svg"
           alt="Malta Map"
           className="
             w-[520px]
