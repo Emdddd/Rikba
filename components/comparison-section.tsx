@@ -81,8 +81,9 @@ export function ComparisonSection() {
                   <span className="text-sm font-bold text-muted-foreground">80%</span>
                 </div>
 
-                <div className="h-3 rounded-full bg-muted overflow-hidden flex">
-                  <div className="h-full rounded-full bg-muted-foreground/25 ml-auto animate-bar-fill-75" />
+                {/* ✅ FIXED */}
+                <div className="h-3 rounded-full bg-muted overflow-hidden">
+                  <div className="h-full rounded-full bg-muted-foreground/25 animate-bar-fill-75" />
                 </div>
               </div>
 
@@ -129,8 +130,9 @@ export function ComparisonSection() {
                   <span className="text-sm font-bold text-primary">92%</span>
                 </div>
 
-                <div className="h-3 rounded-full bg-muted overflow-hidden flex">
-                  <div className="h-full rounded-full bg-primary ml-auto animate-bar-fill-90" />
+                {/* ✅ FIXED */}
+                <div className="h-3 rounded-full bg-muted overflow-hidden">
+                  <div className="h-full rounded-full bg-primary animate-bar-fill-90" />
                 </div>
               </div>
 
