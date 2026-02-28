@@ -78,7 +78,7 @@ html {
 }
 
 /* ================================================= */
-/* FLOATING */
+/* FLOATING ANIMATIONS */
 /* ================================================= */
 
 @keyframes float-y {
@@ -96,10 +96,19 @@ html {
 /* ================================================= */
 
 @keyframes car-drive {
-  0% { transform: translateX(-30px); opacity:0; }
+
+  0% {
+    transform: translateX(-30px);
+    opacity:0;
+  }
+
   10% { opacity:1; }
   90% { opacity:1; }
-  100% { transform: translateX(calc(100vw + 30px)); opacity:0; }
+
+  100% {
+    transform: translateX(calc(100vw + 30px));
+    opacity:0;
+  }
 }
 
 .animate-car-drive {
@@ -107,7 +116,7 @@ html {
 }
 
 /* ================================================= */
-/* MARQUEE FINAL FIX */
+/* MARQUEE (RIGHT → LEFT LOOP) */
 /* ================================================= */
 
 @keyframes marquee {
@@ -126,11 +135,76 @@ html {
     width: max-content;
     will-change: transform;
   }
-
 }
 
 /* ================================================= */
-/* SVG QUALITY */
+/* MALTA MAP FLOAT */
+/* ================================================= */
+
+@keyframes malta-float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+.animate-malta-float {
+  animation: malta-float 12s ease-in-out infinite;
+}
+
+/* ================================================= */
+/* MALTA MAP GLOW */
+/* ================================================= */
+
+@keyframes malta-pulse {
+  0%,100% { opacity:.4; transform:scale(1); }
+  50% { opacity:.7; transform:scale(1.05); }
+}
+
+.animate-malta-pulse {
+  animation: malta-pulse 6s ease-in-out infinite;
+}
+
+/* ================================================= */
+/* MAP LOCATION PULSE */
+/* ================================================= */
+
+@keyframes map-pulse {
+
+  0% {
+    transform: scale(0.5);
+    opacity: .9;
+  }
+
+  70% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.map-dot {
+  position:absolute;
+  width:8px;
+  height:8px;
+  border-radius:9999px;
+  background:var(--primary);
+  z-index:2;
+}
+
+.map-pulse {
+  position:absolute;
+  width:8px;
+  height:8px;
+  border-radius:9999px;
+  background:var(--primary);
+  animation: map-pulse 3s infinite;
+  z-index:1;
+}
+
+/* ================================================= */
+/* SVG QUALITY IMPROVEMENT */
 /* ================================================= */
 
 svg {
