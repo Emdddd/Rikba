@@ -5,8 +5,6 @@ export function Marquee() {
   const items = [
     { text: "100% Malta owned", icon: "pin" },
     { text: "Drivers keep way more", icon: "coin" },
-    { text: "Half the commission", icon: "tag" },
-    { text: "No surge pricing", icon: "shield" },
     { text: "Lower fares for riders", icon: "sparkle" },
     { text: "Launching Summer 2026", icon: "rocket" },
   ]
