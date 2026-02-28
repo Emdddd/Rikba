@@ -120,12 +120,8 @@ html {
 /* ================================================= */
 
 @keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
 
 @layer utilities {
@@ -171,16 +167,16 @@ html {
 
   0% {
     transform: scale(0.5);
-    opacity: .9;
+    opacity:.9;
   }
 
   70% {
     transform: scale(2.5);
-    opacity: 0;
+    opacity:0;
   }
 
   100% {
-    opacity: 0;
+    opacity:0;
   }
 }
 
@@ -201,6 +197,38 @@ html {
   background:var(--primary);
   animation: map-pulse 3s infinite;
   z-index:1;
+}
+
+/* ================================================= */
+/* ⭐ COMMISSION BARS ANIMATION (NEW) */
+/* ================================================= */
+
+/* Other App → 80% (ناقص 25% من اليمين) */
+@keyframes bar-fill-75 {
+  from {
+    width:0%;
+  }
+  to {
+    width:75%;
+  }
+}
+
+/* Rikba → 92% (ناقص 7% من اليمين) */
+@keyframes bar-fill-90 {
+  from {
+    width:0%;
+  }
+  to {
+    width:93%;
+  }
+}
+
+.animate-bar-fill-75 {
+  animation: bar-fill-75 1.4s ease-out forwards;
+}
+
+.animate-bar-fill-90 {
+  animation: bar-fill-90 1.4s ease-out forwards;
 }
 
 /* ================================================= */
