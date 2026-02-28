@@ -27,7 +27,7 @@ export function MaltaMap({ className = "" }: { className?: string }) {
         />
 
         {/* Pulse Point */}
-        <div className="absolute top-[55%] left-[78%] -translate-x-1/2 -translate-y-1/2">
+        <div className="absolute top-[57%] left-[78%] -translate-x-1/2 -translate-y-1/2">
 
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
