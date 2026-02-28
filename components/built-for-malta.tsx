@@ -11,17 +11,22 @@ export function BuiltForMalta() {
       <div className="mx-auto max-w-6xl px-5">
 
         <AnimateOnScroll animation="fade-up">
-          <div className="relative overflow-hidden rounded-3xl border border-border bg-card p-8 md:p-14 text-center min-h-[400px] md:min-h-[480px] flex flex-col items-center justify-center">
 
-            {/* ✅ Malta Map Background */}
-            <MaltaMap />
+          {/* CARD */}
+          <div className="relative overflow-hidden rounded-3xl border border-border bg-card p-8 md:p-14 text-center min-h-[420px] md:min-h-[520px] flex flex-col items-center justify-center">
 
-            {/* ✅ Gradient readability */}
-            <div className="absolute inset-0 bg-gradient-to-b from-card/70 via-card/50 to-card/80 pointer-events-none" />
+            {/* ⭐ Malta Map Background */}
+            <div className="absolute inset-0 z-0">
+              <MaltaMap />
+            </div>
+
+            {/* ⭐ Gradient readability */}
+            <div className="absolute inset-0 z-[1] bg-gradient-to-b from-card/80 via-card/60 to-card/90 pointer-events-none" />
 
             {/* ===== CONTENT ===== */}
             <div className="relative z-10">
 
+              {/* Icon */}
               <div className="mb-6 mx-auto w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center">
                 <svg
                   width="32"
@@ -39,15 +44,18 @@ export function BuiltForMalta() {
                 </svg>
               </div>
 
+              {/* Title */}
               <h2 className="text-3xl md:text-5xl font-bold text-card-foreground leading-tight">
                 Built for <span className="text-primary">Malta.</span>
               </h2>
 
+              {/* Description */}
               <p className="mx-auto mt-5 max-w-xl text-lg text-muted-foreground leading-relaxed">
                 Not copy-pasted from a megacity playbook. A Maltese team building
                 for a Maltese island. Festa traffic, Sliema gridlock, and all.
               </p>
 
+              {/* Badges */}
               <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
                 {[
                   { icon: <SparkleIcon size={14} />, text: "100% Maltese owned" },
@@ -66,12 +74,13 @@ export function BuiltForMalta() {
 
             </div>
 
-            {/* ✅ Animated Car */}
-            <div className="absolute bottom-6 left-0 right-0 z-10">
+            {/* ⭐ Animated Car */}
+            <div className="absolute bottom-6 left-0 right-0 z-20">
               <CarAnimation />
             </div>
 
           </div>
+
         </AnimateOnScroll>
 
       </div>
