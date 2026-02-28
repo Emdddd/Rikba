@@ -61,7 +61,7 @@ export function ComparisonSection() {
                     <line x1="6" y1="10" x2="14" y2="10" />
                   </svg>
                 </div>
-                <span className="font-bold text-card-foreground text-xl">Other App</span>
+                <span className="font-bold text-card-foreground text-xl">Other Apps</span>
               </div>
 
               {/* Rows */}
