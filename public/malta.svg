@@ -1,27 +1,55 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created for MapSVG plugin: http://mapsvg.com -->
 
 <svg
-  xmlns="http://www.w3.org/2000/svg"
-  viewBox="0 0 1000 800"
-  fill="none"
-  stroke="#3b82f6"
-  stroke-width="2.8"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
+   xmlns:mapsvg="http://mapsvg.com"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   mapsvg:geoViewBox="14.182891 36.082376 14.576552 35.805673"
+   width="916.64319"
+   height="792.52557"
+   viewBox="0 0 916.64319 792.52557"
+   fill="none"
+   stroke="#3b82f6"
+   stroke-width="2.5"
+   stroke-linecap="round"
+   stroke-linejoin="round">
 
-  <g transform="translate(-150,-50) scale(1.2)">
+<style>
+path{
+  fill: rgba(59,130,246,0.05);
+  stroke:#3b82f6;
+  stroke-width:2.5;
+}
+</style>
 
-    <path d="m 524.54316,329.0085 0,3.98 -11.64,1.6 -4.53,5.57 -5.17,0.8 -1.29,-1.59 0.65,-3.98 2.59,-2.39 5.17,0 6.47,-3.98 7.75,0 z"/>
+<!-- ================= PATHS (UNCHANGED) ================= -->
 
-    <path d="m 713.35316,433.1885 4.53,0.8 3.88,5.56 -5.17,4.78 0.65,2.38 3.23,-0.8 2.58,1.59 3.23,-2.38 2.59,2.38 -3.88,3.18"/>
+<path
+d="m 524.54316,329.0085 0,3.98 -11.64,1.6 -4.53,5.57 -5.17,0.8 -1.29,-1.59 0.65,-3.98 2.59,-2.39 5.17,0 6.47,-3.98 7.75,0 z"
+title="Northern"
+id="MT_NO"/>
 
-    <path d="m 836.86316,724.7885 0.39,-8.51 -4.96,-5.65 -2.48,-8.26 -12.03,-12.61 -13.46,-4.78"/>
+<path
+d="m 713.35316,433.1885 4.53,0.8 3.88,5.56 -5.17,4.78 0.65,2.38 3.23,-0.8 2.58,1.59 3.23,-2.38 2.59,2.38 -3.88,3.18"
+title="Central"
+id="MT_CE"/>
 
-    <path d="m 731.40316,548.8485 4.6,3.48 -2.48,6.96 -1.77,1.74 -3.89,0 -5.31,6.09"/>
+<path
+d="m 836.86316,724.7885 0.39,-8.51 -4.96,-5.65 -2.48,-8.26 -12.03,-12.61 -13.46,-4.78"
+title="Southern"
+id="MT_SO"/>
 
-    <path d="m 321.50316,192.9485 3.88,3.99 0,3.18 1.94,0.8 0,4.78 -4.52,-4.78 -6.47,1.58"/>
+<path
+d="m 731.40316,548.8485 4.6,3.48 -2.48,6.96 -1.77,1.74 -3.89,0 -5.31,6.09"
+title="South Eastern"
+id="MT_SE"/>
 
-  </g>
+<path
+d="m 321.50316,192.9485 3.88,3.99 0,3.18 1.94,0.8 0,4.78 -4.52,-4.78 -6.47,1.58"
+title="Gozo"
+id="MT_GO"/>
 
 </svg>
