@@ -96,19 +96,10 @@ html {
 /* ================================================= */
 
 @keyframes car-drive {
-
-  0% {
-    transform: translateX(-30px);
-    opacity:0;
-  }
-
+  0% { transform: translateX(-30px); opacity:0; }
   10% { opacity:1; }
   90% { opacity:1; }
-
-  100% {
-    transform: translateX(calc(100vw + 30px));
-    opacity:0;
-  }
+  100% { transform: translateX(calc(100vw + 30px)); opacity:0; }
 }
 
 .animate-car-drive {
@@ -121,7 +112,7 @@ html {
 
 @keyframes marquee {
   from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  to { transform: translateX(-50%); }
 }
 
 @layer utilities {
@@ -200,27 +191,18 @@ html {
 }
 
 /* ================================================= */
-/* ⭐ COMMISSION BARS ANIMATION (NEW) */
+/* ⭐ COMMISSION BARS (FINAL FIX) */
+/* يبدأ من الشمال → النقص يمين */
 /* ================================================= */
 
-/* Other App → 80% (ناقص 25% من اليمين) */
 @keyframes bar-fill-75 {
-  from {
-    width:0%;
-  }
-  to {
-    width:75%;
-  }
+  from { width:0%; }
+  to { width:75%; }
 }
 
-/* Rikba → 92% (ناقص 7% من اليمين) */
 @keyframes bar-fill-90 {
-  from {
-    width:0%;
-  }
-  to {
-    width:93%;
-  }
+  from { width:0%; }
+  to { width:93%; }
 }
 
 .animate-bar-fill-75 {
@@ -232,7 +214,7 @@ html {
 }
 
 /* ================================================= */
-/* SVG QUALITY IMPROVEMENT */
+/* SVG QUALITY */
 /* ================================================= */
 
 svg {
