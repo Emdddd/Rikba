@@ -206,11 +206,11 @@ html {
 }
 
 .animate-bar-fill-75 {
-  animation: bar-fill-75 2.5s ease-out forwards;
+  animation: bar-fill-75 5s ease-out forwards;
 }
 
 .animate-bar-fill-90 {
-  animation: bar-fill-90 2.5s ease-out forwards;
+  animation: bar-fill-90 5s ease-out forwards;
 }
 
 /* ================================================= */
