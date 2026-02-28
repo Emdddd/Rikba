@@ -78,7 +78,7 @@ html {
 }
 
 /* ================================================= */
-/* FLOATING ANIMATIONS */
+/* FLOATING */
 /* ================================================= */
 
 @keyframes float-y {
@@ -96,19 +96,10 @@ html {
 /* ================================================= */
 
 @keyframes car-drive {
-
-  0% {
-    transform: translateX(-30px);
-    opacity: 0;
-  }
-
+  0% { transform: translateX(-30px); opacity:0; }
   10% { opacity:1; }
   90% { opacity:1; }
-
-  100% {
-    transform: translateX(calc(100vw + 30px));
-    opacity:0;
-  }
+  100% { transform: translateX(calc(100vw + 30px)); opacity:0; }
 }
 
 .animate-car-drive {
@@ -116,83 +107,10 @@ html {
 }
 
 /* ================================================= */
-/* GLOW PULSE */
+/* MARQUEE FINAL FIX */
 /* ================================================= */
 
-@keyframes glow-pulse {
-
-  0%,100% {
-    box-shadow: 0 0 20px 0 oklch(0.62 0.22 260 / .1);
-  }
-
-  50% {
-    box-shadow: 0 0 30px 4px oklch(0.62 0.22 260 / .2);
-  }
-}
-
-.animate-glow-pulse {
-  animation: glow-pulse 3s ease-in-out infinite;
-}
-
-/* ================================================= */
-/* TRAVEL DOT */
-/* ================================================= */
-
-@keyframes travel-dot {
-
-  0% { left:0%; opacity:0; }
-  10% { opacity:1; }
-  90% { opacity:1; }
-
-  100% {
-    left:100%;
-    opacity:0;
-  }
-}
-
-.animate-travel-dot {
-  animation: travel-dot 3s ease-in-out infinite;
-}
-
-/* ================================================= */
-/* MALTA MAP FLOAT */
-/* ================================================= */
-
-@keyframes malta-float {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
-}
-
-.animate-malta-float {
-  animation: malta-float 12s ease-in-out infinite;
-}
-
-/* ================================================= */
-/* MALTA MAP PULSE */
-/* ================================================= */
-
-@keyframes malta-pulse {
-
-  0%,100% {
-    opacity: .4;
-    transform: scale(1);
-  }
-
-  50% {
-    opacity: .7;
-    transform: scale(1.05);
-  }
-}
-
-.animate-malta-pulse {
-  animation: malta-pulse 6s ease-in-out infinite;
-}
-
-/* ================================================= */
-/* ⭐ FADE MARQUEE (FINAL FIX) */
-/* ================================================= */
-
-@keyframes marquee-scroll {
+@keyframes marquee {
   from {
     transform: translateX(0);
   }
@@ -203,45 +121,10 @@ html {
 
 @layer utilities {
 
-  .marquee-container {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-  }
-
-  .marquee-track {
-    display: flex;
-    gap: 3rem;
+  .animate-marquee {
+    animation: marquee 20s linear infinite;
     width: max-content;
-    white-space: nowrap;
-    animation: marquee-scroll 20s linear infinite;
     will-change: transform;
-  }
-
-  /* Fade Left */
-  .marquee-container::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 120px;
-    height: 100%;
-    background: linear-gradient(to right, var(--background), transparent);
-    z-index: 10;
-    pointer-events: none;
-  }
-
-  /* Fade Right */
-  .marquee-container::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 120px;
-    height: 100%;
-    background: linear-gradient(to left, var(--background), transparent);
-    z-index: 10;
-    pointer-events: none;
   }
 
 }
