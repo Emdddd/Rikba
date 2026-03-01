@@ -1,5 +1,6 @@
 "use client"
 
+import { Navbar } from "@/components/navbar"
 import { Hero } from "@/components/hero"
 import { Marquee } from "@/components/marquee"
 import { ComparisonSection } from "@/components/comparison-section"
@@ -10,6 +11,9 @@ import { Footer } from "@/components/footer"
 export default function Page() {
   return (
     <main className="relative overflow-hidden">
+
+      {/* ===== NAVBAR ===== */}
+      <Navbar />
 
       {/* ===== HERO ===== */}
       <Hero />
@@ -23,7 +27,7 @@ export default function Page() {
       {/* ===== HOW IT WORKS ===== */}
       <HowItWorks />
 
-      {/* ===== MALTA SECTION ===== */}
+      {/* ===== BUILT FOR MALTA ===== */}
       <BuiltForMalta />
 
       {/* ===== FOOTER ===== */}
