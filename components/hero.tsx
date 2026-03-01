@@ -7,8 +7,21 @@ export function Hero() {
   return (
     <section className="relative pt-28 pb-20 md:pt-36 md:pb-28 overflow-hidden">
 
-      {/* BACKGROUND GLOW */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[128px] pointer-events-none" />
+      {/* ===== BLUE AMBIENT GLOW ===== */}
+      <div className="absolute inset-0 -z-10 pointer-events-none flex items-center justify-center">
+
+        <div
+          className="
+          w-[900px] h-[900px]
+          bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.22),transparent_70%)]
+          blur-[160px]
+          opacity-70
+        "
+        />
+
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background opacity-80" />
+
+      </div>
 
       <div className="relative mx-auto max-w-6xl px-5 z-10">
 
@@ -39,9 +52,15 @@ export function Hero() {
             </span>
           </h1>
 
-          {/* Launch Badge */}
+          {/* ===== LAUNCH BADGE (رجعت زي ما كانت) ===== */}
           <div className="flex justify-center mt-4">
             <span className="inline-flex items-center gap-2 rounded-xl border border-primary/40 bg-primary/15 px-5 py-2 text-sm font-semibold text-primary shadow-lg backdrop-blur-md">
+
+              <span className="relative flex w-2.5 h-2.5 shrink-0">
+                <span className="animate-ping absolute inset-0 rounded-full bg-primary opacity-80" />
+                <span className="relative rounded-full w-2.5 h-2.5 bg-primary" />
+              </span>
+
               Launching Summer 2026
             </span>
           </div>
@@ -81,7 +100,7 @@ export function Hero() {
   )
 }
 
-/* ===== ICON ===== */
+/* ===== ORIGINAL CAR ICON (رجعناه) ===== */
 
 function CarIcon() {
   return (
@@ -93,9 +112,9 @@ function CarIcon() {
       stroke="currentColor"
       strokeWidth="2"
     >
-      <circle cx="6.5" cy="16.5" r="2.5" />
-      <circle cx="16.5" cy="16.5" r="2.5" />
-      <path d="M2 16h2l1-4h12l1 4h4" />
+      <path d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.7-3.6a1 1 0 0 0-.8-.4H5.24a2 2 0 0 0-1.8 1.1l-.8 1.63A6 6 0 0 0 2 12.42V16h2"/>
+      <circle cx="6.5" cy="16.5" r="2.5"/>
+      <circle cx="16.5" cy="16.5" r="2.5"/>
     </svg>
   )
 }
