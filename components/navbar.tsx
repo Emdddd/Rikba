@@ -23,45 +23,71 @@ export function Navbar() {
           </span>
         </a>
 
-        {/* ===== Desktop Nav ===== */}
+        {/* ===== Desktop Links ===== */}
         <div className="hidden md:flex items-center gap-8">
 
-          <a href="#problem" className="text-muted-foreground hover:text-foreground text-sm">
+          <a href="#problem" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
             Why Rikba
           </a>
 
-          <a href="#how-it-works" className="text-muted-foreground hover:text-foreground text-sm">
+          <a href="#how-it-works" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
             How it works
           </a>
 
-          <a href="#faq" className="text-muted-foreground hover:text-foreground text-sm">
+          <a href="#faq" className="text-muted-foreground hover:text-foreground transition-colors text-sm">
             FAQ
           </a>
 
         </div>
 
-        {/* ===== RIGHT SIDE STACK ===== */}
+        {/* ===== RIGHT SIDE (STACKED) ===== */}
         <div className="hidden md:flex flex-col items-center gap-2">
 
           {/* CONTACT BUTTON */}
           <a
             href="mailto:info@rikba.eu"
-            className="inline-flex items-center justify-center rounded-lg bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition shadow-md shadow-primary/25"
+            className="inline-flex items-center justify-center rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition shadow-md shadow-primary/25"
           >
             Contact us
           </a>
 
-          {/* THEME SWITCH */}
+          {/* THEME SWITCH UNDER CONTACT */}
           <ThemeToggle />
 
         </div>
 
-        {/* ===== MOBILE MENU BUTTON ===== */}
+        {/* ===== MOBILE MENU BUTTON (ORIGINAL SIZE) ===== */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           className="md:hidden flex items-center justify-center w-11 h-11 rounded-lg text-foreground"
+          aria-label="Toggle menu"
         >
-          {mobileMenuOpen ? "✕" : "☰"}
+          {mobileMenuOpen ? (
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          ) : (
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+          )}
         </button>
 
       </div>
@@ -91,7 +117,7 @@ export function Navbar() {
               Contact us
             </a>
 
-            {/* THEME SWITCH */}
+            {/* SWITCH UNDER CONTACT */}
             <ThemeToggle />
 
           </div>
