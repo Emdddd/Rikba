@@ -67,7 +67,7 @@ export function Hero() {
             <div className="relative w-[260px] md:w-[360px] lg:w-[420px] xl:w-[480px] h-auto">
 
               <Image
-                src="/IMG_2347.png"
+                src="/IMG_2349.png"
                 alt="Rikba logo"
                 width={480}
                 height={200}
