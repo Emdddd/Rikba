@@ -61,19 +61,22 @@ export function Navbar() {
 
               {/* TOP LINE */}
               <span
-                className={`absolute left-0 w-full h-[2px] bg-current transition-all duration-300
+                className={`absolute left-0 w-full h-[2px] bg-current
+                transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]
                 ${mobileMenuOpen ? "rotate-45 top-3" : "top-1"}`}
               />
 
               {/* MIDDLE LINE */}
               <span
-                className={`absolute left-0 w-full h-[2px] bg-current transition-all duration-300
+                className={`absolute left-0 w-full h-[2px] bg-current
+                transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]
                 ${mobileMenuOpen ? "opacity-0" : "top-3"}`}
               />
 
               {/* BOTTOM LINE */}
               <span
-                className={`absolute left-0 w-full h-[2px] bg-current transition-all duration-300
+                className={`absolute left-0 w-full h-[2px] bg-current
+                transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]
                 ${mobileMenuOpen ? "-rotate-45 top-3" : "top-5"}`}
               />
 
