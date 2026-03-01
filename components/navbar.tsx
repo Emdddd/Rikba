@@ -7,9 +7,7 @@ export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const menuRef = useRef<HTMLDivElement>(null)
 
-  /* ===============================
-     LOCK SCROLL + CLICK OUTSIDE
-  =============================== */
+  /* CLOSE OUTSIDE + LOCK SCROLL */
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (
@@ -22,8 +20,6 @@ export function Navbar() {
     }
 
     document.addEventListener("mousedown", handleClickOutside)
-
-    // LOCK SCROLL
     document.body.style.overflow = mobileMenuOpen ? "hidden" : ""
 
     return () => {
@@ -34,23 +30,20 @@ export function Navbar() {
 
   return (
     <>
-      {/* ================= BACKDROP ================= */}
+      {/* BACKDROP */}
       <div
         onClick={() => setMobileMenuOpen(false)}
-        className={`
-          fixed inset-0 z-40
-          transition-all duration-300
-          ${
-            mobileMenuOpen
-              ? "bg-black/30 backdrop-blur-sm opacity-100"
-              : "opacity-0 pointer-events-none"
-          }
-        `}
+        className={`fixed inset-0 z-40 transition-all duration-300 ${
+          mobileMenuOpen
+            ? "bg-black/30 backdrop-blur-sm opacity-100"
+            : "opacity-0 pointer-events-none"
+        }`}
       />
 
       <div ref={menuRef}>
         <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border">
 
+          {/* ===== NAVBAR HEIGHT FIX ===== */}
           <div className="mx-auto max-w-6xl px-5 flex items-center justify-between h-16">
 
             {/* LOGO */}
@@ -62,22 +55,30 @@ export function Navbar() {
             </a>
 
             {/* DESKTOP LINKS */}
-            <div className="hidden md:flex items-center gap-8">
-              <a href="#problem">Why Rikba</a>
-              <a href="#how-it-works">How it works</a>
-              <a href="#faq">FAQ</a>
+            <div className="hidden md:flex items-center gap-8 text-sm">
+              <a href="#problem" className="hover:text-foreground">
+                Why Rikba
+              </a>
+              <a href="#how-it-works" className="hover:text-foreground">
+                How it works
+              </a>
+              <a href="#faq" className="hover:text-foreground">
+                FAQ
+              </a>
             </div>
 
             {/* RIGHT SIDE */}
-            <div className="hidden md:flex flex-col items-center gap-2">
+            <div className="hidden md:flex flex-col items-center gap-1">
+
               <a
                 href="mailto:info@rikba.eu"
-                className="bg-primary text-primary-foreground px-5 py-2.5 rounded-lg font-semibold"
+                className="bg-primary text-primary-foreground px-5 py-2 rounded-lg text-sm font-semibold"
               >
                 Contact us
               </a>
 
               <ThemeToggle />
+
             </div>
 
             {/* HAMBURGER */}
@@ -88,48 +89,37 @@ export function Navbar() {
               <span className="relative w-6 h-5">
 
                 <span
-                  className={`
-                    absolute top-0 w-full h-[2px] bg-foreground
-                    transition-all duration-300
-                    ${mobileMenuOpen ? "rotate-45 top-[9px]" : ""}
-                  `}
+                  className={`absolute top-0 w-full h-[2px] bg-foreground transition-all duration-300 ${
+                    mobileMenuOpen ? "rotate-45 top-[9px]" : ""
+                  }`}
                 />
 
                 <span
-                  className={`
-                    absolute top-[9px] w-full h-[2px] bg-foreground
-                    transition-all duration-300
-                    ${mobileMenuOpen ? "opacity-0" : ""}
-                  `}
+                  className={`absolute top-[9px] w-full h-[2px] bg-foreground transition-all duration-300 ${
+                    mobileMenuOpen ? "opacity-0" : ""
+                  }`}
                 />
 
                 <span
-                  className={`
-                    absolute bottom-0 w-full h-[2px] bg-foreground
-                    transition-all duration-300
-                    ${mobileMenuOpen ? "-rotate-45 bottom-[9px]" : ""}
-                  `}
+                  className={`absolute bottom-0 w-full h-[2px] bg-foreground transition-all duration-300 ${
+                    mobileMenuOpen ? "-rotate-45 bottom-[9px]" : ""
+                  }`}
                 />
 
               </span>
             </button>
+
           </div>
 
-          {/* ================= MOBILE MENU ================= */}
+          {/* MOBILE MENU */}
           <div
-            className={`
-              md:hidden
-              bg-background
-              border-b border-border
-              transition-all duration-300 ease-out
-              ${
-                mobileMenuOpen
-                  ? "translate-y-0 opacity-100"
-                  : "-translate-y-6 opacity-0 pointer-events-none"
-              }
-            `}
+            className={`md:hidden bg-background border-b border-border transition-all duration-300 ${
+              mobileMenuOpen
+                ? "translate-y-0 opacity-100"
+                : "-translate-y-6 opacity-0 pointer-events-none"
+            }`}
           >
-            <div className="px-5 py-8 flex flex-col items-center gap-6">
+            <div className="px-5 py-6 flex flex-col items-center gap-5 text-sm">
 
               <a onClick={()=>setMobileMenuOpen(false)} href="#problem">
                 Why Rikba
