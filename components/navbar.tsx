@@ -26,70 +26,50 @@ export function Navbar() {
         {/* ===== Desktop Nav ===== */}
         <div className="hidden md:flex items-center gap-8">
 
-          <a
-            href="#problem"
-            className="text-muted-foreground hover:text-foreground transition-colors text-sm inline-flex items-center gap-1.5"
-          >
+          <a href="#problem" className="text-muted-foreground hover:text-foreground text-sm">
             Why Rikba
           </a>
 
-          <a
-            href="#how-it-works"
-            className="text-muted-foreground hover:text-foreground transition-colors text-sm inline-flex items-center gap-1.5"
-          >
+          <a href="#how-it-works" className="text-muted-foreground hover:text-foreground text-sm">
             How it works
           </a>
 
-          <a
-            href="#faq"
-            className="text-muted-foreground hover:text-foreground transition-colors text-sm inline-flex items-center gap-1.5"
-          >
+          <a href="#faq" className="text-muted-foreground hover:text-foreground text-sm">
             FAQ
           </a>
 
         </div>
 
-        {/* ===== CTA + THEME ===== */}
-        <div className="hidden md:flex items-center gap-3">
+        {/* ===== RIGHT SIDE STACK ===== */}
+        <div className="hidden md:flex flex-col items-center gap-2">
+
+          {/* CONTACT BUTTON */}
+          <a
+            href="mailto:info@rikba.eu"
+            className="inline-flex items-center justify-center rounded-lg bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition shadow-md shadow-primary/25"
+          >
+            Contact us
+          </a>
 
           {/* THEME SWITCH */}
           <ThemeToggle />
 
-          <a
-            href="#waitlist"
-            className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-colors min-h-[44px] shadow-md shadow-primary/25"
-          >
-            Join the Waitlist
-          </a>
-
         </div>
 
-        {/* ===== Mobile Menu Button ===== */}
+        {/* ===== MOBILE MENU BUTTON ===== */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           className="md:hidden flex items-center justify-center w-11 h-11 rounded-lg text-foreground"
-          aria-label="Toggle menu"
         >
-          {mobileMenuOpen ? (
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <line x1="18" y1="6" x2="6" y2="18" />
-              <line x1="6" y1="6" x2="18" y2="18" />
-            </svg>
-          ) : (
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <line x1="3" y1="12" x2="21" y2="12" />
-              <line x1="3" y1="6" x2="21" y2="6" />
-              <line x1="3" y1="18" x2="21" y2="18" />
-            </svg>
-          )}
+          {mobileMenuOpen ? "✕" : "☰"}
         </button>
 
       </div>
 
-      {/* ===== Mobile Menu ===== */}
+      {/* ===== MOBILE MENU ===== */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-background border-b border-border">
-          <div className="px-5 py-4 flex flex-col gap-4">
+          <div className="px-5 py-6 flex flex-col items-center gap-5">
 
             <a href="#problem" onClick={() => setMobileMenuOpen(false)}>
               Why Rikba
@@ -103,16 +83,16 @@ export function Navbar() {
               FAQ
             </a>
 
-            {/* MOBILE THEME TOGGLE */}
-            <ThemeToggle />
-
+            {/* CONTACT */}
             <a
-              href="#waitlist"
-              onClick={() => setMobileMenuOpen(false)}
-              className="inline-flex items-center justify-center rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground"
+              href="mailto:info@rikba.eu"
+              className="inline-flex items-center justify-center rounded-lg bg-primary px-6 py-3 text-primary-foreground font-semibold"
             >
-              Join the Waitlist
+              Contact us
             </a>
+
+            {/* THEME SWITCH */}
+            <ThemeToggle />
 
           </div>
         </div>
