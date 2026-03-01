@@ -22,7 +22,7 @@ export function Navbar() {
         <div className="mx-auto max-w-6xl px-5 flex items-center justify-between h-16">
 
           {/* LOGO */}
-          <a href="#" className="flex items-center gap-0.5">
+          <a href="#" className="flex items-center gap-0.3">
             <img src="/Logoicon.PNG" className="w-9 h-9 object-contain" />
             <span className="font-bold text-xl">Rikba</span>
           </a>
