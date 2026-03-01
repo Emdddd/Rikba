@@ -8,11 +8,7 @@ export function Navbar() {
 
   /* LOCK SCROLL */
   useEffect(() => {
-    if (mobileMenuOpen) {
-      document.body.style.overflow = "hidden"
-    } else {
-      document.body.style.overflow = "auto"
-    }
+    document.body.style.overflow = mobileMenuOpen ? "hidden" : "auto"
   }, [mobileMenuOpen])
 
   return (
@@ -22,7 +18,7 @@ export function Navbar() {
         <div className="mx-auto max-w-6xl px-5 flex items-center justify-between h-16">
 
           {/* LOGO */}
-          <a href="#" className="flex items-center gap-0.3">
+          <a href="#" className="flex items-center gap-[2px]">
             <img src="/Logoicon.PNG" className="w-9 h-9 object-contain" />
             <span className="font-bold text-xl">Rikba</span>
           </a>
@@ -44,7 +40,6 @@ export function Navbar() {
 
             {/* CONTACT + THEME */}
             <div className="flex items-center gap-3">
-
               <a
                 href="mailto:info@rikba.eu"
                 className="rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground"
@@ -53,27 +48,36 @@ export function Navbar() {
               </a>
 
               <ThemeToggle />
-
             </div>
           </div>
 
-          {/* HAMBURGER BUTTON */}
+          {/* ================= HAMBURGER ================= */}
           <button
             onClick={() => setMobileMenuOpen(prev => !prev)}
             className="md:hidden w-11 h-11 flex items-center justify-center"
+            aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? (
-              <svg width="24" height="24" stroke="currentColor" strokeWidth="2">
-                <line x1="18" y1="6" x2="6" y2="18" />
-                <line x1="6" y1="6" x2="18" y2="18" />
-              </svg>
-            ) : (
-              <svg width="24" height="24" stroke="currentColor" strokeWidth="2">
-                <line x1="3" y1="12" x2="21" y2="12" />
-                <line x1="3" y1="6" x2="21" y2="6" />
-                <line x1="3" y1="18" x2="21" y2="18" />
-              </svg>
-            )}
+            <div className="relative w-6 h-6">
+
+              {/* TOP LINE */}
+              <span
+                className={`absolute left-0 w-full h-[2px] bg-current transition-all duration-300
+                ${mobileMenuOpen ? "rotate-45 top-3" : "top-1"}`}
+              />
+
+              {/* MIDDLE LINE */}
+              <span
+                className={`absolute left-0 w-full h-[2px] bg-current transition-all duration-300
+                ${mobileMenuOpen ? "opacity-0" : "top-3"}`}
+              />
+
+              {/* BOTTOM LINE */}
+              <span
+                className={`absolute left-0 w-full h-[2px] bg-current transition-all duration-300
+                ${mobileMenuOpen ? "-rotate-45 top-3" : "top-5"}`}
+              />
+
+            </div>
           </button>
 
         </div>
@@ -98,27 +102,15 @@ export function Navbar() {
       >
         <div className="px-6 py-6 flex flex-col gap-6 text-center">
 
-          <a
-            href="#problem"
-            onClick={() => setMobileMenuOpen(false)}
-            className="text-lg"
-          >
+          <a href="#problem" onClick={() => setMobileMenuOpen(false)} className="text-lg">
             Why Rikba
           </a>
 
-          <a
-            href="#how-it-works"
-            onClick={() => setMobileMenuOpen(false)}
-            className="text-lg"
-          >
+          <a href="#how-it-works" onClick={() => setMobileMenuOpen(false)} className="text-lg">
             How it works
           </a>
 
-          <a
-            href="#faq"
-            onClick={() => setMobileMenuOpen(false)}
-            className="text-lg"
-          >
+          <a href="#faq" onClick={() => setMobileMenuOpen(false)} className="text-lg">
             FAQ
           </a>
 
