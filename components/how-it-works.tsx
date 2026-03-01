@@ -89,7 +89,7 @@ export function HowItWorks() {
                       direction="y"
                       className="absolute -right-16 top-1/2 -translate-y-1/2 hidden md:flex"
                     >
-                      <div className="flex items-center gap-1 rounded-lg bg-card border border-border shadow-md px-2 py-1">
+                      <div className="flex items-center gap-0 rounded-lg bg-card border border-border shadow-md px-2 py-1">
                         <img
                           src="/Logoicon.PNG"
                           alt="Rikba"
