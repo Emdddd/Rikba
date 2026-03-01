@@ -8,126 +8,134 @@ export function Navbar() {
 
   /* LOCK SCROLL */
   useEffect(() => {
-    document.body.style.overflow = mobileMenuOpen ? "hidden" : ""
-    return () => {
-      document.body.style.overflow = ""
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = "auto"
     }
   }, [mobileMenuOpen])
 
   return (
     <>
-      {/* ================= BACKDROP ================= */}
-      <div
-        onClick={() => setMobileMenuOpen(false)}
-        className={`
-          fixed inset-0 z-40
-          transition-all duration-300 ease-out
-          ${
-            mobileMenuOpen
-              ? "bg-black/30 backdrop-blur-sm opacity-100"
-              : "opacity-0 pointer-events-none"
-          }
-        `}
-      />
-
       {/* ================= NAVBAR ================= */}
-      <nav className="fixed top-0 left-0 right-0 z-50 h-16 bg-background/80 backdrop-blur-xl border-b border-border">
-        <div className="mx-auto max-w-6xl px-5 flex items-center justify-between h-full">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border">
+        <div className="mx-auto max-w-6xl px-5 flex items-center justify-between h-16">
 
           {/* LOGO */}
           <a href="#" className="flex items-center gap-2">
-            <img src="/Logoicon.PNG" className="w-9 h-9" />
-            <span className="font-bold text-xl text-foreground">Rikba</span>
+            <img src="/Logoicon.PNG" className="w-9 h-9 object-contain" />
+            <span className="font-bold text-xl">Rikba</span>
           </a>
 
-          {/* DESKTOP LINKS */}
-          <div className="hidden md:flex items-center gap-8 text-sm">
-            <a href="#problem">Why Rikba</a>
-            <a href="#how-it-works">How it works</a>
-            <a href="#faq">FAQ</a>
+          {/* DESKTOP NAV */}
+          <div className="hidden md:flex items-center gap-8">
+
+            <a href="#problem" className="text-sm text-muted-foreground hover:text-foreground">
+              Why Rikba
+            </a>
+
+            <a href="#how-it-works" className="text-sm text-muted-foreground hover:text-foreground">
+              How it works
+            </a>
+
+            <a href="#faq" className="text-sm text-muted-foreground hover:text-foreground">
+              FAQ
+            </a>
+
+            {/* CONTACT + THEME */}
+            <div className="flex items-center gap-3">
+
+              <a
+                href="mailto:info@rikba.eu"
+                className="rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground"
+              >
+                Contact us
+              </a>
+
+              <ThemeToggle />
+
+            </div>
           </div>
 
-          {/* RIGHT SIDE DESKTOP */}
-          <div className="hidden md:flex flex-col items-center gap-1">
+          {/* HAMBURGER BUTTON */}
+          <button
+            onClick={() => setMobileMenuOpen(prev => !prev)}
+            className="md:hidden w-11 h-11 flex items-center justify-center"
+          >
+            {mobileMenuOpen ? (
+              <svg width="24" height="24" stroke="currentColor" strokeWidth="2">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            ) : (
+              <svg width="24" height="24" stroke="currentColor" strokeWidth="2">
+                <line x1="3" y1="12" x2="21" y2="12" />
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <line x1="3" y1="18" x2="21" y2="18" />
+              </svg>
+            )}
+          </button>
+
+        </div>
+      </nav>
+
+      {/* ================= BACKDROP ================= */}
+      <div
+        onClick={() => setMobileMenuOpen(false)}
+        className={`fixed inset-0 z-40 bg-black/40 backdrop-blur-sm transition-opacity duration-300 md:hidden
+        ${mobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
+      />
+
+      {/* ================= MOBILE MENU ================= */}
+      <div
+        className={`fixed top-16 left-0 right-0 z-50 md:hidden
+        bg-background border-b border-border
+        transition-all duration-300 ease-out
+        ${mobileMenuOpen
+          ? "opacity-100 translate-y-0"
+          : "opacity-0 -translate-y-6 pointer-events-none"
+        }`}
+      >
+        <div className="px-6 py-6 flex flex-col gap-6 text-center">
+
+          <a
+            href="#problem"
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-lg"
+          >
+            Why Rikba
+          </a>
+
+          <a
+            href="#how-it-works"
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-lg"
+          >
+            How it works
+          </a>
+
+          <a
+            href="#faq"
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-lg"
+          >
+            FAQ
+          </a>
+
+          {/* CONTACT + THEME */}
+          <div className="flex justify-center items-center gap-3 pt-4">
+
             <a
               href="mailto:info@rikba.eu"
-              className="bg-primary text-primary-foreground px-5 py-2 rounded-lg text-sm font-semibold"
+              onClick={() => setMobileMenuOpen(false)}
+              className="rounded-lg bg-primary px-6 py-3 font-semibold text-primary-foreground"
             >
               Contact us
             </a>
 
-            <ThemeToggle />
+            <ThemeToggle onClick={() => setMobileMenuOpen(false)} />
+
           </div>
-
-          {/* ================= HAMBURGER ================= */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden relative w-11 h-11 flex items-center justify-center"
-          >
-            <span className="relative w-6 h-5">
-
-              {/* TOP */}
-              <span
-                className={`absolute top-0 w-full h-[2px] bg-foreground transition-all duration-300 ${
-                  mobileMenuOpen ? "rotate-45 top-[9px]" : ""
-                }`}
-              />
-
-              {/* MIDDLE */}
-              <span
-                className={`absolute top-[9px] w-full h-[2px] bg-foreground transition-all duration-300 ${
-                  mobileMenuOpen ? "opacity-0" : ""
-                }`}
-              />
-
-              {/* BOTTOM */}
-              <span
-                className={`absolute bottom-0 w-full h-[2px] bg-foreground transition-all duration-300 ${
-                  mobileMenuOpen ? "-rotate-45 bottom-[9px]" : ""
-                }`}
-              />
-
-            </span>
-          </button>
-        </div>
-      </nav>
-
-      {/* ================= MOBILE MENU ================= */}
-      <div
-        className={`
-          fixed top-16 left-0 right-0 z-50
-          md:hidden
-          bg-background border-b border-border
-          transition-all duration-300 ease-out
-          ${
-            mobileMenuOpen
-              ? "translate-y-0 opacity-100"
-              : "-translate-y-6 opacity-0 pointer-events-none"
-          }
-        `}
-      >
-        <div className="px-5 py-8 flex flex-col items-center gap-6 text-sm">
-
-          <a href="#problem" onClick={() => setMobileMenuOpen(false)}>
-            Why Rikba
-          </a>
-
-          <a href="#how-it-works" onClick={() => setMobileMenuOpen(false)}>
-            How it works
-          </a>
-
-          <a href="#faq" onClick={() => setMobileMenuOpen(false)}>
-            FAQ
-          </a>
-
-          <a
-            href="mailto:info@rikba.eu"
-            className="bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold"
-          >
-            Contact us
-          </a>
-
-          <ThemeToggle />
 
         </div>
       </div>
