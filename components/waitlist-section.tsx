@@ -121,7 +121,7 @@ export function WaitlistSection() {
       {showToast && (
         <div className="fixed inset-0 flex items-center justify-center pointer-events-none z-50">
           <div className="bg-primary text-primary-foreground px-8 py-4 rounded-2xl shadow-2xl text-lg font-semibold animate-fade-in">
-            Received 💙
+            Susccefly recevied
           </div>
         </div>
       )}
