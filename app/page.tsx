@@ -7,7 +7,6 @@ import { ComparisonSection } from "@/components/comparison-section"
 import { HowItWorks } from "@/components/how-it-works"
 import { BuiltForMalta } from "@/components/built-for-malta"
 import { Footer } from "@/components/footer"
-import ThemeToggle from "@/components/theme-toggle"
 
 export default function Page() {
   return (
@@ -33,11 +32,6 @@ export default function Page() {
 
       {/* ===== FOOTER ===== */}
       <Footer />
-
-      {/* ===== THEME TOGGLE (BOTTOM) ===== */}
-      <div className="flex justify-center pb-16 pt-6">
-        <ThemeToggle />
-      </div>
 
     </main>
   )
