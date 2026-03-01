@@ -1,32 +1,15 @@
 "use client"
 
-import { useState, useRef, useEffect } from "react"
+import { useState, useEffect } from "react"
 import ThemeToggle from "@/components/theme-toggle"
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const menuRef = useRef<HTMLDivElement>(null)
 
-  /* ===============================
-     CLOSE OUTSIDE + LOCK SCROLL
-  =============================== */
+  /* LOCK SCROLL */
   useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (
-        mobileMenuOpen &&
-        menuRef.current &&
-        !menuRef.current.contains(event.target as Node)
-      ) {
-        setMobileMenuOpen(false)
-      }
-    }
-
-    document.addEventListener("mousedown", handleClickOutside)
-
     document.body.style.overflow = mobileMenuOpen ? "hidden" : ""
-
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside)
       document.body.style.overflow = ""
     }
   }, [mobileMenuOpen])
@@ -36,26 +19,25 @@ export function Navbar() {
       {/* ================= BACKDROP ================= */}
       <div
         onClick={() => setMobileMenuOpen(false)}
-        className={`fixed inset-0 z-40 transition-all duration-300 ${
-          mobileMenuOpen
-            ? "bg-black/30 backdrop-blur-sm opacity-100"
-            : "opacity-0 pointer-events-none"
-        }`}
+        className={`
+          fixed inset-0 z-40
+          transition-all duration-300 ease-out
+          ${
+            mobileMenuOpen
+              ? "bg-black/30 backdrop-blur-sm opacity-100"
+              : "opacity-0 pointer-events-none"
+          }
+        `}
       />
 
       {/* ================= NAVBAR ================= */}
-      <nav
-        ref={menuRef}
-        className="fixed top-0 left-0 right-0 z-50 h-16 bg-background/80 backdrop-blur-xl border-b border-border"
-      >
+      <nav className="fixed top-0 left-0 right-0 z-50 h-16 bg-background/80 backdrop-blur-xl border-b border-border">
         <div className="mx-auto max-w-6xl px-5 flex items-center justify-between h-full">
 
           {/* LOGO */}
           <a href="#" className="flex items-center gap-2">
             <img src="/Logoicon.PNG" className="w-9 h-9" />
-            <span className="font-bold text-xl text-foreground">
-              Rikba
-            </span>
+            <span className="font-bold text-xl text-foreground">Rikba</span>
           </a>
 
           {/* DESKTOP LINKS */}
@@ -77,25 +59,28 @@ export function Navbar() {
             <ThemeToggle />
           </div>
 
-          {/* ===== HAMBURGER ANIMATION ===== */}
+          {/* ================= HAMBURGER ================= */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden relative w-11 h-11 flex items-center justify-center"
           >
             <span className="relative w-6 h-5">
 
+              {/* TOP */}
               <span
                 className={`absolute top-0 w-full h-[2px] bg-foreground transition-all duration-300 ${
                   mobileMenuOpen ? "rotate-45 top-[9px]" : ""
                 }`}
               />
 
+              {/* MIDDLE */}
               <span
                 className={`absolute top-[9px] w-full h-[2px] bg-foreground transition-all duration-300 ${
                   mobileMenuOpen ? "opacity-0" : ""
                 }`}
               />
 
+              {/* BOTTOM */}
               <span
                 className={`absolute bottom-0 w-full h-[2px] bg-foreground transition-all duration-300 ${
                   mobileMenuOpen ? "-rotate-45 bottom-[9px]" : ""
@@ -107,13 +92,13 @@ export function Navbar() {
         </div>
       </nav>
 
-      {/* ================= MOBILE MENU (SEPARATED) ================= */}
+      {/* ================= MOBILE MENU ================= */}
       <div
         className={`
-          fixed top-16 left-0 right-0 z-40
+          fixed top-16 left-0 right-0 z-50
           md:hidden
           bg-background border-b border-border
-          transition-all duration-300
+          transition-all duration-300 ease-out
           ${
             mobileMenuOpen
               ? "translate-y-0 opacity-100"
@@ -123,15 +108,15 @@ export function Navbar() {
       >
         <div className="px-5 py-8 flex flex-col items-center gap-6 text-sm">
 
-          <a onClick={()=>setMobileMenuOpen(false)} href="#problem">
+          <a href="#problem" onClick={() => setMobileMenuOpen(false)}>
             Why Rikba
           </a>
 
-          <a onClick={()=>setMobileMenuOpen(false)} href="#how-it-works">
+          <a href="#how-it-works" onClick={() => setMobileMenuOpen(false)}>
             How it works
           </a>
 
-          <a onClick={()=>setMobileMenuOpen(false)} href="#faq">
+          <a href="#faq" onClick={() => setMobileMenuOpen(false)}>
             FAQ
           </a>
 
