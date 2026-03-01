@@ -9,14 +9,37 @@
 
 :root {
 
+  /* LIGHT MODE DEFAULT */
+
+  --background: oklch(0.98 0.01 260);
+  --foreground: oklch(0.18 0.02 260);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.02 260);
+
+  --primary: oklch(0.62 0.22 260);
+  --primary-foreground: oklch(1 0 0);
+
+  --secondary: oklch(0.94 0.01 260);
+  --secondary-foreground: oklch(0.25 0.02 260);
+
+  --muted: oklch(0.95 0.01 260);
+  --muted-foreground: oklch(0.45 0.02 260);
+
+  --border: oklch(0.90 0.01 260);
+
+  --radius: 0.75rem;
+}
+
+/* DARK MODE */
+
+.dark {
+
   --background: oklch(0.13 0.01 260);
   --foreground: oklch(0.97 0 0);
 
   --card: oklch(0.17 0.01 260);
   --card-foreground: oklch(0.97 0 0);
-
-  --primary: oklch(0.62 0.22 260);
-  --primary-foreground: oklch(0.99 0 0);
 
   --secondary: oklch(0.22 0.015 260);
   --secondary-foreground: oklch(0.92 0 0);
@@ -25,8 +48,6 @@
   --muted-foreground: oklch(0.65 0.02 260);
 
   --border: oklch(0.28 0.02 260);
-
-  --radius: 0.75rem;
 }
 
 /* ================================================= */
@@ -107,7 +128,7 @@ html {
 }
 
 /* ================================================= */
-/* MARQUEE (RIGHT → LEFT LOOP) */
+/* MARQUEE */
 /* ================================================= */
 
 @keyframes marquee {
@@ -191,8 +212,7 @@ html {
 }
 
 /* ================================================= */
-/* ⭐ COMMISSION BARS (FINAL FIX) */
-/* يبدأ من الشمال → النقص يمين */
+/* COMMISSION BARS */
 /* ================================================= */
 
 @keyframes bar-fill-75 {
