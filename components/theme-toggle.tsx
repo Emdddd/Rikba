@@ -7,9 +7,7 @@ export default function ThemeToggle() {
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
 
-  useEffect(() => {
-    setMounted(true)
-  }, [])
+  useEffect(() => setMounted(true), [])
 
   if (!mounted) return null
 
@@ -18,9 +16,19 @@ export default function ThemeToggle() {
       onClick={() =>
         setTheme(theme === "dark" ? "light" : "dark")
       }
-      className="fixed bottom-6 right-6 z-50 rounded-xl border border-border bg-card px-4 py-3 shadow-lg hover:scale-105 transition"
+      className="
+        h-10
+        px-2
+        flex items-center justify-center
+        rounded-lg
+        border border-border
+        bg-card
+        hover:bg-muted
+        transition
+      "
+      aria-label="Toggle theme"
     >
-      {theme === "dark" ? "☀️ Light" : "🌙 Dark"}
+      {theme === "dark" ? "🌙" : "☀️"}
     </button>
   )
 }
