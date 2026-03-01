@@ -62,21 +62,21 @@ export function Navbar() {
               {/* TOP LINE */}
               <span
                 className={`absolute left-0 w-full h-[2px] bg-current
-                transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]
+                transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]
                 ${mobileMenuOpen ? "rotate-45 top-3" : "top-1"}`}
               />
 
               {/* MIDDLE LINE */}
               <span
                 className={`absolute left-0 w-full h-[2px] bg-current
-                transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]
+                transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]
                 ${mobileMenuOpen ? "opacity-0" : "top-3"}`}
               />
 
               {/* BOTTOM LINE */}
               <span
                 className={`absolute left-0 w-full h-[2px] bg-current
-                transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]
+                transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]
                 ${mobileMenuOpen ? "-rotate-45 top-3" : "top-5"}`}
               />
 
@@ -96,11 +96,12 @@ export function Navbar() {
       {/* ================= MOBILE MENU ================= */}
       <div
         className={`fixed top-16 left-0 right-0 z-50 md:hidden
-        bg-background border-b border-border
+        bg-background/80 backdrop-blur-xl border-b border-border
         transition-all duration-300 ease-out
-        ${mobileMenuOpen
-          ? "opacity-100 translate-y-0"
-          : "opacity-0 -translate-y-6 pointer-events-none"
+        ${
+          mobileMenuOpen
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 -translate-y-6 pointer-events-none"
         }`}
       >
         <div className="px-6 py-6 flex flex-col gap-6 text-center">
