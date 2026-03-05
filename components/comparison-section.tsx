@@ -74,14 +74,13 @@ export function ComparisonSection() {
                 <ComparisonRow icon={<CrossIcon />} label="Driver experience" value="Squeezed, overworked" negative />
               </div>
 
-              {/* ✅ Commission bar 80% */}
+              {/* Commission bar */}
               <div className="mt-8 pt-6 border-t border-border">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-sm text-muted-foreground">Driver keeps</span>
                   <span className="text-sm font-bold text-muted-foreground">80%</span>
                 </div>
 
-                {/* ✅ FIXED */}
                 <div className="h-3 rounded-full bg-muted overflow-hidden">
                   <div className="h-full rounded-full bg-muted-foreground/25 animate-bar-fill-75" />
                 </div>
@@ -101,8 +100,14 @@ export function ComparisonSection() {
 
               {/* Header */}
               <div className="relative flex items-center gap-3 mb-8">
+
+                {/* 🔵 Rikba Logo */}
                 <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center shadow-lg shadow-primary/30">
-                  <span className="text-primary-foreground font-bold text-sm">R</span>
+                  <img
+                    src="/Logoicon.PNG"
+                    alt="Rikba"
+                    className="w-6 h-6 object-contain"
+                  />
                 </div>
 
                 <span className="font-bold text-card-foreground text-xl">Rikba</span>
@@ -123,14 +128,13 @@ export function ComparisonSection() {
                 <ComparisonRow icon={<CheckIcon />} label="Driver experience" value="Happy drivers, better rides" positive />
               </div>
 
-              {/* ✅ Commission bar 92% */}
+              {/* Commission bar */}
               <div className="mt-8 pt-6 border-t border-primary/20">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-sm text-muted-foreground">Driver keeps</span>
                   <span className="text-sm font-bold text-primary">92%</span>
                 </div>
 
-                {/* ✅ FIXED */}
                 <div className="h-3 rounded-full bg-muted overflow-hidden">
                   <div className="h-full rounded-full bg-primary animate-bar-fill-90" />
                 </div>
