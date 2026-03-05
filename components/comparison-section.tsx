@@ -101,14 +101,11 @@ export function ComparisonSection() {
               {/* Header */}
               <div className="relative flex items-center gap-3 mb-8">
 
-                {/* 🔵 Rikba Logo */}
-                <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center shadow-lg shadow-primary/30">
-                  <img
-                    src="/Logoicon.PNG"
-                    alt="Rikba"
-                    className="w-6 h-6 object-contain"
-                  />
-                </div>
+                <img
+                  src="/Logoicon.PNG"
+                  alt="Rikba"
+                  className="w-10 h-10 object-contain"
+                />
 
                 <span className="font-bold text-card-foreground text-xl">Rikba</span>
 
