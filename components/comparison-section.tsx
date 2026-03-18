@@ -21,7 +21,7 @@ export function ComparisonSection() {
 
 
         {/* Comparison */}
-        <div className="mt-14 grid gap-0 md:grid-cols-2 max-w-4xl mx-auto relative">
+        <div className="mt-14 grid gap-0 md:grid-cols-1 max-w-4xl mx-auto relative">
 
           {/* EUR badge */}
           <FloatingBadge
@@ -49,51 +49,9 @@ export function ComparisonSection() {
           </FloatingBadge>
 
 
-          {/* ================= OTHER APP ================= */}
-          <AnimateOnScroll animation="fade-right" delay={100}>
-            <div className="rounded-t-2xl md:rounded-l-2xl md:rounded-tr-none border border-border bg-card p-7 md:p-9 relative h-full">
-
-              {/* Header */}
-              <div className="flex items-center gap-3 mb-8">
-                <div className="w-10 h-10 rounded-xl bg-muted flex items-center justify-center">
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2">
-                    <circle cx="10" cy="10" r="8" />
-                    <line x1="6" y1="10" x2="14" y2="10" />
-                  </svg>
-                </div>
-                <span className="font-bold text-card-foreground text-xl">Other Apps</span>
-              </div>
-
-              {/* Rows */}
-              <div className="space-y-5">
-                <ComparisonRow icon={<CrossIcon />} label="Pricing" value="High fares with surge pricing" negative />
-                <ComparisonRow icon={<CrossIcon />} label="Driver commission" value="Drivers keep only ~80%" negative />
-                <ComparisonRow icon={<CrossIcon />} label="Built for" value="Global template, not Malta" negative />
-                <ComparisonRow icon={<CrossIcon />} label="Money stays" value="Profits go overseas" negative />
-                <ComparisonRow icon={<CrossIcon />} label="Transparency" value="Hidden fees after the ride" negative />
-                <ComparisonRow icon={<CrossIcon />} label="Driver experience" value="Squeezed, overworked" negative />
-              </div>
-
-              {/* Commission bar */}
-              <div className="mt-8 pt-6 border-t border-border">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm text-muted-foreground">Driver keeps</span>
-                  <span className="text-sm font-bold text-muted-foreground">80%</span>
-                </div>
-
-                <div className="h-3 rounded-full bg-muted overflow-hidden">
-                  <div className="h-full rounded-full bg-muted-foreground/25 animate-bar-fill-75" />
-                </div>
-              </div>
-
-            </div>
-          </AnimateOnScroll>
-
-
-
           {/* ================= RIKBA ================= */}
-          <AnimateOnScroll animation="fade-left" delay={200}>
-            <div className="rounded-b-2xl md:rounded-r-2xl md:rounded-bl-none border border-primary/40 bg-primary/5 p-7 md:p-9 relative overflow-hidden h-full animate-glow-pulse">
+          <AnimateOnScroll animation="fade-up" delay={200}>
+            <div className="rounded-2xl border border-primary/40 bg-primary/5 p-7 md:p-9 relative overflow-hidden h-full animate-glow-pulse">
 
               <div className="absolute top-0 right-0 w-40 h-40 bg-primary/10 rounded-full blur-[80px]" />
               <div className="absolute bottom-0 left-0 w-32 h-32 bg-primary/8 rounded-full blur-[60px]" />
@@ -182,15 +140,6 @@ function CheckIcon() {
   return (
     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2.5">
       <polyline points="10.5 4.5 5.75 9.5 3.5 7.25" />
-    </svg>
-  )
-}
-
-function CrossIcon() {
-  return (
-    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2.5">
-      <line x1="10" y1="4" x2="4" y2="10" />
-      <line x1="4" y1="4" x2="10" y2="10" />
     </svg>
   )
 }
