@@ -15,7 +15,7 @@ export function ComparisonSection() {
           </h2>
 
           <p className="mx-auto mt-4 max-w-lg text-center text-muted-foreground text-lg leading-relaxed">
-            See how Rikba stacks up against other ride-hailing apps.
+          
           </p>
         </AnimateOnScroll>
 
