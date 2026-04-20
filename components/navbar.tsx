@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { useState, useEffect } from "react"
 import ThemeToggle from "@/components/theme-toggle"
 import { useTheme } from "next-themes"
@@ -27,33 +28,37 @@ export function Navbar() {
         <div className="mx-auto max-w-6xl px-5 flex items-center justify-between h-16">
 
           {/* LOGO */}
-          <a href="#" className="flex items-center gap-[2px]">
+          <Link href="/" className="flex items-center gap-[2px]">
             <img src="/Logoicon.PNG" className="w-9 h-9 object-contain" />
             <span className="font-bold text-xl">Rikba</span>
-          </a>
+          </Link>
 
           {/* DESKTOP NAV */}
           <div className="hidden md:flex items-center gap-8">
 
-            <a href="#problem" className="text-sm text-muted-foreground hover:text-foreground">
+            <a href="/#problem" className="text-sm text-muted-foreground hover:text-foreground">
               Why Rikba
             </a>
 
-            <a href="#how-it-works" className="text-sm text-muted-foreground hover:text-foreground">
+            <a href="/#how-it-works" className="text-sm text-muted-foreground hover:text-foreground">
               How it works
             </a>
 
-            <a href="#faq" className="text-sm text-muted-foreground hover:text-foreground">
+            <a href="/#faq" className="text-sm text-muted-foreground hover:text-foreground">
               FAQ
             </a>
 
+            <Link href="/legal" className="text-sm text-muted-foreground hover:text-foreground">
+              Legal
+            </Link>
+
             <div className="flex items-center gap-3">
-              <a
-                href="mailto:info@rikba.eu"
+              <Link
+                href="/legal/contact"
                 className="rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground"
               >
                 Contact us
-              </a>
+              </Link>
 
               <ThemeToggle />
             </div>
@@ -112,26 +117,30 @@ export function Navbar() {
       >
         <div className="px-6 py-6 flex flex-col gap-6 text-center">
 
-          <a href="#problem" onClick={() => setMobileMenuOpen(false)} className="text-lg">
+          <a href="/#problem" onClick={() => setMobileMenuOpen(false)} className="text-lg">
             Why Rikba
           </a>
 
-          <a href="#how-it-works" onClick={() => setMobileMenuOpen(false)} className="text-lg">
+          <a href="/#how-it-works" onClick={() => setMobileMenuOpen(false)} className="text-lg">
             How it works
           </a>
 
-          <a href="#faq" onClick={() => setMobileMenuOpen(false)} className="text-lg">
+          <a href="/#faq" onClick={() => setMobileMenuOpen(false)} className="text-lg">
             FAQ
           </a>
 
+          <Link href="/legal" onClick={() => setMobileMenuOpen(false)} className="text-lg">
+            Legal
+          </Link>
+
           <div className="flex justify-center items-center gap-3 pt-4">
 
-            <a
-              href="mailto:info@rikba.eu"
+            <Link
+              href="/legal/contact"
               className="rounded-lg bg-primary px-6 py-3 font-semibold text-primary-foreground"
             >
               Contact us
-            </a>
+            </Link>
 
             <ThemeToggle />
 
