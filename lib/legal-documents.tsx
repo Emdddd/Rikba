@@ -4,7 +4,7 @@ import { LegalCallout, LegalList, LegalSection, type LegalTocItem } from "@/comp
 const EFFECTIVE_DATE = "20 April 2026"
 const COMPANY_NAME = "RIKBA Rides Ltd."
 const COMPANY_ADDRESS = "23, Triq Nofs in-Nhar, Valletta, VLT 1102, Malta"
-const COMPANY_EMAIL = "info@rikba.com"
+const COMPANY_EMAIL = "info@rikba.eu"
 
 export type LegalSlug =
   | "terms-for-riders"
