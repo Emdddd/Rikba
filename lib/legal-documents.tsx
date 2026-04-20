@@ -251,10 +251,11 @@ const legalDocuments: LegalDocument[] = [
     toc: [
       { id: "privacy-overview", number: "1", title: "Overview" },
       { id: "privacy-data", number: "2", title: "Personal data we collect" },
-      { id: "privacy-use", number: "3", title: "How we use personal data" },
-      { id: "privacy-sharing", number: "4", title: "Sharing and retention" },
-      { id: "privacy-rights", number: "5", title: "Your rights" },
-      { id: "privacy-contact", number: "6", title: "Contact" },
+      { id: "camera-access", number: "3", title: "Camera Access" },
+      { id: "privacy-use", number: "4", title: "How we use personal data" },
+      { id: "privacy-sharing", number: "5", title: "Sharing and retention" },
+      { id: "privacy-rights", number: "6", title: "Your rights" },
+      { id: "privacy-contact", number: "7", title: "Contact" },
     ],
     body: (
       <>
@@ -276,7 +277,19 @@ const legalDocuments: LegalDocument[] = [
           />
         </LegalSection>
 
-        <LegalSection id="privacy-use" number="3" title="How we use personal data">
+        <LegalSection id="camera-access" number="3" title="Camera Access">
+          <p>
+            Rikba may request access to your device camera to allow you to take photos related to ride activity,
+            such as photos of a vehicle when required for support, verification, safety, or service-related reporting.
+          </p>
+          <p>
+            Camera access is only used when you choose to take a photo through the app. If a photo is uploaded or
+            submitted through Rikba, it may be processed and stored as part of the related support, safety,
+            verification, or operational record in accordance with this Privacy Policy.
+          </p>
+        </LegalSection>
+
+        <LegalSection id="privacy-use" number="4" title="How we use personal data">
           <LegalList
             items={[
               "To operate and improve Rikba services.",
@@ -287,7 +300,7 @@ const legalDocuments: LegalDocument[] = [
           />
         </LegalSection>
 
-        <LegalSection id="privacy-sharing" number="4" title="Sharing and retention">
+        <LegalSection id="privacy-sharing" number="5" title="Sharing and retention">
           <p>
             Rikba may share personal data with payment providers, communications vendors, infrastructure vendors,
             legal advisors, or authorities where necessary and lawful.
@@ -298,7 +311,7 @@ const legalDocuments: LegalDocument[] = [
           </p>
         </LegalSection>
 
-        <LegalSection id="privacy-rights" number="5" title="Your rights">
+        <LegalSection id="privacy-rights" number="6" title="Your rights">
           <p>
             Subject to applicable law, you may have the right to request access, correction, deletion,
             restriction, objection, or data portability in relation to your personal data.
@@ -310,7 +323,7 @@ const legalDocuments: LegalDocument[] = [
           </LegalCallout>
         </LegalSection>
 
-        <LegalSection id="privacy-contact" number="6" title="Contact">
+        <LegalSection id="privacy-contact" number="7" title="Contact">
           <ContactDetails />
         </LegalSection>
       </>
