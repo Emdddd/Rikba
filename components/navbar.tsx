@@ -48,6 +48,10 @@ export function Navbar() {
               FAQ
             </a>
 
+            <Link href="/blog" className="text-sm text-muted-foreground hover:text-foreground">
+              Blog
+            </Link>
+
             <Link href="/legal" className="text-sm text-muted-foreground hover:text-foreground">
               Legal
             </Link>
@@ -128,6 +132,10 @@ export function Navbar() {
           <a href="/#faq" onClick={() => setMobileMenuOpen(false)} className="text-lg">
             FAQ
           </a>
+
+          <Link href="/blog" onClick={() => setMobileMenuOpen(false)} className="text-lg">
+            Blog
+          </Link>
 
           <Link href="/legal" onClick={() => setMobileMenuOpen(false)} className="text-lg">
             Legal
