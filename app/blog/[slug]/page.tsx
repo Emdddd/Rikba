@@ -7,12 +7,17 @@ import { Footer } from "@/components/footer"
 import { Navbar } from "@/components/navbar"
 import { formatBlogDate, getPublishedBlogPost, getPublishedBlogPosts } from "@/lib/blog-posts"
 
+type BlogDetailPageProps = {
+  params: Promise<{ slug: string }>
+}
+
 export function generateStaticParams() {
   return getPublishedBlogPosts().map((post) => ({ slug: post.slug }))
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const post = getPublishedBlogPost(params.slug)
+export async function generateMetadata({ params }: BlogDetailPageProps): Promise<Metadata> {
+  const { slug } = await params
+  const post = getPublishedBlogPost(slug)
 
   if (!post) {
     return {
@@ -26,8 +31,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   }
 }
 
-export default function BlogDetailPage({ params }: { params: { slug: string } }) {
-  const post = getPublishedBlogPost(params.slug)
+export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
+  const { slug } = await params
+  const post = getPublishedBlogPost(slug)
 
   if (!post) {
     notFound()
