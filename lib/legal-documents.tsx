@@ -193,7 +193,7 @@ const riderTermsBody = (
         additional information where this is reasonably necessary for fraud prevention, safety, sanctions
         screening, dispute handling, or legal compliance.
       </p>
-      <p>An account is personal to the registered Rider. Account sharing, impersonation, resale of account access, and unauthorized use are prohibited.</p>
+      <p>An account is personal to the registered Rider. Account sharing, impersonation, resale of account access, and unauthorised use are prohibited.</p>
     </LegalSection>
 
     <LegalSection id="booking-dispatch" number="4" title="Booking, dispatch, and acceptance">
@@ -353,8 +353,8 @@ const riderTermsBody = (
       <p>If the Rider qualifies as a consumer under applicable law, mandatory consumer rights shall prevail over any conflicting provisions in these Terms.</p>
       <p>
         Riders may also use the European Commission&apos;s Online Dispute Resolution (ODR) platform, available at{" "}
-        <a href="https://ec.europa.eu/consumers/odr" className="font-semibold text-foreground hover:text-primary">
-          https://ec.europa.eu/consumers/odr
+        <a href="https://ec.europa.eu/consumers/od" className="font-semibold text-foreground hover:text-primary">
+          https://ec.europa.eu/consumers/od
         </a>
         .
       </p>
@@ -510,71 +510,22 @@ const privacyPolicyBody = (
     </LegalSection>
 
     <LegalSection id="controller-details" number="2" title="Controller details">
-      <p>RIKBA Rides Ltd. is the controller of personal data processed for the core operation of the platform, except where a separate notice states otherwise.</p>
-      <p>For privacy-related matters, users may contact RIKBA at {COMPANY_EMAIL}. Where required under applicable law, a data protection contact or representative may be appointed.</p>
+      <p>RIKBA Rides Ltd. is the controller of personal data processed for the core operation of the platform, except where a separate notice states otherwise. Contact: {COMPANY_EMAIL}. For privacy-related matters, users may contact RIKBA at {COMPANY_EMAIL}. Where required under applicable law, a data protection contact or representative may be appointed.</p>
       <ContactDetails />
     </LegalSection>
 
     <LegalSection id="categories-of-data" number="3" title="Categories of personal data">
-      <p>Depending on how you use RIKBA, we may collect the following categories of personal data:</p>
-
-      <div className="space-y-5">
-        <div>
-          <h3 className="text-lg font-semibold text-foreground">a. Identity data</h3>
-          <div className="mt-3">
-            <LegalList items={["full name;", "date of birth where required;", "profile information;", "account identifiers;", "verification-related information."]} />
-          </div>
-        </div>
-
-        <div>
-          <h3 className="text-lg font-semibold text-foreground">b. Contact data</h3>
-          <div className="mt-3">
-            <LegalList items={["phone number;", "email address;", "support contact details."]} />
-          </div>
-        </div>
-
-        <div>
-          <h3 className="text-lg font-semibold text-foreground">c. Location and trip data</h3>
-          <div className="mt-3">
-            <LegalList items={["pickup and drop-off information;", "GPS data during active use;", "route information;", "timestamps;", "ride history."]} />
-          </div>
-        </div>
-
-        <div>
-          <h3 className="text-lg font-semibold text-foreground">d. Device and technical data</h3>
-          <div className="mt-3">
-            <LegalList items={["IP address;", "app version;", "device identifiers;", "browser details;", "operating system;", "cookies;", "logs;", "diagnostics."]} />
-          </div>
-        </div>
-
-        <div>
-          <h3 className="text-lg font-semibold text-foreground">e. Payment and financial data</h3>
-          <div className="mt-3">
-            <LegalList items={["payment token data;", "transaction metadata;", "fare records;", "refund records;", "chargeback records."]} />
-          </div>
-        </div>
-
-        <div>
-          <h3 className="text-lg font-semibold text-foreground">f. Compliance and safety data</h3>
-          <div className="mt-3">
-            <LegalList items={["complaints;", "incident reports;", "ratings;", "fraud indicators;", "verification results;", "communications records."]} />
-          </div>
-        </div>
-
-        <div>
-          <h3 className="text-lg font-semibold text-foreground">g. Photographs, images, document scans, and evidence</h3>
-          <div className="mt-3">
-            <LegalList
-              items={[
-                "photographs or images uploaded through the app, including driver profile photos and vehicle photos;",
-                "identity and onboarding document images, including driving licence, LPTV, permit, authorisation, insurance, vehicle registration, roadworthiness, police conduct, fit-and-proper, and similar verification documents;",
-                "driver and vehicle verification documents and proof of RIKBA sticker or branding compliance;",
-                "incident, complaint, safety, support, refund, damage, lost-property, or dispute evidence submitted through the platform.",
-              ]}
-            />
-          </div>
-        </div>
-      </div>
+      <LegalList
+        items={[
+          "Identity data, such as full name, date of birth where required, and profile information.",
+          "Contact data, such as phone number, email address, and support contact details.",
+          "Location and trip data, such as pickup, drop-off, GPS data during active use, route information, timestamps, and ride history.",
+          "Device and technical data, such as IP address, app version, device identifiers, browser details, operating system, cookies, logs, and diagnostics.",
+          "Payment and financial data, such as payment token data, transaction metadata, fare, refund, and chargeback records.",
+          "Compliance and safety data, such as complaints, incident reports, ratings, fraud indicators, verification results, and communications records.",
+          "Photographs, images, document scans, and evidence, such as photographs or images uploaded through the app, identity and onboarding document images, driver and vehicle verification documents, proof of RIKBA sticker or branding compliance, and incident, complaint, safety, support, refund, damage, lost-property, or dispute evidence submitted through the platform.",
+        ]}
+      />
 
       <LegalCallout title="Camera and media permissions">
         <p>Camera permission may be used to capture required photos or documents through the app.</p>
@@ -590,17 +541,15 @@ const privacyPolicyBody = (
     </LegalSection>
 
     <LegalSection id="purposes-of-processing" number="5" title="Purposes of processing">
-      <p>We process personal data for purposes including:</p>
       <LegalList
         items={[
-          "account creation, login, verification, and identity management;",
-          "onboarding and eligibility verification, driver and document approval, and vehicle, sticker, or branding verification;",
-          "trip dispatch, matching, route coordination, navigation support, and ride history management;",
-          "payment processing, refunds, accounting, fraud prevention, collections, and chargeback handling;",
-          "customer support, safety and compliance checks, dispute handling, and communications;",
-          "security, abuse detection, sanctions compliance, internal audit, legal defence, and regulatory cooperation;",
-          "incident review and support or dispute evidence handling;",
-          "product development, analytics, reliability improvements, and lawful marketing activities.",
+          "Account creation, login, verification, and identity management.",
+          "Trip dispatch, matching, route coordination, navigation support, and ride history management.",
+          "Payment processing, refunds, accounting, fraud prevention, collections, and chargeback handling.",
+          "Customer support, dispute handling, service quality monitoring, and communications.",
+          "Security, abuse detection, sanctions compliance, internal audit, legal defence, and regulatory cooperation.",
+          "Product development, analytics, reliability improvements, and lawful marketing activities.",
+          "Onboarding and eligibility verification, driver and document approval, vehicle, sticker, or branding verification, safety and compliance checks, incident review, and support or dispute evidence handling.",
         ]}
       />
     </LegalSection>
@@ -755,7 +704,7 @@ const cookiePolicyBody = (
     </LegalSection>
 
     <LegalSection id="cookie-contact" number="13" title="Contact">
-      <p>For any questions regarding this Cookie Policy, please contact {COMPANY_EMAIL} or write to {COMPANY_ADDRESS}.</p>
+      <p>For any questions regarding this Cookie Policy, please contact email {COMPANY_EMAIL} or address {COMPANY_ADDRESS}.</p>
       <ContactDetails />
     </LegalSection>
   </>
