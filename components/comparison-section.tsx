@@ -40,17 +40,17 @@ export function ComparisonSection() {
             direction="rotate"
             className="absolute bottom-8 right-4 md:bottom-6 md:right-8 z-20 pointer-events-none"
           >
-            <span className="flex flex-col items-center justify-center px-3 py-2 md:px-4 md:py-2.5 rounded-xl bg-primary shadow-2xl shadow-primary/30 text-primary-foreground">
+            <span className="flex flex-col items-center justify-center px-2.5 py-1.5 md:px-3 md:py-2 rounded-lg bg-primary shadow-2xl shadow-primary/30 text-primary-foreground">
 
-              <span className="text-sm md:text-base font-bold">
+              <span className="text-xs md:text-sm font-bold">
                 -8%
               </span>
 
-              <div className="mt-1 text-[9px] font-medium text-primary-foreground/80 leading-none">
+              <div className="mt-1 text-[8px] font-medium text-primary-foreground/80 leading-none">
                 with Rikba sticker
               </div>
 
-              <div className="text-[8px] text-primary-foreground/60 leading-none mt-1">
+              <div className="text-[7px] text-primary-foreground/60 leading-none mt-1">
                 otherwise 12%
               </div>
 
