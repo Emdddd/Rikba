@@ -27,7 +27,7 @@ export function Hero() {
 
         {/* ===== LOGO ===== */}
         <AnimateOnScroll animation="scale-in">
-          <div className="flex justify-center mb-0 -mt-6">
+          <div className="flex justify-center mb-[-14px] mt-8">
             <div className="relative w-[220px] md:w-[300px] lg:w-[360px] xl:w-[420px]">
               <Image
                 src="/493FBC7E-9A7E-4C7B-8722-3C9DC25FB107.png"
@@ -99,8 +99,6 @@ export function Hero() {
     </section>
   )
 }
-
-/* ===== CAR ICON ===== */
 
 function CarIcon() {
   return (
