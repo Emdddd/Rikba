@@ -96,6 +96,7 @@ export function ComparisonSection() {
 
               {/* Commission bar */}
               <div className="mt-8 pt-6 border-t border-primary/20">
+
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-sm text-muted-foreground">
                     Driver keeps
@@ -109,6 +110,16 @@ export function ComparisonSection() {
                 <div className="h-3 rounded-full bg-muted overflow-hidden">
                   <div className="h-full rounded-full bg-primary animate-bar-fill-90" />
                 </div>
+
+                {/* Forever commission note */}
+                <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1.5 text-xs font-medium text-primary">
+
+                  <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+
+                  Our commission will never increase.
+
+                </div>
+
               </div>
 
             </div>
