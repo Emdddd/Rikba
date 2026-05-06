@@ -5,7 +5,7 @@ import Image from "next/image"
 
 export function Hero() {
   return (
-    <section className="relative pt-28 pb-20 md:pt-36 md:pb-28 overflow-hidden">
+    <section className="relative pt-16 pb-20 md:pt-20 md:pb-28 overflow-hidden">
 
       {/* ===== BLUE AMBIENT GLOW ===== */}
       <div className="absolute inset-0 -z-10 pointer-events-none flex items-center justify-center">
@@ -27,8 +27,8 @@ export function Hero() {
 
         {/* ===== LOGO ===== */}
         <AnimateOnScroll animation="scale-in">
-          <div className="flex justify-center mb-3 -mt-4">
-            <div className="relative w-[260px] md:w-[360px] lg:w-[420px] xl:w-[480px]">
+          <div className="flex justify-center mb-0 -mt-6">
+            <div className="relative w-[220px] md:w-[300px] lg:w-[360px] xl:w-[420px]">
               <Image
                 src="/493FBC7E-9A7E-4C7B-8722-3C9DC25FB107.png"
                 alt="Rikba logo"
@@ -52,7 +52,7 @@ export function Hero() {
             </span>
           </h1>
 
-          {/* ===== LAUNCH BADGE (رجعت زي ما كانت) ===== */}
+          {/* ===== LAUNCH BADGE ===== */}
           <div className="flex justify-center mt-4">
             <span className="inline-flex items-center gap-2 rounded-xl border border-primary/40 bg-primary/15 px-5 py-2 text-sm font-semibold text-primary shadow-lg backdrop-blur-md">
 
@@ -100,7 +100,7 @@ export function Hero() {
   )
 }
 
-/* ===== ORIGINAL CAR ICON (رجعناه) ===== */
+/* ===== CAR ICON ===== */
 
 function CarIcon() {
   return (
