@@ -60,12 +60,14 @@ export function ComparisonSection() {
               <div className="relative flex items-center gap-3 mb-8">
 
                 <img
-                  src="/Logoicon.PNG"
+                  src="/A16AD795-F572-4489-AF30-87250463907F.png"
                   alt="Rikba"
-                  className="w-10 h-10 object-contain"
+                  className="w-11 h-11 object-contain drop-shadow-sm"
                 />
 
-                <span className="font-bold text-card-foreground text-xl">Rikba</span>
+                <span className="font-bold text-card-foreground text-xl">
+                  Rikba
+                </span>
 
                 <span className="ml-auto inline-flex items-center gap-1.5 rounded-full bg-primary/15 px-3 py-1 text-xs font-semibold text-primary">
                   <SparkleIcon size={12} />
@@ -86,8 +88,13 @@ export function ComparisonSection() {
               {/* Commission bar */}
               <div className="mt-8 pt-6 border-t border-primary/20">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm text-muted-foreground">Driver keeps</span>
-                  <span className="text-sm font-bold text-primary">92%</span>
+                  <span className="text-sm text-muted-foreground">
+                    Driver keeps
+                  </span>
+
+                  <span className="text-sm font-bold text-primary">
+                    92%
+                  </span>
                 </div>
 
                 <div className="h-3 rounded-full bg-muted overflow-hidden">
@@ -110,22 +117,34 @@ export function ComparisonSection() {
 function ComparisonRow({ icon, label, value, positive }: any) {
   return (
     <div className="flex items-start gap-3">
-      <div className={`mt-0.5 w-6 h-6 rounded-full flex items-center justify-center ${
-        positive ? "bg-primary/15 text-primary" : "bg-destructive/10 text-destructive"
-      }`}>
+      <div
+        className={`mt-0.5 w-6 h-6 rounded-full flex items-center justify-center ${
+          positive
+            ? "bg-primary/15 text-primary"
+            : "bg-destructive/10 text-destructive"
+        }`}
+      >
         {icon}
       </div>
 
       <div>
-        <span className={`text-xs font-semibold uppercase tracking-wider ${
-          positive ? "text-primary/70" : "text-muted-foreground/60"
-        }`}>
+        <span
+          className={`text-xs font-semibold uppercase tracking-wider ${
+            positive
+              ? "text-primary/70"
+              : "text-muted-foreground/60"
+          }`}
+        >
           {label}
         </span>
 
-        <p className={`text-sm leading-relaxed ${
-          positive ? "text-card-foreground font-medium" : "text-muted-foreground"
-        }`}>
+        <p
+          className={`text-sm leading-relaxed ${
+            positive
+              ? "text-card-foreground font-medium"
+              : "text-muted-foreground"
+          }`}
+        >
           {value}
         </p>
       </div>
@@ -138,7 +157,14 @@ function ComparisonRow({ icon, label, value, positive }: any) {
 
 function CheckIcon() {
   return (
-    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2.5">
+    <svg
+      width="14"
+      height="14"
+      viewBox="0 0 14 14"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.5"
+    >
       <polyline points="10.5 4.5 5.75 9.5 3.5 7.25" />
     </svg>
   )
@@ -146,7 +172,12 @@ function CheckIcon() {
 
 export function SparkleIcon({ size = 16 }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 16 16" fill="currentColor">
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 16 16"
+      fill="currentColor"
+    >
       <path d="M8 0L9.79 6.21L16 8L9.79 9.79L8 16L6.21 9.79L0 8L6.21 6.21L8 0Z" />
     </svg>
   )
