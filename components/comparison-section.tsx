@@ -39,7 +39,7 @@ export function ComparisonSection() {
             delay={1}
             duration={4}
             direction="rotate"
-            className="absolute -bottom-5 right-4 md:-bottom-7 md:right-8 z-20 pointer-events-none"
+            className="absolute bottom-2 right-4 md:bottom-0 md:right-8 z-20 pointer-events-none"
           >
             <span className="flex flex-col items-center justify-center px-3 py-2 md:px-4 md:py-2.5 rounded-xl bg-primary shadow-2xl shadow-primary/30 text-primary-foreground">
 
@@ -130,77 +130,5 @@ export function ComparisonSection() {
         </div>
       </div>
     </section>
-  )
-}
-
-
-/* ================= ROW ================= */
-
-function ComparisonRow({ icon, label, value, positive }: any) {
-  return (
-    <div className="flex items-start gap-3">
-      <div
-        className={`mt-0.5 w-6 h-6 rounded-full flex items-center justify-center ${
-          positive
-            ? "bg-primary/15 text-primary"
-            : "bg-destructive/10 text-destructive"
-        }`}
-      >
-        {icon}
-      </div>
-
-      <div>
-        <span
-          className={`text-xs font-semibold uppercase tracking-wider ${
-            positive
-              ? "text-primary/70"
-              : "text-muted-foreground/60"
-          }`}
-        >
-          {label}
-        </span>
-
-        <p
-          className={`text-sm leading-relaxed ${
-            positive
-              ? "text-card-foreground font-medium"
-              : "text-muted-foreground"
-          }`}
-        >
-          {value}
-        </p>
-      </div>
-    </div>
-  )
-}
-
-
-/* ================= ICONS ================= */
-
-function CheckIcon() {
-  return (
-    <svg
-      width="14"
-      height="14"
-      viewBox="0 0 14 14"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2.5"
-    >
-      <polyline points="10.5 4.5 5.75 9.5 3.5 7.25" />
-    </svg>
-  )
-}
-
-export function SparkleIcon({ size = 16 }) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 16 16"
-      fill="currentColor"
-    >
-      <path d="M8 0L9.79 6.21L16 8L9.79 9.79L8 16L6.21 9.79L0 8L6.21 6.21L8 0Z" />
-    </svg>
   )
 }
