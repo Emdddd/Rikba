@@ -91,7 +91,7 @@ export function HowItWorks() {
                     >
                       <div className="flex items-center gap-0 rounded-lg bg-card border border-border shadow-md px-2 py-1">
                         <img
-                          src="/Logoicon.PNG"
+                          src="/A16AD795-F572-4489-AF30-87250463907F.png"
                           alt="Rikba"
                           className="w-5 h-5 object-contain"
                         />
@@ -110,8 +110,13 @@ export function HowItWorks() {
                       className="absolute -right-20 top-1/2 -translate-y-1/2 hidden md:flex"
                     >
                       <span className="flex items-center gap-1 rounded-lg bg-card border border-border shadow-md px-2 py-1">
-                        <span className="text-[8px] text-muted-foreground font-medium">EUR</span>
-                        <span className="text-sm font-bold text-primary">7.80</span>
+                        <span className="text-[8px] text-muted-foreground font-medium">
+                          EUR
+                        </span>
+
+                        <span className="text-sm font-bold text-primary">
+                          7.80
+                        </span>
                       </span>
                     </FloatingBadge>
                   )}
@@ -125,6 +130,7 @@ export function HowItWorks() {
                     >
                       <div className="flex items-center gap-1.5 rounded-lg bg-card border border-border shadow-md px-2 py-1">
                         <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+
                         <span className="text-[8px] font-semibold text-foreground whitespace-nowrap">
                           1 min away
                         </span>
