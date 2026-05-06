@@ -30,7 +30,7 @@ export function Hero() {
           <div className="flex justify-center mb-3 -mt-4">
             <div className="relative w-[260px] md:w-[360px] lg:w-[420px] xl:w-[480px]">
               <Image
-                src="/ED7F1B23-70E8-4C19-8C5B-B238FFE6F192.png"
+                src="/493FBC7E-9A7E-4C7B-8722-3C9DC25FB107.png"
                 alt="Rikba logo"
                 width={480}
                 height={200}
