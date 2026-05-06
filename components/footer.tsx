@@ -16,7 +16,7 @@ export function Footer() {
             {/* Logo + Brand */}
             <div className="flex items-center justify-center gap-1">
               <img
-                src="/Logoicon.PNG"
+                src="/A16AD795-F572-4489-AF30-87250463907F.png"
                 alt="Rikba"
                 className="w-7 h-7 object-contain"
               />
@@ -27,15 +27,24 @@ export function Footer() {
             </div>
 
             <div className="mt-3 flex flex-wrap items-center justify-center gap-4 text-sm text-muted-foreground">
-              <Link href="/blog" className="hover:text-foreground transition-colors">
+              <Link
+                href="/blog"
+                className="hover:text-foreground transition-colors"
+              >
                 Blog
               </Link>
 
-              <Link href="/legal" className="hover:text-foreground transition-colors">
+              <Link
+                href="/legal"
+                className="hover:text-foreground transition-colors"
+              >
                 Legal
               </Link>
 
-              <Link href="/legal/contact" className="hover:text-foreground transition-colors">
+              <Link
+                href="/legal/contact"
+                className="hover:text-foreground transition-colors"
+              >
                 Contact us
               </Link>
             </div>
