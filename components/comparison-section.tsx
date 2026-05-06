@@ -38,7 +38,7 @@ export function ComparisonSection() {
             delay={1}
             duration={4}
             direction="rotate"
-            className="absolute bottom-2 right-4 md:bottom-0 md:right-8 z-20 pointer-events-none"
+            className="absolute bottom-8 right-4 md:bottom-6 md:right-8 z-20 pointer-events-none"
           >
             <span className="flex flex-col items-center justify-center px-3 py-2 md:px-4 md:py-2.5 rounded-xl bg-primary shadow-2xl shadow-primary/30 text-primary-foreground">
 
