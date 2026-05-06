@@ -15,7 +15,6 @@ export function ComparisonSection() {
           </h2>
 
           <p className="mx-auto mt-4 max-w-lg text-center text-muted-foreground text-lg leading-relaxed">
-          
           </p>
         </AnimateOnScroll>
 
@@ -34,7 +33,7 @@ export function ComparisonSection() {
             </span>
           </FloatingBadge>
 
-          {/* -8% badge */}
+          {/* 8% badge */}
           <FloatingBadge
             delay={1}
             duration={4}
@@ -58,7 +57,7 @@ export function ComparisonSection() {
             </span>
           </FloatingBadge>
 
-          {/* ================= RIKBA ================= */}
+          {/* Card */}
           <div>
             <AnimateOnScroll animation="fade-up" delay={200}>
               <div className="rounded-2xl border border-primary/40 bg-primary/5 p-7 md:p-9 relative overflow-hidden h-full animate-glow-pulse">
@@ -83,22 +82,61 @@ export function ComparisonSection() {
                     <SparkleIcon size={12} />
                     Recommended
                   </span>
+
                 </div>
 
                 {/* Rows */}
                 <div className="space-y-5">
-                  <ComparisonRow icon={<CheckIcon />} label="Pricing" value="Fair fares, Clear prices" positive />
-                  <ComparisonRow icon={<CheckIcon />} label="Driver commission" value="Drivers keep 92%" positive />
-                  <ComparisonRow icon={<CheckIcon />} label="Built for" value="100% designed for Malta" positive />
-                  <ComparisonRow icon={<CheckIcon />} label="Money stays" value="Your money stays on the island" positive />
-                  <ComparisonRow icon={<CheckIcon />} label="Transparency" value="Book a price, pay that price" positive />
-                  <ComparisonRow icon={<CheckIcon />} label="Driver experience" value="Happy drivers, better rides" positive />
+
+                  <ComparisonRow
+                    icon={<CheckIcon />}
+                    label="Pricing"
+                    value="Fair fares, Clear prices"
+                    positive
+                  />
+
+                  <ComparisonRow
+                    icon={<CheckIcon />}
+                    label="Driver commission"
+                    value="Drivers keep 92%"
+                    positive
+                  />
+
+                  <ComparisonRow
+                    icon={<CheckIcon />}
+                    label="Built for"
+                    value="100% designed for Malta"
+                    positive
+                  />
+
+                  <ComparisonRow
+                    icon={<CheckIcon />}
+                    label="Money stays"
+                    value="Your money stays on the island"
+                    positive
+                  />
+
+                  <ComparisonRow
+                    icon={<CheckIcon />}
+                    label="Transparency"
+                    value="Book a price, pay that price"
+                    positive
+                  />
+
+                  <ComparisonRow
+                    icon={<CheckIcon />}
+                    label="Driver experience"
+                    value="Happy drivers, better rides"
+                    positive
+                  />
+
                 </div>
 
                 {/* Commission bar */}
                 <div className="mt-8 pt-6 border-t border-primary/20">
 
                   <div className="flex items-center justify-between mb-2">
+
                     <span className="text-sm text-muted-foreground">
                       Driver keeps
                     </span>
@@ -106,6 +144,7 @@ export function ComparisonSection() {
                     <span className="text-sm font-bold text-primary">
                       92%
                     </span>
+
                   </div>
 
                   <div className="h-3 rounded-full bg-muted overflow-hidden">
@@ -117,7 +156,7 @@ export function ComparisonSection() {
               </div>
             </AnimateOnScroll>
 
-            {/* Forever commission note BELOW card */}
+            {/* Bottom note */}
             <div className="mt-5 flex justify-center">
               <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-4 py-2 text-xs font-medium text-primary">
 
@@ -125,10 +164,89 @@ export function ComparisonSection() {
 
               </div>
             </div>
+
           </div>
 
         </div>
       </div>
     </section>
+  )
+}
+
+/* ================= ROW ================= */
+
+function ComparisonRow({
+  icon,
+  label,
+  value,
+  positive,
+}: any) {
+  return (
+    <div className="flex items-start gap-3">
+
+      <div
+        className={`mt-0.5 w-6 h-6 rounded-full flex items-center justify-center ${
+          positive
+            ? "bg-primary/15 text-primary"
+            : "bg-destructive/10 text-destructive"
+        }`}
+      >
+        {icon}
+      </div>
+
+      <div>
+
+        <span
+          className={`text-xs font-semibold uppercase tracking-wider ${
+            positive
+              ? "text-primary/70"
+              : "text-muted-foreground/60"
+          }`}
+        >
+          {label}
+        </span>
+
+        <p
+          className={`text-sm leading-relaxed ${
+            positive
+              ? "text-card-foreground font-medium"
+              : "text-muted-foreground"
+          }`}
+        >
+          {value}
+        </p>
+
+      </div>
+    </div>
+  )
+}
+
+/* ================= ICONS ================= */
+
+function CheckIcon() {
+  return (
+    <svg
+      width="14"
+      height="14"
+      viewBox="0 0 14 14"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.5"
+    >
+      <polyline points="10.5 4.5 5.75 9.5 3.5 7.25" />
+    </svg>
+  )
+}
+
+export function SparkleIcon({ size = 16 }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 16 16"
+      fill="currentColor"
+    >
+      <path d="M8 0L9.79 6.21L16 8L9.79 9.79L8 16L6.21 9.79L0 8L6.21 6.21L8 0Z" />
+    </svg>
   )
 }
