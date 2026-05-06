@@ -59,71 +59,73 @@ export function ComparisonSection() {
           </FloatingBadge>
 
           {/* ================= RIKBA ================= */}
-          <AnimateOnScroll animation="fade-up" delay={200}>
-            <div className="rounded-2xl border border-primary/40 bg-primary/5 p-7 md:p-9 relative overflow-hidden h-full animate-glow-pulse">
+          <div>
+            <AnimateOnScroll animation="fade-up" delay={200}>
+              <div className="rounded-2xl border border-primary/40 bg-primary/5 p-7 md:p-9 relative overflow-hidden h-full animate-glow-pulse">
 
-              <div className="absolute top-0 right-0 w-40 h-40 bg-primary/10 rounded-full blur-[80px]" />
-              <div className="absolute bottom-0 left-0 w-32 h-32 bg-primary/8 rounded-full blur-[60px]" />
+                <div className="absolute top-0 right-0 w-40 h-40 bg-primary/10 rounded-full blur-[80px]" />
+                <div className="absolute bottom-0 left-0 w-32 h-32 bg-primary/8 rounded-full blur-[60px]" />
 
-              {/* Header */}
-              <div className="relative flex items-center gap-3 mb-8">
+                {/* Header */}
+                <div className="relative flex items-center gap-3 mb-8">
 
-                <img
-                  src="/A16AD795-F572-4489-AF30-87250463907F.png"
-                  alt="Rikba"
-                  className="w-11 h-11 object-contain drop-shadow-sm"
-                />
+                  <img
+                    src="/A16AD795-F572-4489-AF30-87250463907F.png"
+                    alt="Rikba"
+                    className="w-11 h-11 object-contain drop-shadow-sm"
+                  />
 
-                <span className="font-bold text-card-foreground text-xl">
-                  Rikba
-                </span>
-
-                <span className="ml-auto inline-flex items-center gap-1.5 rounded-full bg-primary/15 px-3 py-1 text-xs font-semibold text-primary">
-                  <SparkleIcon size={12} />
-                  Recommended
-                </span>
-              </div>
-
-              {/* Rows */}
-              <div className="space-y-5">
-                <ComparisonRow icon={<CheckIcon />} label="Pricing" value="Fair fares, Clear prices" positive />
-                <ComparisonRow icon={<CheckIcon />} label="Driver commission" value="Drivers keep 92%" positive />
-                <ComparisonRow icon={<CheckIcon />} label="Built for" value="100% designed for Malta" positive />
-                <ComparisonRow icon={<CheckIcon />} label="Money stays" value="Your money stays on the island" positive />
-                <ComparisonRow icon={<CheckIcon />} label="Transparency" value="Book a price, pay that price" positive />
-                <ComparisonRow icon={<CheckIcon />} label="Driver experience" value="Happy drivers, better rides" positive />
-              </div>
-
-              {/* Commission bar */}
-              <div className="mt-8 pt-6 border-t border-primary/20">
-
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm text-muted-foreground">
-                    Driver keeps
+                  <span className="font-bold text-card-foreground text-xl">
+                    Rikba
                   </span>
 
-                  <span className="text-sm font-bold text-primary">
-                    92%
+                  <span className="ml-auto inline-flex items-center gap-1.5 rounded-full bg-primary/15 px-3 py-1 text-xs font-semibold text-primary">
+                    <SparkleIcon size={12} />
+                    Recommended
                   </span>
                 </div>
 
-                <div className="h-3 rounded-full bg-muted overflow-hidden">
-                  <div className="h-full rounded-full bg-primary animate-bar-fill-90" />
+                {/* Rows */}
+                <div className="space-y-5">
+                  <ComparisonRow icon={<CheckIcon />} label="Pricing" value="Fair fares, Clear prices" positive />
+                  <ComparisonRow icon={<CheckIcon />} label="Driver commission" value="Drivers keep 92%" positive />
+                  <ComparisonRow icon={<CheckIcon />} label="Built for" value="100% designed for Malta" positive />
+                  <ComparisonRow icon={<CheckIcon />} label="Money stays" value="Your money stays on the island" positive />
+                  <ComparisonRow icon={<CheckIcon />} label="Transparency" value="Book a price, pay that price" positive />
+                  <ComparisonRow icon={<CheckIcon />} label="Driver experience" value="Happy drivers, better rides" positive />
                 </div>
 
-                {/* Forever commission note */}
-                <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1.5 text-xs font-medium text-primary">
+                {/* Commission bar */}
+                <div className="mt-8 pt-6 border-t border-primary/20">
 
-                  <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-sm text-muted-foreground">
+                      Driver keeps
+                    </span>
 
-                  Our commission will never increase.
+                    <span className="text-sm font-bold text-primary">
+                      92%
+                    </span>
+                  </div>
+
+                  <div className="h-3 rounded-full bg-muted overflow-hidden">
+                    <div className="h-full rounded-full bg-primary animate-bar-fill-90" />
+                  </div>
 
                 </div>
 
               </div>
+            </AnimateOnScroll>
 
+            {/* Forever commission note BELOW card */}
+            <div className="mt-5 flex justify-center">
+              <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-4 py-2 text-xs font-medium text-primary">
+
+                Our commission will never increase.
+
+              </div>
             </div>
-          </AnimateOnScroll>
+          </div>
 
         </div>
       </div>
