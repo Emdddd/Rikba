@@ -35,10 +35,6 @@ export function Footer() {
                 Legal
               </Link>
 
-              <Link href="/legal/account-deletion" className="hover:text-foreground transition-colors">
-                
-              </Link>
-
               <Link href="/legal/contact" className="hover:text-foreground transition-colors">
                 Contact us
               </Link>
