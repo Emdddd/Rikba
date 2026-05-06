@@ -2,28 +2,21 @@
 
 import Link from "next/link"
 import { useState, useEffect } from "react"
-import ThemeToggle from "@/components/theme-toggle"
-import { useTheme } from "next-themes"
 
 export function Navbar() {
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const { theme } = useTheme()
 
   /* LOCK SCROLL */
   useEffect(() => {
     document.body.style.overflow = mobileMenuOpen ? "hidden" : "auto"
   }, [mobileMenuOpen])
 
-  const lightMenuActive =
-    mobileMenuOpen && theme !== "dark"
-
   return (
     <>
       {/* NAVBAR */}
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 border-b border-border transition-all duration-500
-        ${lightMenuActive ? "bg-white" : "bg-background/80 backdrop-blur-xl"}`}
+        className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-white/80 backdrop-blur-xl transition-all duration-500"
       >
         <div className="mx-auto max-w-6xl px-5 flex items-center justify-between h-16">
 
@@ -56,16 +49,13 @@ export function Navbar() {
               Legal
             </Link>
 
-            <div className="flex items-center gap-3">
-              <Link
-                href="/legal/contact"
-                className="rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground"
-              >
-                Contact us
-              </Link>
+            <Link
+              href="/legal/contact"
+              className="rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground"
+            >
+              Contact us
+            </Link>
 
-              <ThemeToggle />
-            </div>
           </div>
 
           {/* HAMBURGER */}
@@ -111,13 +101,10 @@ export function Navbar() {
       {/* MOBILE MENU */}
       <div
         className={`fixed top-16 left-0 right-0 z-50 md:hidden border-b border-border
-        transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]
+        bg-white transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]
         ${mobileMenuOpen
           ? "opacity-100 translate-y-0"
-          : "opacity-0 -translate-y-8 pointer-events-none"}
-        ${theme === "dark"
-          ? "bg-background/95 backdrop-blur-xl"
-          : "bg-white"}`}
+          : "opacity-0 -translate-y-8 pointer-events-none"}`}
       >
         <div className="px-6 py-6 flex flex-col gap-6 text-center">
 
@@ -141,7 +128,7 @@ export function Navbar() {
             Legal
           </Link>
 
-          <div className="flex justify-center items-center gap-3 pt-4">
+          <div className="flex justify-center items-center pt-4">
 
             <Link
               href="/legal/contact"
@@ -149,8 +136,6 @@ export function Navbar() {
             >
               Contact us
             </Link>
-
-            <ThemeToggle />
 
           </div>
 
