@@ -19,7 +19,6 @@ export function ComparisonSection() {
           </p>
         </AnimateOnScroll>
 
-
         {/* Comparison */}
         <div className="mt-14 grid gap-0 md:grid-cols-1 max-w-4xl mx-auto relative">
 
@@ -35,7 +34,6 @@ export function ComparisonSection() {
             </span>
           </FloatingBadge>
 
-
           {/* -8% badge */}
           <FloatingBadge
             delay={1}
@@ -43,11 +41,22 @@ export function ComparisonSection() {
             direction="rotate"
             className="absolute -bottom-5 right-4 md:-bottom-7 md:right-8 z-20 pointer-events-none"
           >
-            <span className="flex items-center justify-center px-3 py-2 md:px-4 md:py-2.5 rounded-xl bg-primary shadow-2xl shadow-primary/30 text-sm md:text-base font-bold text-primary-foreground">
-              -8%
+            <span className="flex flex-col items-center justify-center px-3 py-2 md:px-4 md:py-2.5 rounded-xl bg-primary shadow-2xl shadow-primary/30 text-primary-foreground">
+
+              <span className="text-sm md:text-base font-bold">
+                -8%
+              </span>
+
+              <div className="mt-1 text-[9px] font-medium text-primary-foreground/80 leading-none">
+                with Rikba sticker
+              </div>
+
+              <div className="text-[8px] text-primary-foreground/60 leading-none mt-1">
+                otherwise 12%
+              </div>
+
             </span>
           </FloatingBadge>
-
 
           {/* ================= RIKBA ================= */}
           <AnimateOnScroll animation="fade-up" delay={200}>
