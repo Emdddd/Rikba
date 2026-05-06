@@ -27,8 +27,10 @@ export function Hero() {
 
         {/* ===== LOGO ===== */}
         <AnimateOnScroll animation="scale-in">
-          <div className="flex justify-center mb-[-14px] mt-8">
-            <div className="relative w-[220px] md:w-[300px] lg:w-[360px] xl:w-[420px]">
+          <div className="flex justify-center mb-[-24px] mt-8">
+
+            <div className="relative w-[250px] md:w-[340px] lg:w-[400px] xl:w-[460px]">
+
               <Image
                 src="/1CD50AD3-C98C-41E9-906E-DA7B306907D7.png"
                 alt="Rikba logo"
@@ -37,45 +39,62 @@ export function Hero() {
                 priority
                 className="w-full h-auto object-contain"
               />
+
             </div>
           </div>
         </AnimateOnScroll>
 
         {/* ===== HEADING ===== */}
         <AnimateOnScroll animation="fade-up" delay={100}>
+
           <h1 className="text-center text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground leading-tight">
+
             Malta deserves
+
             <br />
+
             <span className="text-primary inline-flex items-center gap-2 md:gap-3">
               <CarIcon />
               a better ride.
             </span>
+
           </h1>
 
           {/* ===== LAUNCH BADGE ===== */}
           <div className="flex justify-center mt-4">
+
             <span className="inline-flex items-center gap-2 rounded-xl border border-primary/40 bg-primary/15 px-5 py-2 text-sm font-semibold text-primary shadow-lg backdrop-blur-md">
 
               <span className="relative flex w-2.5 h-2.5 shrink-0">
+
                 <span className="animate-ping absolute inset-0 rounded-full bg-primary opacity-80" />
+
                 <span className="relative rounded-full w-2.5 h-2.5 bg-primary" />
+
               </span>
 
               Launching Summer 2026
+
             </span>
           </div>
+
         </AnimateOnScroll>
 
         {/* ===== SUBTITLE ===== */}
         <AnimateOnScroll animation="fade-up" delay={200}>
+
           <p className="mx-auto mt-6 max-w-xl text-center text-lg md:text-xl text-muted-foreground leading-relaxed">
+
             Lower prices. Happier drivers. An app that's 100% Maltese and keeps
             your money on the island.
+
           </p>
+
         </AnimateOnScroll>
 
         {/* ===== CTA BUTTONS ===== */}
         <AnimateOnScroll animation="fade-up" delay={300}>
+
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
 
             <a
@@ -93,6 +112,7 @@ export function Hero() {
             </a>
 
           </div>
+
         </AnimateOnScroll>
 
       </div>
