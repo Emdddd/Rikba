@@ -13,22 +13,23 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-      
-      # Install pnpm globally first
+          node-version: 22
+          cache: "pnpm"
+
       - name: Global install pnpm
-        run: npm install -g pnpm@latest
-      
+        run: npm install -g pnpm@9
+
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
-      
+
       - name: Cache pnpm store
         uses: actions/cache@v4
         with:
@@ -36,20 +37,21 @@ jobs:
             ~/.pnpm-store
             .next/cache
           key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: ${{ runner.os }}-pnpm-
-      
+          restore-keys: |
+            ${{ runner.os }}-pnpm-
+
       - name: Get pnpm store directory
         id: pnpm-cache
         shell: bash
         run: |
           echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
-      
+
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-      
+
       - name: Build
         run: pnpm build
-      
+
       - name: Verify out folder
         run: |
           if [ ! -d "out" ]; then
@@ -57,10 +59,10 @@ jobs:
             exit 1
           fi
           ls -la out/
-      
+
       - name: Clean non-static files
         run: rm -rf node_modules .next .cache
-      
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -69,10 +71,11 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
-        
