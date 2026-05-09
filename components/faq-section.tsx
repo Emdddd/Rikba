@@ -22,11 +22,11 @@ const faqs = [
   },
   {
     question: "How is Rikba different from other platforms?",
-    answer: "We're 100% Maltese-owned, we take a much smaller commission from drivers which means lower fares for you, and we never use surge pricing. Built for Malta, not copy-pasted from a global template.",
+    answer: "We're 100% Maltese company, we take a much smaller commission from drivers which means lower fares for you. Built for Malta, not copy-pasted from a global template.",
   },
   {
     question: "How does pricing work?",
-    answer: "You see the price before you book. That's the price you pay. No surge pricing, no hidden fees, no surprises after the ride.",
+    answer: "You see the price before you book. That's the price you pay. No hidden fees, no surprises after the ride.",
   },
 ]
 
