@@ -21,30 +21,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: "pnpm"
 
-      - name: Global install pnpm
+      - name: Install pnpm
         run: npm install -g pnpm@9
 
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
-
-      - name: Cache pnpm store
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.pnpm-store
-            .next/cache
-          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-
-
-      - name: Get pnpm store directory
-        id: pnpm-cache
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
@@ -55,13 +38,10 @@ jobs:
       - name: Verify out folder
         run: |
           if [ ! -d "out" ]; then
-            echo "❌ out folder not found! Check next.config.js output: 'export'"
+            echo "❌ out folder not found!"
             exit 1
           fi
           ls -la out/
-
-      - name: Clean non-static files
-        run: rm -rf node_modules .next .cache
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
