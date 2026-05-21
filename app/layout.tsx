@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title: "Rikba | Malta's Ride-Hailing App | Coming Summer 2026",
 
   description:
-    "Lower prices. Happier drivers. An app that's 100% Maltese and keeps your money on the island.",
+    "Fair prices and lower commissions are coming soon to Malta.",
 
   keywords: [
     "Rikba",
@@ -23,7 +23,6 @@ export const metadata: Metadata = {
     "Ride Hailing Malta",
     "Bolt Alternative Malta",
     "Taxi App Malta",
-    "Cheap Taxi Malta",
     "Malta Transport",
   ],
 
@@ -38,16 +37,16 @@ export const metadata: Metadata = {
   publisher: "Rikba",
 
   icons: {
-    icon: "/5BDA6FFD-95DA-4CC6-9EAD-71BA2A8B75E0.png",
-    shortcut: "/5BDA6FFD-95DA-4CC6-9EAD-71BA2A8B75E0.png",
-    apple: "/5BDA6FFD-95DA-4CC6-9EAD-71BA2A8B75E0.png",
+    icon: "/98BA593C-6832-49D3-BED4-077B62EB7787.png",
+    shortcut: "/98BA593C-6832-49D3-BED4-077B62EB7787.png",
+    apple: "/98BA593C-6832-49D3-BED4-077B62EB7787.png",
   },
 
   openGraph: {
     title: "Rikba | Malta's Ride-Hailing App",
 
     description:
-      "Lower prices. Happier drivers. Malta deserves a better ride.",
+      "Fair prices and lower commissions are coming soon to Malta.",
 
     url: "https://rikba.eu",
 
@@ -72,7 +71,7 @@ export const metadata: Metadata = {
     title: "Rikba | Malta's Ride-Hailing App",
 
     description:
-      "Lower prices. Happier drivers. Malta deserves a better ride.",
+      "Fair prices and lower commissions are coming soon to Malta.",
 
     images: ["/Opengraph.png"],
 
