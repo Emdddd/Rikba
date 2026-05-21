@@ -55,10 +55,10 @@ export const metadata: Metadata = {
 
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/Opengraph.png",
         width: 1200,
         height: 630,
-        alt: "Rikba - Malta's Ride-Hailing App",
+        alt: "Rikba",
       },
     ],
 
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
     description:
       "Lower prices. Happier drivers. Malta deserves a better ride.",
 
-    images: ["/og-image.jpg"],
+    images: ["/Opengraph.png"],
 
     creator: "@rikba",
   },
