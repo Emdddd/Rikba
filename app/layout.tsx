@@ -13,39 +13,74 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://rikba.eu"),
 
   title: "Rikba | Malta's Ride-Hailing App | Coming Summer 2026",
+
   description:
     "Lower prices. Happier drivers. An app that's 100% Maltese and keeps your money on the island.",
 
+  keywords: [
+    "Rikba",
+    "Taxi Malta",
+    "Ride Hailing Malta",
+    "Bolt Alternative Malta",
+    "Taxi App Malta",
+    "Cheap Taxi Malta",
+    "Malta Transport",
+  ],
+
+  authors: [
+    {
+      name: "Rikba",
+      url: "https://rikba.eu",
+    },
+  ],
+
+  creator: "Rikba",
+  publisher: "Rikba",
+
   icons: {
-    icon: "https://rikba.eu/5BDA6FFD-95DA-4CC6-9EAD-71BA2A8B75E0.png",
-    shortcut: "https://rikba.eu/5BDA6FFD-95DA-4CC6-9EAD-71BA2A8B75E0.png",
-    apple: "https://rikba.eu/5BDA6FFD-95DA-4CC6-9EAD-71BA2A8B75E0.png",
+    icon: "/5BDA6FFD-95DA-4CC6-9EAD-71BA2A8B75E0.png",
+    shortcut: "/5BDA6FFD-95DA-4CC6-9EAD-71BA2A8B75E0.png",
+    apple: "/5BDA6FFD-95DA-4CC6-9EAD-71BA2A8B75E0.png",
   },
 
   openGraph: {
-    title: "Rikba",
-    description: "Malta deserves a better ride.",
+    title: "Rikba | Malta's Ride-Hailing App",
+
+    description:
+      "Lower prices. Happier drivers. Malta deserves a better ride.",
+
     url: "https://rikba.eu",
+
     siteName: "Rikba",
+
     images: [
       {
-        url: "https://rikba.eu/5BDA6FFD-95DA-4CC6-9EAD-71BA2A8B75E0.png",
-        width: 512,
-        height: 512,
-        alt: "Rikba",
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Rikba - Malta's Ride-Hailing App",
       },
     ],
+
     locale: "en_US",
     type: "website",
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Rikba",
-    description: "Malta deserves a better ride.",
-    images: [
-      "https://rikba.eu/5BDA6FFD-95DA-4CC6-9EAD-71BA2A8B75E0.png",
-    ],
+
+    title: "Rikba | Malta's Ride-Hailing App",
+
+    description:
+      "Lower prices. Happier drivers. Malta deserves a better ride.",
+
+    images: ["/og-image.jpg"],
+
+    creator: "@rikba",
+  },
+
+  alternates: {
+    canonical: "https://rikba.eu",
   },
 }
 
@@ -53,6 +88,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 1,
+  themeColor: "#000000",
 }
 
 export default function RootLayout({
