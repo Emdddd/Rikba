@@ -16,7 +16,7 @@ export function Footer() {
             {/* Logo + Brand */}
             <div className="flex items-center justify-center gap-1">
               <img
-                src="/A16AD795-F572-4489-AF30-87250463907F.png"
+                src="/Favecoiiin.png"
                 alt="Rikba"
                 className="w-7 h-7 object-contain"
               />
