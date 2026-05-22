@@ -23,7 +23,7 @@ export function Navbar() {
           {/* LOGO */}
           <Link href="/" className="flex items-center gap-[2px]">
             <img
-              src="/A16AD795-F572-4489-AF30-87250463907F.png"
+              src="/Favecoiiin.png"
               className="w-9 h-9 object-contain"
             />
             <span className="font-bold text-xl">Rikba</span>
