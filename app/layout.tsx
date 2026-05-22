@@ -37,9 +37,23 @@ export const metadata: Metadata = {
   publisher: "Rikba",
 
   icons: {
-    icon: "/98BA593C-6832-49D3-BED4-077B62EB7787.png",
-    shortcut: "/98BA593C-6832-49D3-BED4-077B62EB7787.png",
-    apple: "/98BA593C-6832-49D3-BED4-077B62EB7787.png",
+    icon: [
+      {
+        url: "/Favecoiiin.png",
+        sizes: "512x512",
+        type: "image/png",
+      },
+    ],
+
+    shortcut: "/Favecoiiin.png",
+
+    apple: [
+      {
+        url: "/Favecoiiin.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
+    ],
   },
 
   openGraph: {
