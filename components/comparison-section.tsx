@@ -69,7 +69,7 @@ export function ComparisonSection() {
                 <div className="relative flex items-center gap-3 mb-8">
 
                   <img
-                    src="/A16AD795-F572-4489-AF30-87250463907F.png"
+                    src="/Favecoiiin.png"
                     alt="Rikba"
                     className="w-11 h-11 object-contain drop-shadow-sm"
                   />
