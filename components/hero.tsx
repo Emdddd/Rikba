@@ -85,7 +85,7 @@ export function Hero() {
 
           <p className="mx-auto mt-6 max-w-xl text-center text-lg md:text-xl text-muted-foreground leading-relaxed">
 
-            Lower prices. Happier drivers. An app that's 100% Maltese and keeps
+            Fair prices. Happier drivers. An app that's 100% Maltese and keeps
             your money on the island.
 
           </p>
