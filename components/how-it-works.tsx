@@ -91,7 +91,7 @@ export function HowItWorks() {
                     >
                       <div className="flex items-center gap-0 rounded-lg bg-card border border-border shadow-md px-2 py-1">
                         <img
-                          src="/A16AD795-F572-4489-AF30-87250463907F.png"
+                          src="/Favecoiiin.png"
                           alt="Rikba"
                           className="w-5 h-5 object-contain"
                         />
