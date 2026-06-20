@@ -2,6 +2,7 @@ import type { ReactNode } from "react"
 import { LegalCallout, LegalList, LegalSection, type LegalTocItem } from "@/components/legal/legal-page-shell"
 
 const EFFECTIVE_DATE = "May 1, 2026"
+const PRIVACY_EFFECTIVE_DATE = "June 20, 2026"
 const COMPANY_NAME = "RIKBA Rides Ltd."
 const COMPANY_ADDRESS = "23, Triq Nofs in-Nhar, Valletta, VLT 1102, Malta"
 const COMPANY_EMAIL = "info@rikba.eu"
@@ -94,6 +95,7 @@ const privacyPolicyToc: LegalTocItem[] = [
   { id: "privacy-scope", number: "1", title: "Scope of this notice" },
   { id: "controller-details", number: "2", title: "Controller details" },
   { id: "categories-of-data", number: "3", title: "Categories of personal data" },
+  { id: "location-data", number: "3A", title: "Location / GPS Data" },
   { id: "sources-of-data", number: "4", title: "Sources of data" },
   { id: "purposes-of-processing", number: "5", title: "Purposes of processing" },
   { id: "legal-bases", number: "6", title: "Legal bases" },
@@ -505,6 +507,7 @@ const driverTermsBody = (
 const privacyPolicyBody = (
   <>
     <LegalSection id="privacy-scope" number="1" title="Scope of this notice">
+      <p className="text-sm font-medium text-muted-foreground">Last updated: June 20, 2026</p>
       <p>This Privacy Policy explains how RIKBA collects, uses, stores, shares, retains, and protects personal data relating to Riders, Drivers, website visitors, applicants, support users, and other persons who interact with the RIKBA platform and services.</p>
       <p>This notice applies to the website, mobile applications, support channels, marketing touchpoints, onboarding flows, and other interactions connected with the platform.</p>
     </LegalSection>
@@ -536,7 +539,7 @@ const privacyPolicyBody = (
         <div>
           <h3 className="text-lg font-semibold text-foreground">c. Location and trip data</h3>
           <div className="mt-3">
-            <LegalList items={["pickup and drop-off information;", "GPS data during active use;", "route information;", "timestamps;", "ride history."]} />
+            <LegalList items={["pickup and drop-off information;", "approximate and precise location (GPS) collected when the app is used, while the driver is online or available, and during active trips;", "route information;", "timestamps;", "ride history."]} />
           </div>
         </div>
 
@@ -581,6 +584,36 @@ const privacyPolicyBody = (
         <p>Photo or media library access may be used to select existing images or documents for upload.</p>
         <p>Photographs, images, and documents are collected only when the user chooses to capture or upload them, or where submission is required for onboarding, compliance, support, or safety workflows.</p>
         <p>You can deny these permissions, but some onboarding, verification, support, or evidence-upload features may not work properly if the required photo or document cannot be provided.</p>
+      </LegalCallout>
+    </LegalSection>
+
+    <LegalSection id="location-data" number="3A" title="Location / GPS Data">
+      <p>
+        Rikba Driver uses GPS and location services to collect the driver&apos;s approximate and/or precise
+        location when the driver uses the app, is online or available, or is assigned to or completing a trip.
+        This location data is necessary to provide core ride-hailing services, including driver availability,
+        nearby ride assignment, navigation, live trip tracking, estimated arrival times (ETA), route management,
+        dispatch and admin monitoring, safety, support, fraud prevention, and service improvement.
+      </p>
+      <p>
+        Location data may be shared with riders or customers where required for the booking or trip, with
+        authorised dispatchers and administrators, with map and navigation providers, and with backend, cloud,
+        and service providers that help operate, secure, and support the platform. Location data may also be
+        disclosed to legal or regulatory authorities where required by applicable law.
+      </p>
+      <p>
+        Drivers can manage or disable location permissions at any time from their device settings. However,
+        disabling location access may prevent the Rikba Driver app from functioning correctly, including
+        receiving trip assignments, navigation, and live trip tracking.
+      </p>
+      <LegalCallout title="When location is collected">
+        <p>Location is collected when the driver uses the app, when the driver is online or available, and during active trips.</p>
+        <p>Location and trip records are retained as described in the Data retention section below and are then deleted, anonymised, or archived in line with applicable retention rules. Rikba applies the technical and organisational safeguards described in the Security measures section to protect this data.</p>
+        <p>
+          For privacy questions, contact{" "}
+          <a href={`mailto:${COMPANY_EMAIL}`} className="font-semibold hover:text-primary">{COMPANY_EMAIL}</a>. Drivers can request account or data deletion through the{" "}
+          <a href="/legal/account-deletion" className="font-semibold hover:text-primary">Delete My Rikba Account</a>{" "}page.
+        </p>
       </LegalCallout>
     </LegalSection>
 
@@ -905,7 +938,7 @@ export const legalDocuments: Record<LegalSlug, LegalDocument> = {
     title: "Privacy Policy",
     shortTitle: "Privacy policy",
     description: "How RIKBA collects, uses, stores, shares, retains, and protects personal data across the platform.",
-    effectiveDate: EFFECTIVE_DATE,
+    effectiveDate: PRIVACY_EFFECTIVE_DATE,
     toc: privacyPolicyToc,
     body: privacyPolicyBody,
   },
