@@ -7,11 +7,11 @@ export function ComparisonSection() {
     <section id="problem" className="py-20 md:py-32 relative overflow-hidden">
       <div className="mx-auto max-w-6xl px-5 relative z-10">
 
-        {/* ===== SECTION HEADER ===== */}
+        {/* ===== SECTION HEADER (FIXED TITLE CONTRAST) ===== */}
         <div className="text-center">
-          <h2 className="text-center text-3xl md:text-5xl lg:text-6xl font-bold text-foreground text-balance leading-tight tracking-tight">
+          <h2 className="text-center text-3xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white text-balance leading-tight tracking-tight">
             Why switch to{" "}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-sky-400 via-cyan-300 to-white">
+            <span className="text-sky-500 drop-shadow-sm">
               Rikba?
             </span>
           </h2>
@@ -27,7 +27,7 @@ export function ComparisonSection() {
             direction="y"
             className="absolute -top-6 left-4 md:-top-8 md:left-8 z-20 pointer-events-none"
           >
-            <span className="flex items-center justify-center w-14 h-10 md:w-16 md:h-12 rounded-2xl bg-black/60 border border-white/15 backdrop-blur-xl shadow-2xl text-base md:text-lg font-bold text-sky-400">
+            <span className="flex items-center justify-center w-14 h-10 md:w-16 md:h-12 rounded-2xl bg-white/80 dark:bg-black/60 border border-sky-500/20 backdrop-blur-xl shadow-2xl text-base md:text-lg font-bold text-sky-500">
               EUR
             </span>
           </FloatingBadge>
@@ -53,28 +53,28 @@ export function ComparisonSection() {
           </FloatingBadge>
 
           {/* Main Card */}
-          <div className="rounded-[32px] border border-white/10 bg-gradient-to-b from-white/10 via-white/5 to-transparent backdrop-blur-2xl p-7 md:p-11 relative overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-500 hover:border-white/20">
+          <div className="rounded-[32px] border border-sky-500/15 bg-sky-500/5 backdrop-blur-2xl p-7 md:p-11 relative overflow-hidden shadow-xl transition-all duration-500 hover:border-sky-500/30">
 
             {/* Ambient Background Glows */}
-            <div className="absolute top-0 right-0 w-48 h-48 bg-sky-500/15 rounded-full blur-[90px] pointer-events-none" />
+            <div className="absolute top-0 right-0 w-48 h-48 bg-sky-500/10 rounded-full blur-[90px] pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-40 h-40 bg-cyan-400/10 rounded-full blur-[70px] pointer-events-none" />
 
             {/* Card Header */}
-            <div className="relative flex items-center gap-3.5 mb-8 pb-6 border-b border-white/10">
-              <div className="w-12 h-12 rounded-2xl bg-sky-500/10 border border-sky-400/20 backdrop-blur-md flex items-center justify-center p-2 shadow-[0_0_20px_rgba(56,189,248,0.15)]">
+            <div className="relative flex items-center gap-3.5 mb-8 pb-6 border-b border-sky-500/15">
+              <div className="w-12 h-12 rounded-2xl bg-sky-500/10 border border-sky-400/20 backdrop-blur-md flex items-center justify-center p-2 shadow-sm">
                 <img
                   src="/Favecoiiin.png"
                   alt="Rikba"
-                  className="w-full h-full object-contain drop-shadow-md"
+                  className="w-full h-full object-contain"
                 />
               </div>
 
-              <span className="font-bold text-foreground text-2xl tracking-tight">
+              <span className="font-extrabold text-slate-900 dark:text-white text-2xl tracking-tight">
                 Rikba
               </span>
 
-              <span className="ml-auto inline-flex items-center gap-1.5 rounded-full border border-sky-500/30 bg-sky-500/10 backdrop-blur-xl px-3.5 py-1.5 text-xs font-semibold text-sky-400 shadow-sm">
-                <SparkleIcon size={12} className="text-sky-400" />
+              <span className="ml-auto inline-flex items-center gap-1.5 rounded-full border border-sky-500/30 bg-sky-500/10 backdrop-blur-xl px-3.5 py-1.5 text-xs font-semibold text-sky-500 shadow-sm">
+                <SparkleIcon size={12} className="text-sky-500" />
                 Recommended
               </span>
             </div>
@@ -119,17 +119,17 @@ export function ComparisonSection() {
             </div>
 
             {/* Commission Bar Section */}
-            <div className="mt-9 pt-7 border-t border-white/10">
+            <div className="mt-9 pt-7 border-t border-sky-500/15">
               <div className="flex items-center justify-between mb-3">
-                <span className="text-xs font-mono uppercase tracking-wider text-muted-foreground">
+                <span className="text-xs font-mono font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                   Driver keeps
                 </span>
-                <span className="text-base font-bold text-sky-400 tracking-tight">
+                <span className="text-base font-extrabold text-sky-500 tracking-tight">
                   92%
                 </span>
               </div>
 
-              <div className="h-3.5 rounded-full bg-white/5 border border-white/10 overflow-hidden p-0.5">
+              <div className="h-3.5 rounded-full bg-sky-500/10 border border-sky-400/20 overflow-hidden p-0.5">
                 <div className="h-full rounded-full bg-gradient-to-r from-sky-400 to-cyan-300 w-[92%] shadow-[0_0_15px_rgba(56,189,248,0.5)] transition-all duration-1000" />
               </div>
             </div>
@@ -138,7 +138,7 @@ export function ComparisonSection() {
 
           {/* Bottom Note Badge */}
           <div className="mt-6 flex justify-center">
-            <div className="inline-flex items-center rounded-full border border-sky-500/20 bg-sky-500/10 backdrop-blur-md px-5 py-2 text-xs font-medium text-sky-300 shadow-sm">
+            <div className="inline-flex items-center rounded-full border border-sky-500/20 bg-sky-500/10 backdrop-blur-md px-5 py-2 text-xs font-semibold text-sky-600 dark:text-sky-300 shadow-sm">
               Our commission will never increase.
             </div>
           </div>
@@ -162,15 +162,15 @@ function ComparisonRow({
 }) {
   return (
     <div className="flex items-start gap-3.5 group">
-      <div className="mt-0.5 w-6 h-6 rounded-full bg-sky-500/15 border border-sky-400/30 text-sky-400 flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110">
+      <div className="mt-0.5 w-6 h-6 rounded-full bg-sky-500/15 border border-sky-400/30 text-sky-500 flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110">
         {icon}
       </div>
 
       <div>
-        <span className="text-[11px] font-mono font-semibold uppercase tracking-wider text-sky-400/80 block">
+        <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400 block">
           {label}
         </span>
-        <p className="text-sm md:text-base leading-relaxed text-foreground font-medium mt-0.5">
+        <p className="text-sm md:text-base leading-relaxed text-slate-900 dark:text-white font-semibold mt-0.5">
           {value}
         </p>
       </div>
