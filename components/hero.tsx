@@ -1,138 +1,158 @@
 "use client"
 
-import { AnimateOnScroll } from "./animate-on-scroll"
+import { useState, useEffect } from "react"
+import { motion, useMotionValue, useTransform, useSpring } from "framer-motion"
 import Image from "next/image"
 
 export function Hero() {
+  // Parallax Mouse Effect
+  const mouseX = useMotionValue(0)
+  const mouseY = useMotionValue(0)
+
+  const springConfig = { damping: 25, stiffness: 150 }
+  const dx = useSpring(mouseX, springConfig)
+  const dy = useSpring(mouseY, springConfig)
+
+  const rotateX = useTransform(dy, [-300, 300], [8, -8])
+  const rotateY = useTransform(dx, [-300, 300], [-8, 8])
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect()
+    const x = e.clientX - rect.left - rect.width / 2
+    const y = e.clientY - rect.top - rect.height / 2
+    mouseX.set(x)
+    mouseY.set(y)
+  }
+
   return (
-    <section className="relative pt-16 pb-20 md:pt-20 md:pb-28 overflow-hidden">
-
-      {/* ===== BLUE AMBIENT GLOW ===== */}
+    <section 
+      onMouseMove={handleMouseMove}
+      className="relative min-h-[90vh] pt-20 pb-24 md:pt-28 md:pb-36 overflow-hidden flex flex-col justify-center items-center"
+    >
+      {/* ===== APPLE STYLE AMBIENT GLOW & MESH ===== */}
       <div className="absolute inset-0 -z-10 pointer-events-none flex items-center justify-center">
-
-        <div
-          className="
-          w-[900px] h-[900px]
-          bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.22),transparent_70%)]
-          blur-[160px]
-          opacity-70
-        "
+        <motion.div
+          animate={{
+            scale: [1, 1.15, 1],
+            opacity: [0.35, 0.55, 0.35],
+          }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+          className="w-[700px] h-[700px] md:w-[900px] md:h-[900px] bg-[radial-gradient(circle_at_center,rgba(56,189,248,0.25),transparent_65%)] blur-[140px]"
         />
-
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background opacity-80" />
-
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background opacity-90" />
       </div>
 
-      <div className="relative mx-auto max-w-6xl px-5 z-10">
-
+      <div className="relative mx-auto max-w-5xl px-6 z-10 text-center flex flex-col items-center">
+        
         {/* ===== LOGO ===== */}
-        <AnimateOnScroll animation="scale-in">
-          <div className="flex justify-center mb-[-24px] mt-8">
-
-            <div className="relative w-[250px] md:w-[340px] lg:w-[400px] xl:w-[460px]">
-
-              <Image
-                src="/1CD50AD3-C98C-41E9-906E-DA7B306907D7.png"
-                alt="Rikba logo"
-                width={480}
-                height={200}
-                priority
-                className="w-full h-auto object-contain"
-              />
-
-            </div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9, filter: "blur(10px)" }}
+          animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="mb-6"
+        >
+          <div className="relative w-[220px] md:w-[300px] lg:w-[360px] mx-auto">
+            <Image
+              src="/1CD50AD3-C98C-41E9-906E-DA7B306907D7.png"
+              alt="Rikba logo"
+              width={480}
+              height={200}
+              priority
+              className="w-full h-auto object-contain drop-shadow-[0_0_35px_rgba(56,189,248,0.2)]"
+            />
           </div>
-        </AnimateOnScroll>
+        </motion.div>
 
-        {/* ===== HEADING ===== */}
-        <AnimateOnScroll animation="fade-up" delay={100}>
-
-          <h1 className="text-center text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground leading-tight">
-
-            Malta deserves
-
-            <br />
-
-            <span className="text-primary inline-flex items-center gap-2 md:gap-3">
-              <CarIcon />
-              a better ride.
+        {/* ===== LAUNCH BADGE ===== */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mb-8"
+        >
+          <span className="inline-flex items-center gap-2.5 rounded-full border border-sky-500/30 bg-sky-500/10 backdrop-blur-xl px-4 py-1.5 text-xs font-medium tracking-wide text-sky-400 shadow-lg shadow-sky-500/5">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-sky-400" />
             </span>
+            Launching Soon in Malta
+          </span>
+        </motion.div>
 
-          </h1>
-
-          {/* ===== LAUNCH BADGE ===== */}
-          <div className="flex justify-center mt-4">
-
-            <span className="inline-flex items-center gap-2 rounded-xl border border-primary/40 bg-primary/15 px-5 py-2 text-sm font-semibold text-primary shadow-lg backdrop-blur-md">
-
-              <span className="relative flex w-2.5 h-2.5 shrink-0">
-
-                <span className="animate-ping absolute inset-0 rounded-full bg-primary opacity-80" />
-
-                <span className="relative rounded-full w-2.5 h-2.5 bg-primary" />
-
-              </span>
-
-              Launching Soon
-
-            </span>
-          </div>
-
-        </AnimateOnScroll>
+        {/* ===== MAIN HEADING ===== */}
+        <motion.h1 
+          initial={{ opacity: 0, y: 25, filter: "blur(10px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+          className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground leading-[1.08] max-w-4xl"
+        >
+          Malta deserves <br />
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-sky-400 via-cyan-300 to-white">
+            a better ride.
+          </span>
+        </motion.h1>
 
         {/* ===== SUBTITLE ===== */}
-        <AnimateOnScroll animation="fade-up" delay={200}>
-
-          <p className="mx-auto mt-6 max-w-xl text-center text-lg md:text-xl text-muted-foreground leading-relaxed">
-
-            Fair prices. Happier drivers. An app that's 100% Maltese and keeps
-            your money on the island.
-
-          </p>
-
-        </AnimateOnScroll>
+        <motion.p 
+          initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="mt-6 max-w-2xl text-base md:text-xl text-muted-foreground leading-relaxed font-normal"
+        >
+          Fair prices. Happier drivers. An app that’s 100% Maltese and keeps your money on the island.
+        </motion.p>
 
         {/* ===== CTA BUTTONS ===== */}
-        <AnimateOnScroll animation="fade-up" delay={300}>
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto"
+        >
+          <a
+            href="#waitlist"
+            className="w-full sm:w-auto inline-flex items-center justify-center rounded-2xl bg-sky-400 px-8 py-4 text-sm font-semibold text-black transition-all duration-300 hover:bg-sky-300 hover:shadow-[0_0_30px_rgba(56,189,248,0.4)] hover:scale-[1.02] active:scale-[0.98] min-h-[52px]"
+          >
+            Join the Waitlist
+          </a>
 
-          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href="#waitlist"
+            className="w-full sm:w-auto inline-flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl px-8 py-4 text-sm font-medium text-foreground transition-all duration-300 hover:bg-white/10 hover:border-sky-500/30 hover:scale-[1.02] active:scale-[0.98] min-h-[52px]"
+          >
+            I want to drive
+          </a>
+        </motion.div>
 
-            <a
-              href="#waitlist"
-              className="w-full sm:w-auto inline-flex items-center justify-center rounded-xl bg-primary px-8 py-4 text-base font-semibold text-primary-foreground hover:bg-primary/90 transition-all shadow-lg shadow-primary/25 min-h-[48px]"
-            >
-              Join the Waitlist
-            </a>
+        {/* ===== ABSTRACT 3D INTERACTIVE VISUAL (REPLACES PHONE MOCKUP) ===== */}
+        <motion.div
+          style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
+          initial={{ opacity: 0, y: 40, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 1, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="relative mt-16 w-full max-w-3xl h-[260px] md:h-[360px] rounded-3xl border border-white/10 bg-gradient-to-b from-white/10 via-white/5 to-transparent backdrop-blur-2xl p-6 shadow-2xl flex flex-col items-center justify-center overflow-hidden"
+        >
+          {/* Subtle Grid Lines */}
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:28px_28px] pointer-events-none" />
 
-            <a
-              href="#waitlist"
-              className="w-full sm:w-auto inline-flex items-center justify-center rounded-xl border border-border bg-secondary px-8 py-4 text-base font-semibold text-secondary-foreground hover:bg-secondary/80 hover:border-primary/40 transition-all min-h-[48px]"
-            >
-              I want to drive
-            </a>
+          {/* Glowing Animated Ring Structure */}
+          <motion.div 
+            animate={{ rotate: 360 }}
+            transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+            className="relative w-48 h-48 md:w-64 md:h-64 rounded-full border border-sky-400/20 flex items-center justify-center shadow-[0_0_60px_rgba(56,189,248,0.12)]"
+          >
+            <div className="w-36 h-36 md:w-48 md:h-48 rounded-full border border-sky-300/15 flex items-center justify-center">
+              <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-sky-400/20 blur-2xl animate-pulse" />
+            </div>
+          </motion.div>
 
+          <div className="absolute bottom-5 flex items-center gap-2 text-[11px] font-mono tracking-widest text-muted-foreground uppercase">
+            <span className="w-1.5 h-1.5 rounded-full bg-sky-400" />
+            Rikba Mobility Engine • Malta Network
           </div>
-
-        </AnimateOnScroll>
+        </motion.div>
 
       </div>
     </section>
-  )
-}
-
-function CarIcon() {
-  return (
-    <svg
-      width="28"
-      height="28"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-    >
-      <path d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.7-3.6a1 1 0 0 0-.8-.4H5.24a2 2 0 0 0-1.8 1.1l-.8 1.63A6 6 0 0 0 2 12.42V16h2"/>
-      <circle cx="6.5" cy="16.5" r="2.5"/>
-      <circle cx="16.5" cy="16.5" r="2.5"/>
-    </svg>
   )
 }
