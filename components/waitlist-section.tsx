@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import { AnimateOnScroll } from "./animate-on-scroll"
 
 export function WaitlistSection() {
   const [role, setRole] = useState<"rider" | "driver">("rider")
@@ -36,36 +35,40 @@ export function WaitlistSection() {
   return (
     <section
       id="waitlist"
-      className="py-20 md:py-32 border-t border-border relative"
+      className="py-20 md:py-32 relative overflow-hidden"
     >
-      <div className="mx-auto max-w-6xl px-5">
+      {/* Background Ambient Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-sky-400/10 rounded-full blur-[140px] pointer-events-none" />
+
+      <div className="mx-auto max-w-6xl px-6 relative z-10">
 
         <div className="mx-auto max-w-xl">
 
-          <AnimateOnScroll animation="fade-up">
-
-            <h2 className="text-center text-3xl md:text-5xl font-bold text-foreground leading-tight">
-              Be first <span className="text-primary">in line.</span>
+          {/* SECTION HEADER */}
+          <div className="text-center">
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight tracking-tight">
+              Be first{" "}
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-sky-400 via-cyan-300 to-white">
+                in line.
+              </span>
             </h2>
 
-            <p className="mt-4 text-center text-muted-foreground text-lg">
+            <p className="mt-4 text-base md:text-lg text-muted-foreground font-normal">
               Rikba launches Summer 2026. Get in before everyone else.
             </p>
+          </div>
 
-          </AnimateOnScroll>
-
-          {/* Role Toggle */}
+          {/* ROLE TOGGLE CAPSULE */}
           <div className="mt-8 flex items-center justify-center">
-
-            <div className="inline-flex rounded-xl bg-secondary p-1 border border-border">
+            <div className="inline-flex rounded-full bg-white/5 border border-sky-500/20 p-1.5 backdrop-blur-xl shadow-lg">
 
               <button
                 type="button"
                 onClick={() => setRole("rider")}
-                className={`rounded-lg px-6 py-3 text-sm font-semibold transition-all ${
+                className={`rounded-full px-6 py-2.5 text-xs md:text-sm font-semibold transition-all duration-300 ${
                   role === "rider"
-                    ? "bg-primary text-primary-foreground"
-                    : "text-muted-foreground"
+                    ? "bg-sky-400 text-black shadow-[0_0_20px_rgba(56,189,248,0.4)]"
+                    : "text-muted-foreground hover:text-foreground"
                 }`}
               >
                 I want to ride
@@ -74,10 +77,10 @@ export function WaitlistSection() {
               <button
                 type="button"
                 onClick={() => setRole("driver")}
-                className={`rounded-lg px-6 py-3 text-sm font-semibold transition-all ${
+                className={`rounded-full px-6 py-2.5 text-xs md:text-sm font-semibold transition-all duration-300 ${
                   role === "driver"
-                    ? "bg-primary text-primary-foreground"
-                    : "text-muted-foreground"
+                    ? "bg-sky-400 text-black shadow-[0_0_20px_rgba(56,189,248,0.4)]"
+                    : "text-muted-foreground hover:text-foreground"
                 }`}
               >
                 I want to drive
@@ -86,13 +89,12 @@ export function WaitlistSection() {
             </div>
           </div>
 
-          {/* Form */}
+          {/* FORM CONTAINER */}
           <form
             onSubmit={handleSubmit}
-            className="mt-8 rounded-2xl border border-border bg-card p-6 md:p-8"
+            className="mt-8 rounded-[32px] border border-sky-500/20 bg-sky-500/5 backdrop-blur-2xl p-7 md:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.3)] transition-all duration-300 hover:border-sky-400/30"
           >
-
-            <label className="block text-sm font-medium mb-2">
+            <label className="block text-xs font-mono uppercase tracking-wider text-sky-400/90 mb-3 font-semibold">
               Your contact details
             </label>
 
@@ -109,7 +111,7 @@ export function WaitlistSection() {
                     ? "rider@email.com"
                     : "driver@email.com"
                 }
-                className="w-full rounded-xl border border-border bg-input px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all"
+                className="w-full rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md px-4 py-3.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-sky-400 focus:bg-white/10 transition-all"
               />
 
               {/* Phone */}
@@ -118,36 +120,36 @@ export function WaitlistSection() {
                 type="tel"
                 required
                 placeholder="+356 9999 9999"
-                className="w-full rounded-xl border border-border bg-input px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all"
+                className="w-full rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md px-4 py-3.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-sky-400 focus:bg-white/10 transition-all"
               />
 
             </div>
 
             {/* Launch Update Checkbox */}
-            <label className="mt-4 flex items-center gap-3 cursor-pointer">
+            <label className="mt-5 flex items-center gap-3 cursor-pointer group">
 
               <input
                 type="checkbox"
                 name="launch_update"
                 value="yes"
-                className="w-5 h-5 rounded border-border bg-input text-primary accent-primary"
+                className="w-4 h-4 rounded border-white/20 bg-white/5 text-sky-400 accent-sky-400 focus:ring-0 cursor-pointer"
               />
 
-              <span className="text-sm text-muted-foreground">
-                Update me when launch.
+              <span className="text-xs md:text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+                Update me when launched.
               </span>
 
             </label>
 
-            {/* Submit */}
+            {/* Submit Button */}
             <button
               type="submit"
-              className="mt-6 w-full rounded-xl bg-primary px-6 py-4 font-semibold text-primary-foreground hover:bg-primary/90 transition-all shadow-lg shadow-primary/25"
+              className="mt-6 w-full rounded-2xl bg-sky-400 px-6 py-4 font-semibold text-black text-sm transition-all duration-300 hover:bg-sky-300 hover:shadow-[0_0_30px_rgba(56,189,248,0.4)] hover:scale-[1.01] active:scale-[0.98]"
             >
               Join the Waitlist
             </button>
 
-            <p className="mt-4 text-center text-xs text-muted-foreground">
+            <p className="mt-4 text-center text-xs text-muted-foreground font-normal">
               We{"'"}ll only contact you about Rikba. No spam, ever.
             </p>
 
@@ -156,14 +158,12 @@ export function WaitlistSection() {
         </div>
       </div>
 
-      {/* Toast */}
+      {/* TOAST NOTIFICATION */}
       {showToast && (
-        <div className="fixed inset-0 flex items-center justify-center pointer-events-none z-50">
-
-          <div className="bg-primary text-primary-foreground px-8 py-4 rounded-2xl shadow-2xl text-lg font-semibold animate-fade-in">
-            Successfully received
+        <div className="fixed inset-0 flex items-center justify-center pointer-events-none z-50 px-4">
+          <div className="bg-sky-400 text-black px-8 py-4 rounded-2xl shadow-[0_0_40px_rgba(56,189,248,0.5)] text-base font-semibold border border-sky-300 animate-bounce">
+            Successfully received!
           </div>
-
         </div>
       )}
     </section>
