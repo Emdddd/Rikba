@@ -2,158 +2,209 @@
 
 import Link from "next/link"
 import { useState, useEffect } from "react"
+import { motion, AnimatePresence } from "framer-motion"
 
 export function Navbar() {
-
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
 
-  /* LOCK SCROLL */
+  /* DETECT SCROLL FOR NAVBAR GLOW */
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setScrolled(true)
+      } else {
+        setScrolled(false)
+      }
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  /* LOCK SCROLL ON MOBILE MENU OPEN */
   useEffect(() => {
     document.body.style.overflow = mobileMenuOpen ? "hidden" : "auto"
   }, [mobileMenuOpen])
 
   return (
     <>
-      {/* NAVBAR */}
-      <nav
-        className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-white/80 backdrop-blur-xl transition-all duration-500"
-      >
-        <div className="mx-auto max-w-6xl px-5 flex items-center justify-between h-16">
-
+      {/* FLOATING CAPSULE NAVBAR */}
+      <header className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 pt-4 md:pt-6 transition-all duration-300">
+        <nav
+          className={`w-full max-w-5xl rounded-full border transition-all duration-500 ${
+            scrolled
+              ? "border-white/15 bg-black/60 shadow-[0_8px_32px_rgba(0,0,0,0.5)] backdrop-blur-2xl py-2.5 px-6"
+              : "border-white/10 bg-black/30 backdrop-blur-xl py-3 px-6"
+          } flex items-center justify-between text-white`}
+        >
           {/* LOGO */}
-          <Link href="/" className="flex items-center gap-[2px]">
-            <img
-              src="/Favecoiiin.png"
-              className="w-9 h-9 object-contain"
-            />
-            <span className="font-bold text-xl">Rikba</span>
+          <Link href="/" className="flex items-center gap-2 group">
+            <div className="relative w-8 h-8 flex items-center justify-center rounded-full bg-sky-500/10 border border-sky-400/20 group-hover:border-sky-400/50 transition-all duration-300">
+              <img
+                src="/Favecoiiin.png"
+                alt="Rikba"
+                className="w-5 h-5 object-contain group-hover:scale-110 transition-transform duration-300"
+              />
+            </div>
+            <span className="font-bold text-lg tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-neutral-200 to-neutral-400">
+              Rikba
+            </span>
           </Link>
 
-          {/* DESKTOP NAV */}
-          <div className="hidden md:flex items-center gap-8">
-
-            <a href="/#problem" className="text-sm text-muted-foreground hover:text-foreground">
+          {/* DESKTOP NAV LINKS */}
+          <div className="hidden md:flex items-center gap-7">
+            <a
+              href="/#problem"
+              className="text-xs font-medium text-neutral-300 hover:text-sky-400 transition-colors duration-200"
+            >
               Why Rikba
             </a>
 
-            <a href="/#how-it-works" className="text-sm text-muted-foreground hover:text-foreground">
+            <a
+              href="/#how-it-works"
+              className="text-xs font-medium text-neutral-300 hover:text-sky-400 transition-colors duration-200"
+            >
               How it works
             </a>
 
-            <a href="/#faq" className="text-sm text-muted-foreground hover:text-foreground">
+            <a
+              href="/#faq"
+              className="text-xs font-medium text-neutral-300 hover:text-sky-400 transition-colors duration-200"
+            >
               FAQ
             </a>
 
-            <Link href="/blog" className="text-sm text-muted-foreground hover:text-foreground">
+            <Link
+              href="/blog"
+              className="text-xs font-medium text-neutral-300 hover:text-sky-400 transition-colors duration-200"
+            >
               Blog
             </Link>
 
-            <Link href="/legal" className="text-sm text-muted-foreground hover:text-foreground">
+            <Link
+              href="/legal"
+              className="text-xs font-medium text-neutral-300 hover:text-sky-400 transition-colors duration-200"
+            >
               Legal
             </Link>
 
-            <Link href="/download" className="text-sm text-muted-foreground hover:text-foreground font-medium">
+            <Link
+              href="/download"
+              className="text-xs font-medium text-sky-400 hover:text-sky-300 transition-colors duration-200"
+            >
               Download
             </Link>
+          </div>
 
+          {/* RIGHT ACTION BUTTON */}
+          <div className="hidden md:flex items-center gap-3">
             <Link
               href="/legal/contact"
-              className="rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground"
+              className="relative inline-flex items-center justify-center rounded-full bg-sky-400 px-5 py-2 text-xs font-semibold text-black transition-all duration-300 hover:bg-sky-300 hover:shadow-[0_0_20px_rgba(56,189,248,0.4)] hover:scale-[1.03] active:scale-[0.98]"
             >
               Contact us
             </Link>
-
           </div>
 
-          {/* HAMBURGER BUTTON */}
+          {/* HAMBURGER BUTTON (MOBILE) */}
           <button
-            onClick={() => setMobileMenuOpen(prev => !prev)}
-            className="md:hidden w-11 h-11 flex items-center justify-center"
+            onClick={() => setMobileMenuOpen((prev) => !prev)}
+            aria-label="Toggle Menu"
+            className="md:hidden relative z-50 w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white focus:outline-none"
           >
-            <div className="relative w-6 h-6 transform-gpu will-change-transform">
-
+            <div className="w-4 h-3 flex flex-col justify-between items-center">
               <span
-                className={`absolute left-0 w-full h-[2px] bg-current
-                transition-[transform,opacity] duration-900 ease-[cubic-bezier(0.22,1,0.36,1)]
-                ${mobileMenuOpen ? "rotate-45 top-3" : "top-1"}`}
+                className={`w-full h-[1.5px] bg-white rounded-full transition-all duration-300 ${
+                  mobileMenuOpen ? "rotate-45 translate-y-[5px]" : ""
+                }`}
               />
-
               <span
-                className={`absolute left-0 w-full h-[2px] bg-current
-                transition-[transform,opacity] duration-900 ease-[cubic-bezier(0.22,1,0.36,1)]
-                ${mobileMenuOpen ? "opacity-0" : "top-3"}`}
+                className={`w-full h-[1.5px] bg-white rounded-full transition-all duration-300 ${
+                  mobileMenuOpen ? "opacity-0" : ""
+                }`}
               />
-
               <span
-                className={`absolute left-0 w-full h-[2px] bg-current
-                transition-[transform,opacity] duration-900 ease-[cubic-bezier(0.22,1,0.36,1)]
-                ${mobileMenuOpen ? "-rotate-45 top-3" : "top-5"}`}
+                className={`w-full h-[1.5px] bg-white rounded-full transition-all duration-300 ${
+                  mobileMenuOpen ? "-rotate-45 -translate-y-[5.5px]" : ""
+                }`}
               />
-
             </div>
           </button>
+        </nav>
+      </header>
 
-        </div>
-      </nav>
+      {/* FULLSCREEN MOBILE MENU OVERLAY */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, backdropFilter: "blur(0px)" }}
+            animate={{ opacity: 1, backdropFilter: "blur(24px)" }}
+            exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-40 md:hidden bg-black/80 flex flex-col justify-center px-8 pt-20 pb-10"
+          >
+            <div className="flex flex-col gap-6 text-center">
+              <a
+                href="/#problem"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-2xl font-semibold text-neutral-200 hover:text-sky-400 transition-colors"
+              >
+                Why Rikba
+              </a>
 
-      {/* BACKDROP */}
-      <div
-        onClick={() => setMobileMenuOpen(false)}
-        className={`fixed inset-0 z-40 md:hidden transition-all duration-500
-        ${mobileMenuOpen
-          ? "opacity-100 backdrop-blur-xl bg-black/20"
-          : "opacity-0 pointer-events-none"}`}
-      />
+              <a
+                href="/#how-it-works"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-2xl font-semibold text-neutral-200 hover:text-sky-400 transition-colors"
+              >
+                How it works
+              </a>
 
-      {/* MOBILE MENU (BURGER MENU CONTENTS) */}
-      <div
-        className={`fixed top-16 left-0 right-0 z-50 md:hidden border-b border-border
-        bg-white transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]
-        ${mobileMenuOpen
-          ? "opacity-100 translate-y-0"
-          : "opacity-0 -translate-y-8 pointer-events-none"}`}
-      >
-        <div className="px-6 py-6 flex flex-col gap-6 text-center">
+              <a
+                href="/#faq"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-2xl font-semibold text-neutral-200 hover:text-sky-400 transition-colors"
+              >
+                FAQ
+              </a>
 
-          <a href="/#problem" onClick={() => setMobileMenuOpen(false)} className="text-lg">
-            Why Rikba
-          </a>
+              <Link
+                href="/blog"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-2xl font-semibold text-neutral-200 hover:text-sky-400 transition-colors"
+              >
+                Blog
+              </Link>
 
-          <a href="/#how-it-works" onClick={() => setMobileMenuOpen(false)} className="text-lg">
-            How it works
-          </a>
+              <Link
+                href="/legal"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-2xl font-semibold text-neutral-200 hover:text-sky-400 transition-colors"
+              >
+                Legal
+              </Link>
 
-          <a href="/#faq" onClick={() => setMobileMenuOpen(false)} className="text-lg">
-            FAQ
-          </a>
+              <Link
+                href="/download"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-2xl font-semibold text-sky-400 hover:text-sky-300 transition-colors"
+              >
+                Download App
+              </Link>
 
-          <Link href="/blog" onClick={() => setMobileMenuOpen(false)} className="text-lg">
-            Blog
-          </Link>
-
-          <Link href="/legal" onClick={() => setMobileMenuOpen(false)} className="text-lg">
-            Legal
-          </Link>
-
-          {/* Download App inside Burger Menu */}
-          <Link href="/download" onClick={() => setMobileMenuOpen(false)} className="text-lg font-semibold text-primary">
-            Download App
-          </Link>
-
-          <div className="flex justify-center items-center pt-2">
-
-            <Link
-              href="/legal/contact"
-              onClick={() => setMobileMenuOpen(false)}
-              className="w-full max-w-xs rounded-lg bg-primary px-6 py-3 font-semibold text-primary-foreground"
-            >
-              Contact us
-            </Link>
-
-          </div>
-
-        </div>
-      </div>
+              <div className="pt-6 flex justify-center">
+                <Link
+                  href="/legal/contact"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="w-full max-w-xs rounded-full bg-sky-400 py-3.5 font-semibold text-black shadow-lg shadow-sky-500/25 transition-all active:scale-95"
+                >
+                  Contact us
+                </Link>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   )
 }
