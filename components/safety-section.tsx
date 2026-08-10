@@ -1,17 +1,15 @@
 "use client"
 
-import { AnimateOnScroll } from "./animate-on-scroll"
-
 export function SafetySection() {
   const features = [
     {
       icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
         </svg>
       ),
       badge: (
-        <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor" className="text-primary">
+        <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor" className="text-sky-500">
           <path d="M8 0L9.79 6.21L16 8L9.79 9.79L8 16L6.21 9.79L0 8L6.21 6.21L8 0Z" />
         </svg>
       ),
@@ -20,7 +18,7 @@ export function SafetySection() {
     },
     {
       icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
           <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
           <circle cx="9" cy="7" r="4" />
           <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
@@ -28,7 +26,7 @@ export function SafetySection() {
         </svg>
       ),
       badge: (
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-sky-500">
           <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
           <polyline points="22 4 12 14.01 9 11.01" />
         </svg>
@@ -38,13 +36,13 @@ export function SafetySection() {
     },
     {
       icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
           <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
           <polyline points="22 4 12 14.01 9 11.01" />
         </svg>
       ),
       badge: (
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-sky-500">
           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
         </svg>
       ),
@@ -54,36 +52,48 @@ export function SafetySection() {
   ]
 
   return (
-    <section className="py-20 md:py-32 border-t border-border">
-      <div className="mx-auto max-w-6xl px-5">
-        <AnimateOnScroll animation="fade-up">
-          <h2 className="text-center text-3xl md:text-5xl font-bold text-foreground text-balance leading-tight">
+    <section className="py-20 md:py-32 relative overflow-hidden">
+      {/* Ambient Glow Background */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-sky-400/10 rounded-full blur-[130px] pointer-events-none" />
+
+      <div className="mx-auto max-w-6xl px-6 relative z-10">
+        
+        {/* SECTION HEADER */}
+        <div className="text-center">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight tracking-tight">
             Safe rides.{" "}
-            <span className="text-primary inline-flex items-center gap-1.5">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 md:w-6 md:h-6 opacity-60">
+            <span className="text-sky-500 inline-flex items-center gap-2">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-80">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
               </svg>
               Properly licensed.
             </span>
           </h2>
-        </AnimateOnScroll>
+        </div>
 
-        <div className="mt-14 grid gap-5 md:grid-cols-3">
-          {features.map((feature, index) => (
-            <AnimateOnScroll key={feature.title} animation="fade-up" delay={index * 120}>
-              <div className="group rounded-2xl border border-border bg-card p-7 md:p-8 hover:border-primary/40 transition-all hover:shadow-lg hover:shadow-primary/5">
-                <div className="mb-5 w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary transition-transform group-hover:scale-110">
-                  {feature.icon}
-                </div>
-                <h3 className="text-xl font-bold text-card-foreground mb-2 inline-flex items-center gap-2">
-                  {feature.title}
-                  {feature.badge}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
+        {/* FEATURES GRID */}
+        <div className="mt-14 grid gap-6 md:grid-cols-3">
+          {features.map((feature) => (
+            <div
+              key={feature.title}
+              className="group rounded-3xl border border-sky-500/15 bg-sky-500/5 backdrop-blur-md p-8 transition-all duration-300 hover:border-sky-400/40 hover:bg-sky-500/10 hover:shadow-lg hover:shadow-sky-500/5"
+            >
+              <div className="mb-6 w-12 h-12 rounded-2xl bg-sky-500/10 border border-sky-400/20 backdrop-blur-md flex items-center justify-center text-sky-500 transition-transform duration-300 group-hover:scale-110 shadow-sm">
+                {feature.icon}
               </div>
-            </AnimateOnScroll>
+
+              <h3 className="text-xl font-bold text-foreground mb-2.5 inline-flex items-center gap-2 tracking-tight">
+                {feature.title}
+                {feature.badge}
+              </h3>
+
+              <p className="text-sm md:text-base text-muted-foreground leading-relaxed font-normal">
+                {feature.description}
+              </p>
+            </div>
           ))}
         </div>
+
       </div>
     </section>
   )
