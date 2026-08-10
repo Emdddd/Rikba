@@ -1,15 +1,13 @@
 "use client"
 
-import { AnimateOnScroll } from "./animate-on-scroll"
 import { FloatingBadge } from "./floating-badge"
 
 export function HowItWorks() {
-
   const steps = [
     {
       step: "01",
       icon: (
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75">
           <rect x="5" y="2" width="14" height="20" rx="2" />
           <line x1="12" y1="18" x2="12.01" y2="18" />
         </svg>
@@ -20,7 +18,7 @@ export function HowItWorks() {
     {
       step: "02",
       icon: (
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75">
           <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
           <circle cx="12" cy="10" r="3" />
         </svg>
@@ -31,7 +29,7 @@ export function HowItWorks() {
     {
       step: "03",
       icon: (
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75">
           <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
           <polyline points="22 4 12 14.01 9 11.01" />
         </svg>
@@ -42,114 +40,116 @@ export function HowItWorks() {
   ]
 
   return (
-    <section id="how-it-works" className="py-20 md:py-32 border-t border-border">
-      <div className="mx-auto max-w-6xl px-5">
+    <section id="how-it-works" className="py-20 md:py-32 relative overflow-hidden">
+      {/* Background Ambient Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-sky-400/10 rounded-full blur-[120px] pointer-events-none" />
 
-        {/* Header */}
-        <AnimateOnScroll animation="fade-up">
-          <div className="text-center">
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-2">
-              Three taps
-            </h2>
+      <div className="mx-auto max-w-6xl px-6 relative z-10">
 
-            <span className="text-primary inline-flex items-center gap-1.5 text-xl md:text-2xl font-bold">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                <polyline points="22 4 12 14.01 9 11.01" />
-              </svg>
-              That's it.
-            </span>
+        {/* SECTION HEADER */}
+        <div className="text-center">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight tracking-tight">
+            Three taps
+          </h2>
+
+          <div className="mt-2 inline-flex items-center gap-2 text-sky-500 font-semibold text-lg md:text-xl">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+              <polyline points="22 4 12 14.01 9 11.01" />
+            </svg>
+            That's it.
           </div>
-        </AnimateOnScroll>
+        </div>
 
-        <div className="mt-14 grid gap-8 md:grid-cols-3 max-w-4xl mx-auto relative">
+        {/* STEPS GRID */}
+        <div className="mt-16 grid gap-10 md:grid-cols-3 max-w-4xl mx-auto relative">
 
-          {/* Connecting line */}
-          <div className="hidden md:block absolute top-[40px] left-[calc(16.67%+40px)] right-[calc(16.67%+40px)] h-px bg-border z-0">
-            <div className="absolute top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-primary animate-travel-dot" />
+          {/* CONNECTING LINE */}
+          <div className="hidden md:block absolute top-[44px] left-[calc(16.67%+40px)] right-[calc(16.67%+40px)] h-[1px] bg-gradient-to-r from-sky-500/20 via-sky-400/50 to-sky-500/20 z-0">
+            <div className="absolute top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-sky-400 animate-ping" />
           </div>
 
           {steps.map((step, index) => (
-            <AnimateOnScroll key={step.step} animation="fade-up" delay={index * 150}>
-              <div className="relative z-10 text-center">
+            <div key={step.step} className="relative z-10 text-center group">
 
-                <div className="relative mx-auto mb-5 w-20 h-20 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
+              {/* ICON CONTAINER */}
+              <div className="relative mx-auto mb-6 w-20 h-20 rounded-2xl bg-sky-500/10 border border-sky-400/20 backdrop-blur-md flex items-center justify-center text-sky-500 transition-all duration-300 group-hover:scale-105 group-hover:border-sky-400/40 shadow-sm">
 
-                  {step.icon}
+                {step.icon}
 
-                  <span className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-primary text-primary-foreground text-xs font-bold flex items-center justify-center shadow-lg shadow-primary/30">
-                    {step.step}
-                  </span>
+                {/* STEP NUMBER BADGE */}
+                <span className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-sky-400 text-black text-xs font-bold flex items-center justify-center shadow-md shadow-sky-500/20">
+                  {step.step}
+                </span>
 
-                  {/* ===== RIKBA BADGE ===== */}
-                  {index === 0 && (
-                    <FloatingBadge
-                      delay={0}
-                      duration={4}
-                      direction="y"
-                      className="absolute -right-16 top-1/2 -translate-y-1/2 hidden md:flex"
-                    >
-                      <div className="flex items-center gap-0 rounded-lg bg-card border border-border shadow-md px-2 py-1">
-                        <img
-                          src="/Favecoiiin.png"
-                          alt="Rikba"
-                          className="w-5 h-5 object-contain"
-                        />
-                        <span className="text-[8px] font-semibold text-foreground whitespace-nowrap">
-                          Rikba
-                        </span>
-                      </div>
-                    </FloatingBadge>
-                  )}
-
-                  {index === 1 && (
-                    <FloatingBadge
-                      delay={0.3}
-                      duration={3.5}
-                      direction="y"
-                      className="absolute -right-20 top-1/2 -translate-y-1/2 hidden md:flex"
-                    >
-                      <span className="flex items-center gap-1 rounded-lg bg-card border border-border shadow-md px-2 py-1">
-                        <span className="text-[8px] text-muted-foreground font-medium">
-                          EUR
-                        </span>
-
-                        <span className="text-sm font-bold text-primary">
-                          7.80
-                        </span>
+                {/* FLOATING BADGES */}
+                {index === 0 && (
+                  <FloatingBadge
+                    delay={0}
+                    duration={4}
+                    direction="y"
+                    className="absolute -right-16 top-1/2 -translate-y-1/2 hidden md:flex pointer-events-none"
+                  >
+                    <div className="flex items-center gap-1.5 rounded-full border border-sky-500/20 bg-sky-500/10 backdrop-blur-md px-3 py-1 shadow-sm">
+                      <img
+                        src="/Favecoiiin.png"
+                        alt="Rikba"
+                        className="w-4 h-4 object-contain"
+                      />
+                      <span className="text-[10px] font-semibold text-sky-400 whitespace-nowrap">
+                        Rikba
                       </span>
-                    </FloatingBadge>
-                  )}
+                    </div>
+                  </FloatingBadge>
+                )}
 
-                  {index === 2 && (
-                    <FloatingBadge
-                      delay={0.2}
-                      duration={4}
-                      direction="y"
-                      className="absolute -right-24 top-1/2 -translate-y-1/2 hidden md:flex"
-                    >
-                      <div className="flex items-center gap-1.5 rounded-lg bg-card border border-border shadow-md px-2 py-1">
-                        <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+                {index === 1 && (
+                  <FloatingBadge
+                    delay={0.3}
+                    duration={3.5}
+                    direction="y"
+                    className="absolute -right-20 top-1/2 -translate-y-1/2 hidden md:flex pointer-events-none"
+                  >
+                    <span className="flex items-center gap-1.5 rounded-full border border-sky-500/20 bg-sky-500/10 backdrop-blur-md px-3 py-1 shadow-sm">
+                      <span className="text-[10px] text-muted-foreground font-medium">
+                        EUR
+                      </span>
+                      <span className="text-xs font-bold text-sky-400">
+                        7.80
+                      </span>
+                    </span>
+                  </FloatingBadge>
+                )}
 
-                        <span className="text-[8px] font-semibold text-foreground whitespace-nowrap">
-                          1 min away
-                        </span>
-                      </div>
-                    </FloatingBadge>
-                  )}
-
-                </div>
-
-                <h3 className="text-xl font-bold text-foreground mb-2">
-                  {step.title}
-                </h3>
-
-                <p className="text-muted-foreground leading-relaxed">
-                  {step.description}
-                </p>
+                {index === 2 && (
+                  <FloatingBadge
+                    delay={0.2}
+                    duration={4}
+                    direction="y"
+                    className="absolute -right-24 top-1/2 -translate-y-1/2 hidden md:flex pointer-events-none"
+                  >
+                    <div className="flex items-center gap-2 rounded-full border border-sky-500/20 bg-sky-500/10 backdrop-blur-md px-3 py-1 shadow-sm">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                      <span className="text-[10px] font-semibold text-sky-400 whitespace-nowrap">
+                        1 min away
+                      </span>
+                    </div>
+                  </FloatingBadge>
+                )}
 
               </div>
-            </AnimateOnScroll>
+
+              {/* TITLE */}
+              <h3 className="text-lg md:text-xl font-bold text-foreground mb-2 tracking-tight">
+                {step.title}
+              </h3>
+
+              {/* DESCRIPTION */}
+              <p className="text-sm md:text-base text-muted-foreground leading-relaxed font-normal">
+                {step.description}
+              </p>
+
+            </div>
           ))}
 
         </div>
