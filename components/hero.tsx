@@ -73,7 +73,7 @@ export function Hero() {
 
               </span>
 
-              Launching Summer 2026
+              Launching Soon
 
             </span>
           </div>
