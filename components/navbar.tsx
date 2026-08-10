@@ -2,39 +2,31 @@
 
 import Link from "next/link"
 import { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
-  /* DETECT SCROLL FOR NAVBAR GLOW */
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setScrolled(true)
-      } else {
-        setScrolled(false)
-      }
+      setScrolled(window.scrollY > 20)
     }
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  /* LOCK SCROLL ON MOBILE MENU OPEN */
   useEffect(() => {
     document.body.style.overflow = mobileMenuOpen ? "hidden" : "auto"
   }, [mobileMenuOpen])
 
   return (
     <>
-      {/* FLOATING CAPSULE NAVBAR */}
       <header className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 pt-4 md:pt-6 transition-all duration-300">
         <nav
           className={`w-full max-w-5xl rounded-full border transition-all duration-500 ${
             scrolled
-              ? "border-white/15 bg-black/60 shadow-[0_8px_32px_rgba(0,0,0,0.5)] backdrop-blur-2xl py-2.5 px-6"
-              : "border-white/10 bg-black/30 backdrop-blur-xl py-3 px-6"
+              ? "border-white/15 bg-black/70 shadow-[0_8px_32px_rgba(0,0,0,0.5)] backdrop-blur-2xl py-2.5 px-6"
+              : "border-white/10 bg-black/40 backdrop-blur-xl py-3 px-6"
           } flex items-center justify-between text-white`}
         >
           {/* LOGO */}
@@ -53,158 +45,86 @@ export function Navbar() {
 
           {/* DESKTOP NAV LINKS */}
           <div className="hidden md:flex items-center gap-7">
-            <a
-              href="/#problem"
-              className="text-xs font-medium text-neutral-300 hover:text-sky-400 transition-colors duration-200"
-            >
+            <a href="/#problem" className="text-xs font-medium text-neutral-300 hover:text-sky-400 transition-colors">
               Why Rikba
             </a>
-
-            <a
-              href="/#how-it-works"
-              className="text-xs font-medium text-neutral-300 hover:text-sky-400 transition-colors duration-200"
-            >
+            <a href="/#how-it-works" className="text-xs font-medium text-neutral-300 hover:text-sky-400 transition-colors">
               How it works
             </a>
-
-            <a
-              href="/#faq"
-              className="text-xs font-medium text-neutral-300 hover:text-sky-400 transition-colors duration-200"
-            >
+            <a href="/#faq" className="text-xs font-medium text-neutral-300 hover:text-sky-400 transition-colors">
               FAQ
             </a>
-
-            <Link
-              href="/blog"
-              className="text-xs font-medium text-neutral-300 hover:text-sky-400 transition-colors duration-200"
-            >
+            <Link href="/blog" className="text-xs font-medium text-neutral-300 hover:text-sky-400 transition-colors">
               Blog
             </Link>
-
-            <Link
-              href="/legal"
-              className="text-xs font-medium text-neutral-300 hover:text-sky-400 transition-colors duration-200"
-            >
+            <Link href="/legal" className="text-xs font-medium text-neutral-300 hover:text-sky-400 transition-colors">
               Legal
             </Link>
-
-            <Link
-              href="/download"
-              className="text-xs font-medium text-sky-400 hover:text-sky-300 transition-colors duration-200"
-            >
+            <Link href="/download" className="text-xs font-medium text-sky-400 hover:text-sky-300 transition-colors">
               Download
             </Link>
           </div>
 
-          {/* RIGHT ACTION BUTTON */}
+          {/* ACTION BUTTON */}
           <div className="hidden md:flex items-center gap-3">
             <Link
               href="/legal/contact"
-              className="relative inline-flex items-center justify-center rounded-full bg-sky-400 px-5 py-2 text-xs font-semibold text-black transition-all duration-300 hover:bg-sky-300 hover:shadow-[0_0_20px_rgba(56,189,248,0.4)] hover:scale-[1.03] active:scale-[0.98]"
+              className="inline-flex items-center justify-center rounded-full bg-sky-400 px-5 py-2 text-xs font-semibold text-black transition-all duration-300 hover:bg-sky-300 hover:shadow-[0_0_20px_rgba(56,189,248,0.4)] hover:scale-[1.03]"
             >
               Contact us
             </Link>
           </div>
 
-          {/* HAMBURGER BUTTON (MOBILE) */}
+          {/* HAMBURGER BUTTON */}
           <button
             onClick={() => setMobileMenuOpen((prev) => !prev)}
-            aria-label="Toggle Menu"
-            className="md:hidden relative z-50 w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white focus:outline-none"
+            className="md:hidden relative z-50 w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white"
           >
             <div className="w-4 h-3 flex flex-col justify-between items-center">
-              <span
-                className={`w-full h-[1.5px] bg-white rounded-full transition-all duration-300 ${
-                  mobileMenuOpen ? "rotate-45 translate-y-[5px]" : ""
-                }`}
-              />
-              <span
-                className={`w-full h-[1.5px] bg-white rounded-full transition-all duration-300 ${
-                  mobileMenuOpen ? "opacity-0" : ""
-                }`}
-              />
-              <span
-                className={`w-full h-[1.5px] bg-white rounded-full transition-all duration-300 ${
-                  mobileMenuOpen ? "-rotate-45 -translate-y-[5.5px]" : ""
-                }`}
-              />
+              <span className={`w-full h-[1.5px] bg-white rounded-full transition-all duration-300 ${mobileMenuOpen ? "rotate-45 translate-y-[5px]" : ""}`} />
+              <span className={`w-full h-[1.5px] bg-white rounded-full transition-all duration-300 ${mobileMenuOpen ? "opacity-0" : ""}`} />
+              <span className={`w-full h-[1.5px] bg-white rounded-full transition-all duration-300 ${mobileMenuOpen ? "-rotate-45 -translate-y-[5.5px]" : ""}`} />
             </div>
           </button>
         </nav>
       </header>
 
-      {/* FULLSCREEN MOBILE MENU OVERLAY */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, backdropFilter: "blur(0px)" }}
-            animate={{ opacity: 1, backdropFilter: "blur(24px)" }}
-            exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 md:hidden bg-black/80 flex flex-col justify-center px-8 pt-20 pb-10"
-          >
-            <div className="flex flex-col gap-6 text-center">
-              <a
-                href="/#problem"
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-2xl font-semibold text-neutral-200 hover:text-sky-400 transition-colors"
-              >
-                Why Rikba
-              </a>
-
-              <a
-                href="/#how-it-works"
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-2xl font-semibold text-neutral-200 hover:text-sky-400 transition-colors"
-              >
-                How it works
-              </a>
-
-              <a
-                href="/#faq"
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-2xl font-semibold text-neutral-200 hover:text-sky-400 transition-colors"
-              >
-                FAQ
-              </a>
-
-              <Link
-                href="/blog"
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-2xl font-semibold text-neutral-200 hover:text-sky-400 transition-colors"
-              >
-                Blog
-              </Link>
-
-              <Link
-                href="/legal"
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-2xl font-semibold text-neutral-200 hover:text-sky-400 transition-colors"
-              >
-                Legal
-              </Link>
-
-              <Link
-                href="/download"
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-2xl font-semibold text-sky-400 hover:text-sky-300 transition-colors"
-              >
-                Download App
-              </Link>
-
-              <div className="pt-6 flex justify-center">
-                <Link
-                  href="/legal/contact"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="w-full max-w-xs rounded-full bg-sky-400 py-3.5 font-semibold text-black shadow-lg shadow-sky-500/25 transition-all active:scale-95"
-                >
-                  Contact us
-                </Link>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* MOBILE MENU */}
+      <div
+        className={`fixed inset-0 z-40 md:hidden bg-black/90 backdrop-blur-2xl flex flex-col justify-center px-8 transition-all duration-500 ${
+          mobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
+      >
+        <div className="flex flex-col gap-6 text-center">
+          <a href="/#problem" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-semibold text-neutral-200">
+            Why Rikba
+          </a>
+          <a href="/#how-it-works" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-semibold text-neutral-200">
+            How it works
+          </a>
+          <a href="/#faq" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-semibold text-neutral-200">
+            FAQ
+          </a>
+          <Link href="/blog" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-semibold text-neutral-200">
+            Blog
+          </Link>
+          <Link href="/legal" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-semibold text-neutral-200">
+            Legal
+          </Link>
+          <Link href="/download" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-semibold text-sky-400">
+            Download App
+          </Link>
+          <div className="pt-6 flex justify-center">
+            <Link
+              href="/legal/contact"
+              onClick={() => setMobileMenuOpen(false)}
+              className="w-full max-w-xs rounded-full bg-sky-400 py-3.5 font-semibold text-black shadow-lg shadow-sky-500/25"
+            >
+              Contact us
+            </Link>
+          </div>
+        </div>
+      </div>
     </>
   )
 }
