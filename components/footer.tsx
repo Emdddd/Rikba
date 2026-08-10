@@ -4,16 +4,16 @@ import Link from "next/link"
 
 export function Footer() {
   return (
-    <footer className="relative border-t border-white/10 bg-black/40 backdrop-blur-2xl py-14 overflow-hidden">
-      {/* Background Subtle Ambient Glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[150px] bg-sky-500/10 rounded-full blur-[100px] pointer-events-none" />
+    <footer className="relative py-12 overflow-hidden">
+      {/* ===== AMBIENT GLOW (SEAMLESS & BLENDED) ===== */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[400px] h-[120px] bg-sky-400/10 rounded-full blur-[90px] pointer-events-none" />
 
       <div className="mx-auto max-w-6xl px-6 relative z-10">
         <div className="flex flex-col items-center text-center">
 
           {/* BRAND LOGO */}
           <Link href="/" className="flex items-center justify-center gap-2.5 group mb-4">
-            <div className="w-9 h-9 rounded-full bg-sky-500/10 border border-sky-400/20 flex items-center justify-center p-1.5 transition-transform duration-300 group-hover:scale-110">
+            <div className="w-9 h-9 rounded-full bg-sky-500/10 border border-sky-400/20 backdrop-blur-md flex items-center justify-center p-1.5 transition-transform duration-300 group-hover:scale-110">
               <img
                 src="/Favecoiiin.png"
                 alt="Rikba"
@@ -63,15 +63,15 @@ export function Footer() {
             </Link>
           </div>
 
-          {/* DIVIDER */}
-          <div className="my-8 w-24 h-[1px] bg-gradient-to-r from-transparent via-white/15 to-transparent" />
+          {/* LIGHT TRANSPARENT DIVIDER */}
+          <div className="my-8 w-24 h-[1px] bg-gradient-to-r from-transparent via-sky-500/20 to-transparent" />
 
           {/* COPYRIGHT & ADDRESS */}
-          <p className="text-xs md:text-sm font-medium text-neutral-400">
+          <p className="text-xs md:text-sm font-medium text-muted-foreground">
             &copy; 2026 Rikba. Made in Malta.
           </p>
 
-          <p className="mt-2 text-[11px] font-mono text-neutral-500 tracking-wide max-w-md leading-relaxed">
+          <p className="mt-2 text-[11px] font-mono text-muted-foreground/70 tracking-wide max-w-md leading-relaxed">
             RIKBA Rides Ltd., 23, Triq Nofs in-Nhar, Valletta, VLT 1102, Malta
           </p>
 
