@@ -52,6 +52,10 @@ export function Navbar() {
               Legal
             </Link>
 
+            <Link href="/download" className="text-sm text-muted-foreground hover:text-foreground font-medium">
+              Download
+            </Link>
+
             <Link
               href="/legal/contact"
               className="rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground"
@@ -61,7 +65,7 @@ export function Navbar() {
 
           </div>
 
-          {/* HAMBURGER */}
+          {/* HAMBURGER BUTTON */}
           <button
             onClick={() => setMobileMenuOpen(prev => !prev)}
             className="md:hidden w-11 h-11 flex items-center justify-center"
@@ -101,7 +105,7 @@ export function Navbar() {
           : "opacity-0 pointer-events-none"}`}
       />
 
-      {/* MOBILE MENU */}
+      {/* MOBILE MENU (BURGER MENU CONTENTS) */}
       <div
         className={`fixed top-16 left-0 right-0 z-50 md:hidden border-b border-border
         bg-white transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]
@@ -131,11 +135,17 @@ export function Navbar() {
             Legal
           </Link>
 
-          <div className="flex justify-center items-center pt-4">
+          {/* Download App inside Burger Menu */}
+          <Link href="/download" onClick={() => setMobileMenuOpen(false)} className="text-lg font-semibold text-primary">
+            Download App
+          </Link>
+
+          <div className="flex justify-center items-center pt-2">
 
             <Link
               href="/legal/contact"
-              className="rounded-lg bg-primary px-6 py-3 font-semibold text-primary-foreground"
+              onClick={() => setMobileMenuOpen(false)}
+              className="w-full max-w-xs rounded-lg bg-primary px-6 py-3 font-semibold text-primary-foreground"
             >
               Contact us
             </Link>
