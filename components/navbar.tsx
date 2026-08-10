@@ -21,6 +21,7 @@ export function Navbar() {
 
   return (
     <>
+      {/* FLOATING CAPSULE NAVBAR */}
       <header className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 pt-4 md:pt-6 transition-all duration-300">
         <nav
           className={`w-full max-w-5xl rounded-full border transition-all duration-500 ${
@@ -45,22 +46,45 @@ export function Navbar() {
 
           {/* DESKTOP NAV LINKS */}
           <div className="hidden md:flex items-center gap-7">
-            <a href="/#problem" className="text-xs font-medium text-neutral-300 hover:text-sky-400 transition-colors">
+            <a
+              href="/#problem"
+              className="text-xs font-medium text-neutral-300 hover:text-sky-400 transition-colors duration-200"
+            >
               Why Rikba
             </a>
-            <a href="/#how-it-works" className="text-xs font-medium text-neutral-300 hover:text-sky-400 transition-colors">
+
+            <a
+              href="/#how-it-works"
+              className="text-xs font-medium text-neutral-300 hover:text-sky-400 transition-colors duration-200"
+            >
               How it works
             </a>
-            <a href="/#faq" className="text-xs font-medium text-neutral-300 hover:text-sky-400 transition-colors">
+
+            <a
+              href="/#faq"
+              className="text-xs font-medium text-neutral-300 hover:text-sky-400 transition-colors duration-200"
+            >
               FAQ
             </a>
-            <Link href="/blog" className="text-xs font-medium text-neutral-300 hover:text-sky-400 transition-colors">
+
+            <Link
+              href="/blog"
+              className="text-xs font-medium text-neutral-300 hover:text-sky-400 transition-colors duration-200"
+            >
               Blog
             </Link>
-            <Link href="/legal" className="text-xs font-medium text-neutral-300 hover:text-sky-400 transition-colors">
+
+            <Link
+              href="/legal"
+              className="text-xs font-medium text-neutral-300 hover:text-sky-400 transition-colors duration-200"
+            >
               Legal
             </Link>
-            <Link href="/download" className="text-xs font-medium text-sky-400 hover:text-sky-300 transition-colors">
+
+            <Link
+              href="/download"
+              className="text-xs font-medium text-sky-400 hover:text-sky-300 transition-colors duration-200"
+            >
               Download
             </Link>
           </div>
@@ -75,45 +99,88 @@ export function Navbar() {
             </Link>
           </div>
 
-          {/* HAMBURGER BUTTON */}
+          {/* HAMBURGER BUTTON (MOBILE) */}
           <button
             onClick={() => setMobileMenuOpen((prev) => !prev)}
-            className="md:hidden relative z-50 w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white"
+            aria-label="Toggle Menu"
+            className="md:hidden relative z-50 w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white focus:outline-none"
           >
             <div className="w-4 h-3 flex flex-col justify-between items-center">
-              <span className={`w-full h-[1.5px] bg-white rounded-full transition-all duration-300 ${mobileMenuOpen ? "rotate-45 translate-y-[5px]" : ""}`} />
-              <span className={`w-full h-[1.5px] bg-white rounded-full transition-all duration-300 ${mobileMenuOpen ? "opacity-0" : ""}`} />
-              <span className={`w-full h-[1.5px] bg-white rounded-full transition-all duration-300 ${mobileMenuOpen ? "-rotate-45 -translate-y-[5.5px]" : ""}`} />
+              <span
+                className={`w-full h-[1.5px] bg-white rounded-full transition-all duration-300 ${
+                  mobileMenuOpen ? "rotate-45 translate-y-[5px]" : ""
+                }`}
+              />
+              <span
+                className={`w-full h-[1.5px] bg-white rounded-full transition-all duration-300 ${
+                  mobileMenuOpen ? "opacity-0" : ""
+                }`}
+              />
+              <span
+                className={`w-full h-[1.5px] bg-white rounded-full transition-all duration-300 ${
+                  mobileMenuOpen ? "-rotate-45 -translate-y-[5.5px]" : ""
+                }`}
+              />
             </div>
           </button>
         </nav>
       </header>
 
-      {/* MOBILE MENU */}
+      {/* FULLSCREEN MOBILE MENU OVERLAY */}
       <div
         className={`fixed inset-0 z-40 md:hidden bg-black/90 backdrop-blur-2xl flex flex-col justify-center px-8 transition-all duration-500 ${
           mobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >
         <div className="flex flex-col gap-6 text-center">
-          <a href="/#problem" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-semibold text-neutral-200">
+          <a
+            href="/#problem"
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-2xl font-semibold text-neutral-200 hover:text-sky-400 transition-colors"
+          >
             Why Rikba
           </a>
-          <a href="/#how-it-works" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-semibold text-neutral-200">
+
+          <a
+            href="/#how-it-works"
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-2xl font-semibold text-neutral-200 hover:text-sky-400 transition-colors"
+          >
             How it works
           </a>
-          <a href="/#faq" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-semibold text-neutral-200">
+
+          <a
+            href="/#faq"
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-2xl font-semibold text-neutral-200 hover:text-sky-400 transition-colors"
+          >
             FAQ
           </a>
-          <Link href="/blog" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-semibold text-neutral-200">
+
+          <Link
+            href="/blog"
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-2xl font-semibold text-neutral-200 hover:text-sky-400 transition-colors"
+          >
             Blog
           </Link>
-          <Link href="/legal" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-semibold text-neutral-200">
+
+          <Link
+            href="/legal"
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-2xl font-semibold text-neutral-200 hover:text-sky-400 transition-colors"
+          >
             Legal
           </Link>
-          <Link href="/download" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-semibold text-sky-400">
+
+          <Link
+            href="/download"
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-2xl font-semibold text-sky-400 hover:text-sky-300 transition-colors"
+          >
             Download App
           </Link>
+
           <div className="pt-6 flex justify-center">
             <Link
               href="/legal/contact"
