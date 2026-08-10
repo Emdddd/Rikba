@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import Image from "next/image"
 
 export function Hero() {
@@ -18,7 +18,7 @@ export function Hero() {
       onMouseMove={handleMouseMove}
       className="relative min-h-[90vh] pt-24 pb-24 md:pt-32 md:pb-36 overflow-hidden flex flex-col justify-center items-center"
     >
-      {/* ===== APPLE STYLE AMBIENT GLOW ===== */}
+      {/* ===== AMBIENT GLOW ===== */}
       <div className="absolute inset-0 -z-10 pointer-events-none flex items-center justify-center">
         <div className="w-[700px] h-[700px] md:w-[900px] md:h-[900px] bg-[radial-gradient(circle_at_center,rgba(56,189,248,0.22),transparent_65%)] blur-[140px] animate-pulse" />
         <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background opacity-90" />
@@ -81,7 +81,7 @@ export function Hero() {
           </a>
         </div>
 
-        {/* ===== ABSTRACT 3D INTERACTIVE VISUAL (MOUSE PARALLAX) ===== */}
+        {/* ===== ABSTRACT 3D VISUAL ===== */}
         <div
           style={{
             transform: `perspective(1000px) rotateX(${-mousePos.y}deg) rotateY(${mousePos.x}deg)`,
@@ -89,10 +89,8 @@ export function Hero() {
           }}
           className="relative mt-16 w-full max-w-3xl h-[260px] md:h-[360px] rounded-3xl border border-white/10 bg-gradient-to-b from-white/10 via-white/5 to-transparent backdrop-blur-2xl p-6 shadow-2xl flex flex-col items-center justify-center overflow-hidden"
         >
-          {/* Grid Lines */}
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:28px_28px] pointer-events-none" />
 
-          {/* Glowing Animated Ring Structure */}
           <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full border border-sky-400/20 flex items-center justify-center shadow-[0_0_60px_rgba(56,189,248,0.12)] animate-[spin_30s_linear_infinite]">
             <div className="w-36 h-36 md:w-48 md:h-48 rounded-full border border-sky-300/15 flex items-center justify-center">
               <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-sky-400/20 blur-2xl animate-pulse" />
