@@ -8,19 +8,19 @@ export function Hero() {
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect()
-    const x = (e.clientX - rect.left - rect.width / 2) / 25
-    const y = (e.clientY - rect.top - rect.height / 2) / 25
+    const x = (e.clientX - rect.left - rect.width / 2) / 30
+    const y = (e.clientY - rect.top - rect.height / 2) / 30
     setMousePos({ x, y })
   }
 
   return (
     <section 
       onMouseMove={handleMouseMove}
-      className="relative min-h-[90vh] pt-24 pb-24 md:pt-32 md:pb-36 overflow-hidden flex flex-col justify-center items-center"
+      className="relative min-h-[90vh] pt-28 pb-20 md:pt-36 md:pb-28 overflow-hidden flex flex-col justify-center items-center"
     >
       {/* ===== AMBIENT GLOW ===== */}
       <div className="absolute inset-0 -z-10 pointer-events-none flex items-center justify-center">
-        <div className="w-[700px] h-[700px] md:w-[900px] md:h-[900px] bg-[radial-gradient(circle_at_center,rgba(56,189,248,0.22),transparent_65%)] blur-[140px] animate-pulse" />
+        <div className="w-[600px] h-[600px] md:w-[800px] md:h-[800px] bg-[radial-gradient(circle_at_center,rgba(56,189,248,0.18),transparent_65%)] blur-[130px] animate-pulse" />
         <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background opacity-90" />
       </div>
 
@@ -81,25 +81,51 @@ export function Hero() {
           </a>
         </div>
 
-        {/* ===== ABSTRACT 3D VISUAL ===== */}
-        <div
+        {/* ===== BENTO HIGHLIGHT CARDS (REPLACES THE CIRCLE) ===== */}
+        <div 
           style={{
             transform: `perspective(1000px) rotateX(${-mousePos.y}deg) rotateY(${mousePos.x}deg)`,
             transition: "transform 0.1s ease-out"
           }}
-          className="relative mt-16 w-full max-w-3xl h-[260px] md:h-[360px] rounded-3xl border border-white/10 bg-gradient-to-b from-white/10 via-white/5 to-transparent backdrop-blur-2xl p-6 shadow-2xl flex flex-col items-center justify-center overflow-hidden"
+          className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-4xl text-left"
         >
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:28px_28px] pointer-events-none" />
-
-          <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full border border-sky-400/20 flex items-center justify-center shadow-[0_0_60px_rgba(56,189,248,0.12)] animate-[spin_30s_linear_infinite]">
-            <div className="w-36 h-36 md:w-48 md:h-48 rounded-full border border-sky-300/15 flex items-center justify-center">
-              <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-sky-400/20 blur-2xl animate-pulse" />
+          {/* CARD 1 */}
+          <div className="rounded-2xl border border-white/10 bg-gradient-to-b from-white/10 to-transparent backdrop-blur-xl p-6 shadow-xl transition-all duration-300 hover:border-sky-500/30">
+            <div className="w-10 h-10 rounded-xl bg-sky-500/10 border border-sky-400/20 flex items-center justify-center text-sky-400 mb-4">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <line x1="12" y1="1" x2="12" y2="23" />
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+              </svg>
             </div>
+            <h3 className="font-semibold text-foreground text-base mb-1">Transparent Fares</h3>
+            <p className="text-xs text-muted-foreground leading-relaxed">No surge surprises or hidden fees. What you see is what you pay.</p>
           </div>
 
-          <div className="absolute bottom-5 flex items-center gap-2 text-[11px] font-mono tracking-widest text-muted-foreground uppercase">
-            <span className="w-1.5 h-1.5 rounded-full bg-sky-400 animate-ping" />
-            Rikba Mobility Engine • Malta Network
+          {/* CARD 2 */}
+          <div className="rounded-2xl border border-white/10 bg-gradient-to-b from-white/10 to-transparent backdrop-blur-xl p-6 shadow-xl transition-all duration-300 hover:border-sky-500/30">
+            <div className="w-10 h-10 rounded-xl bg-sky-500/10 border border-sky-400/20 flex items-center justify-center text-sky-400 mb-4">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+            </div>
+            <h3 className="font-semibold text-foreground text-base mb-1">Happier Drivers</h3>
+            <p className="text-xs text-muted-foreground leading-relaxed">Drivers keep up to 92% of earnings, ensuring better service for passengers.</p>
+          </div>
+
+          {/* CARD 3 */}
+          <div className="rounded-2xl border border-white/10 bg-gradient-to-b from-white/10 to-transparent backdrop-blur-xl p-6 shadow-xl transition-all duration-300 hover:border-sky-500/30">
+            <div className="w-10 h-10 rounded-xl bg-sky-500/10 border border-sky-400/20 flex items-center justify-center text-sky-400 mb-4">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+                <path d="M2 12h20" />
+              </svg>
+            </div>
+            <h3 className="font-semibold text-foreground text-base mb-1">100% Maltese</h3>
+            <p className="text-xs text-muted-foreground leading-relaxed">Local support, island-tailored tech, and keeping revenue local.</p>
           </div>
         </div>
 
