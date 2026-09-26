@@ -29,14 +29,14 @@ export function Hero() {
         <div className="mb-6 transition-all duration-700 transform hover:scale-105">
           <div className="relative w-[220px] md:w-[300px] lg:w-[360px] mx-auto">
             {/* Subtle dark-mode glow to separate the blue logo from the dark background */}
-            <div className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[90px] w-[280px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(38,198,218,0.48),transparent_68%)] blur-[36px] opacity-0 dark:opacity-100 md:h-[140px] md:w-[400px]" />
+            <div className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[90px] w-[280px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.42),transparent_68%)] blur-[36px] opacity-0 dark:opacity-100 md:h-[140px] md:w-[400px]" />
             <Image
               src="/1CD50AD3-C98C-41E9-906E-DA7B306907D7.png"
               alt="Rikba logo"
               width={480}
               height={200}
               priority
-              className="w-full h-auto object-contain drop-shadow-[0_0_35px_rgba(56,189,248,0.25)] dark:brightness-125 dark:saturate-125 dark:drop-shadow-[0_0_18px_rgba(38,198,218,0.75)]"
+              className="w-full h-auto object-contain drop-shadow-[0_0_35px_rgba(56,189,248,0.25)] dark:brightness-125 dark:saturate-125 dark:drop-shadow-[0_0_18px_rgba(255,255,255,0.75)]"
             />
           </div>
         </div>
