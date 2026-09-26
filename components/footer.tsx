@@ -5,18 +5,6 @@ import Link from "next/link"
 export function Footer() {
   return (
     <footer className="relative py-12 overflow-hidden">
-      {/* ===== ANIMATED MALTA MAP ===== */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-[300px] overflow-hidden">
-        <div className="absolute inset-x-0 top-0 h-44 bg-gradient-to-b from-background via-background/90 to-transparent z-10" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(14,165,233,0.10),transparent_70%)]" />
-        <img
-          src="/malta-footer-lines.svg"
-          alt=""
-          className="absolute left-1/2 bottom-[10px] h-[260px] w-[430px] -translate-x-1/2 object-contain opacity-20 dark:opacity-45"
-        />
-        <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-background to-transparent" />
-      </div>
-
       <div className="mx-auto max-w-6xl px-6 relative z-10">
         <div className="flex flex-col items-center text-center">
 
@@ -29,7 +17,6 @@ export function Footer() {
                 className="w-full h-full object-contain"
               />
             </div>
-            {/* NAME: SOLID HIGH-CONTRAST TEXT */}
             <span className="font-extrabold text-2xl tracking-tight text-slate-900 dark:text-white drop-shadow-sm">
               Rikba
             </span>
