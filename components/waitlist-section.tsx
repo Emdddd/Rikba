@@ -54,7 +54,7 @@ export function WaitlistSection() {
             </h2>
 
             <p className="mt-4 text-base md:text-lg text-muted-foreground font-normal">
-              Rikba launches Summer 2026. Get in before everyone else.
+              Rikba is launching soon. Get in before everyone else.
             </p>
           </div>
 
