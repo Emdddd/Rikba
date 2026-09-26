@@ -18,11 +18,6 @@ export function Hero() {
       onMouseMove={handleMouseMove}
       className="relative min-h-[85vh] pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden flex flex-col justify-center items-center"
     >
-      {/* ===== AMBIENT GLOW ===== */}
-      <div className="absolute inset-0 -z-10 pointer-events-none flex items-center justify-center">
-        <div className="w-[600px] h-[600px] md:w-[800px] md:h-[800px] bg-[radial-gradient(circle_at_center,rgba(56,189,248,0.18),transparent_65%)] blur-[130px] animate-pulse" />
-      </div>
-
       <div className="relative mx-auto max-w-5xl px-6 z-10 text-center flex flex-col items-center">
         
         {/* ===== LOGO ===== */}
