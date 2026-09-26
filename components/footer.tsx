@@ -5,8 +5,37 @@ import Link from "next/link"
 export function Footer() {
   return (
     <footer className="relative py-12 overflow-hidden">
-      {/* ===== AMBIENT GLOW (SEAMLESS & BLENDED) ===== */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[400px] h-[120px] bg-sky-400/10 rounded-full blur-[90px] pointer-events-none" />
+      {/* ===== ANIMATED MALTA MAP ===== */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-[430px] overflow-hidden opacity-40 dark:opacity-70">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(14,165,233,0.14),transparent_68%)]" />
+        <div
+          className="absolute left-1/2 bottom-[-70px] h-[430px] w-[760px] -translate-x-1/2 overflow-hidden bg-[repeating-linear-gradient(115deg,transparent_0px,transparent_17px,rgba(14,165,233,0.24)_18px,transparent_19px,transparent_34px)] animate-rikba-map-lines"
+          style={{
+            WebkitMaskImage: "url('/maltaHigh.svg')",
+            maskImage: "url('/maltaHigh.svg')",
+            WebkitMaskRepeat: "no-repeat",
+            maskRepeat: "no-repeat",
+            WebkitMaskPosition: "center",
+            maskPosition: "center",
+            WebkitMaskSize: "contain",
+            maskSize: "contain",
+          }}
+        />
+        <div
+          className="absolute left-1/2 bottom-[-70px] h-[430px] w-[760px] -translate-x-1/2 overflow-hidden bg-[repeating-linear-gradient(0deg,transparent_0px,transparent_31px,rgba(56,189,248,0.16)_32px,transparent_33px,transparent_62px)] animate-rikba-map-lines-reverse"
+          style={{
+            WebkitMaskImage: "url('/maltaHigh.svg')",
+            maskImage: "url('/maltaHigh.svg')",
+            WebkitMaskRepeat: "no-repeat",
+            maskRepeat: "no-repeat",
+            WebkitMaskPosition: "center",
+            maskPosition: "center",
+            WebkitMaskSize: "contain",
+            maskSize: "contain",
+          }}
+        />
+        <div className="absolute left-1/2 bottom-[55px] h-[1px] w-[520px] -translate-x-1/2 bg-gradient-to-r from-transparent via-sky-400/45 to-transparent blur-[1px] animate-rikba-map-beam" />
+      </div>
 
       <div className="mx-auto max-w-6xl px-6 relative z-10">
         <div className="flex flex-col items-center text-center">
