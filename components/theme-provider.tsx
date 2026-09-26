@@ -26,8 +26,8 @@ async function getMaltaSunTheme() {
   if (!response.ok) throw new Error('Unable to load Malta sunrise/sunset')
 
   const data = await response.json()
-  const sunrise = new Date(data.results.sunrise).getTime()
-  const sunset = new Date(data.results.sunset).getTime()
+  const sunrise = new Date(data.sunrise).getTime()
+  const sunset = new Date(data.sunset).getTime()
   const now = Date.now()
 
   return now >= sunrise && now < sunset ? 'light' : 'dark'
