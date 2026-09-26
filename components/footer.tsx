@@ -75,16 +75,6 @@ export function Footer() {
           <p className="mt-2 text-[11px] font-mono text-slate-400 dark:text-neutral-500 tracking-wide max-w-md leading-relaxed">
             RIKBA Rides Ltd., 23, Triq Nofs in-Nhar, Valletta, VLT 1102, Malta
           </p>
-
-          <a
-            href="https://sunrise-sunset.org/"
-            target="_blank"
-            rel="noreferrer"
-            className="mt-3 text-[10px] text-slate-400 dark:text-neutral-500 hover:text-sky-500 transition-colors"
-          >
-            Sunrise & sunset data by Sunrise-Sunset.org
-          </a>
-
         </div>
       </div>
     </footer>
