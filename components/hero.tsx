@@ -36,7 +36,7 @@ export function Hero() {
               width={480}
               height={200}
               priority
-              className="w-full h-auto object-contain drop-shadow-[0_0_35px_rgba(56,189,248,0.25)] dark:brightness-0 dark:invert"
+              className="w-full h-auto object-contain drop-shadow-none dark:brightness-0 dark:invert"
             />
           </div>
         </div>
