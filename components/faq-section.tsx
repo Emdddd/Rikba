@@ -6,7 +6,7 @@ const faqs = [
   {
     question: "When are you launching?",
     answer:
-      "Rikba is launching in Summer 2026. Join the waitlist to be the first to know when we go live.",
+      "Rikba is launching soon. Join the waitlist to be the first to know when we go live.",
   },
   {
     question: "How do I sign up as a driver?",
