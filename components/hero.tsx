@@ -28,6 +28,8 @@ export function Hero() {
         {/* ===== LOGO ===== */}
         <div className="mb-6 transition-all duration-700 transform hover:scale-105">
           <div className="relative w-[220px] md:w-[300px] lg:w-[360px] mx-auto">
+            {/* Subtle dark-mode glow to separate the blue logo from the dark background */}
+            <div className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[90px] w-[280px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(38,198,218,0.28),transparent_68%)] blur-[28px] opacity-0 dark:opacity-100 md:h-[120px] md:w-[360px]" />
             <Image
               src="/1CD50AD3-C98C-41E9-906E-DA7B306907D7.png"
               alt="Rikba logo"
