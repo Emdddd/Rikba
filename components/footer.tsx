@@ -6,15 +6,15 @@ export function Footer() {
   return (
     <footer className="relative py-12 overflow-hidden">
       {/* ===== ANIMATED MALTA MAP ===== */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-[430px] overflow-hidden">
-        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-background via-background/70 to-transparent z-10" />
+      <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-[300px] overflow-hidden">
+        <div className="absolute inset-x-0 top-0 h-44 bg-gradient-to-b from-background via-background/90 to-transparent z-10" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(14,165,233,0.10),transparent_70%)]" />
         <img
           src="/malta-footer-lines.svg"
           alt=""
-          className="absolute left-1/2 bottom-[-35px] h-[430px] w-[760px] -translate-x-1/2 object-contain opacity-25 dark:opacity-55"
+          className="absolute left-1/2 bottom-[10px] h-[260px] w-[430px] -translate-x-1/2 object-contain opacity-20 dark:opacity-45"
         />
-        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-background to-transparent" />
       </div>
 
       <div className="mx-auto max-w-6xl px-6 relative z-10">
