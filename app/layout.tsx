@@ -12,7 +12,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://rikba.eu"),
 
-  title: "Rikba | Malta's Ride-Hailing App | Coming Summer 2026",
+  title: "Rikba | Malta's Ride-Hailing App | Launching Soon",
 
   description:
     "Fair prices and lower commissions are coming soon to Malta.",
