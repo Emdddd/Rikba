@@ -6,7 +6,7 @@ export function Marquee() {
     { text: "100% Malta owned", icon: "pin" },
     { text: "Drivers keep way more", icon: "coin" },
     { text: "Lower fares for riders", icon: "sparkle" },
-    { text: "Launching Summer 2026", icon: "rocket" },
+    { text: "Launching Soon", icon: "rocket" },
   ]
 
   return (
